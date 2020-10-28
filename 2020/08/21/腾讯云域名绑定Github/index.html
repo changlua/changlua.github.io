@@ -9,6 +9,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -19,15 +21,15 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"changlua.github.io","root":"/","scheme":"Mist","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+    var CONFIG = {"hostname":"changlua.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
   </script>
 
-  <meta name="description" content="腾讯云域名+Github绑定前提准备：你的github仓库地址 如changlua.github.io 1、购买域名，实名认证对于域名的购买我们可以选择腾讯云 腾讯云地址：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;没有注册的先注册一下，并且进行实名认证(认证还是很快的)     如何查看自己购买的域名？   以下则为我接下来演示的域名：  建议是最好实名注册一下  2、增加解析地址  点">
+  <meta name="description" content="腾讯云域名+Github绑定前提准备：你的github仓库地址 如changlua.github.io 1、购买域名，实名认证对于域名的购买我们可以选择腾讯云 腾讯云地址：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;没有注册的先注册一下，并且进行实名认证(认证还是很快的)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="腾讯云域名绑定Github">
 <meta property="og:url" content="https://changlua.github.io/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/index.html">
 <meta property="og:site_name" content="Changlu&#39;s Blog">
-<meta property="og:description" content="腾讯云域名+Github绑定前提准备：你的github仓库地址 如changlua.github.io 1、购买域名，实名认证对于域名的购买我们可以选择腾讯云 腾讯云地址：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;没有注册的先注册一下，并且进行实名认证(认证还是很快的)     如何查看自己购买的域名？   以下则为我接下来演示的域名：  建议是最好实名注册一下  2、增加解析地址  点">
+<meta property="og:description" content="腾讯云域名+Github绑定前提准备：你的github仓库地址 如changlua.github.io 1、购买域名，实名认证对于域名的购买我们可以选择腾讯云 腾讯云地址：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;没有注册的先注册一下，并且进行实名认证(认证还是很快的)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://changlua.github.io/images/2020.8.21/yumingbangding1.jpg">
 <meta property="og:image" content="https://changlua.github.io/images/2020.8.21/yumingbangding2.jpg">
@@ -214,16 +216,22 @@
     <img class="site-author-image" itemprop="image" alt="changlu"
       src="/images/avator_image.jpg">
   <p class="site-author-name" itemprop="name">changlu</p>
-  <div class="site-description" itemprop="description">长路的个人博客</div>
+  <div class="site-description" itemprop="description">欢迎来到长路的个人博客！</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
@@ -288,7 +296,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avator_image.jpg">
       <meta itemprop="name" content="changlu">
-      <meta itemprop="description" content="长路的个人博客">
+      <meta itemprop="description" content="欢迎来到长路的个人博客！">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,8 +318,31 @@
 
               <time title="创建时间：2020-08-21 16:40:41" itemprop="dateCreated datePublished" datetime="2020-08-21T16:40:41+08:00">2020-08-21</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+                </span>
+            </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>655</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -324,6 +355,7 @@
 <h2 id="1、购买域名，实名认证"><a href="#1、购买域名，实名认证" class="headerlink" title="1、购买域名，实名认证"></a>1、购买域名，实名认证</h2><p>对于域名的购买我们可以选择腾讯云</p>
 <p><strong>腾讯云地址：</strong><a target="_blank" rel="noopener" href="https://cloud.tencent.com/">https://cloud.tencent.com/</a><br>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img src="/images/2020.8.21/yumingbangding1.jpg">  </p>
 <br>
+<a id="more"></a>
 
 <p><strong>如何查看自己购买的域名？</strong><br><img src="/images/2020.8.21/yumingbangding2.jpg"></p>
 <br>
@@ -374,13 +406,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/08/18/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
       </footer>
     
   </article>
@@ -434,9 +459,21 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">changlu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">1k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1 分钟</span>
 </div>
   <!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
   <br/>
   -->
@@ -467,9 +504,6 @@
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
