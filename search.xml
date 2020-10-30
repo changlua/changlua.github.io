@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用Gitee来搭建图床</title>
+    <url>/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="使用Gitee来搭建图床"><a href="#使用Gitee来搭建图床" class="headerlink" title="使用Gitee来搭建图床"></a>使用Gitee来搭建图床</h1><blockquote>
+<p>图床的作用：对于在写markdown笔记中有时候会使用到图片，如果使用的是本地的图片，那么上传到别的平台如ccdn、博客园等就会失效。我们也可以将图片放置在贴图库、七牛云等平台使用其链接，过了一段时间也会失效，对于我们记录笔记会造成很大困扰，我们不妨搭建自己图床来存储图片，本期我们使用Gitee来搭建图床。</p>
+</blockquote>
+<h2 id="创建Gitee仓库"><a href="#创建Gitee仓库" class="headerlink" title="创建Gitee仓库"></a>创建Gitee仓库</h2><p><strong>① 注册Gitee账号，新建仓库</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234405.png"   width="60%">
+
+<a id="more"></a>
+
+<br>
+
+<p><strong>② 选择公开，使用Readme文件初始化，点击创建</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234757.png"   width="60%">
+
+<br>
+
+<p><strong>③ 创建的仓库中，找到服务-Gitee Pages，点击设置静态页面</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235014.png"   width="60%">
+
+<br>
+
+<p><strong>④ 我们不选择HTTPS，点击启动，稍等片刻即可</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235202.png"   width="60%">
+
+
+
+
+<hr>
+<h2 id="获取Gitee账号的Token私人令牌"><a href="#获取Gitee账号的Token私人令牌" class="headerlink" title="获取Gitee账号的Token私人令牌"></a>获取Gitee账号的Token私人令牌</h2><br>
+
+<p><strong>① 点击右上角的设置,找到私人令牌，点击生成，接着输入命令获取</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235453.png"   width="60%">
+
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235603.png"   width="60%">
+
+<br>
+
+<p><strong>② 我们只选择projects，然后点击提交即可获取</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235757.png"   width="60%">
+
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000009.png"   width="40%">
+
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000120.png"   width="40%">
+
+<p><strong>注意</strong>：私人令牌请自己主动保管，只会在Gitee平台上显示这一次</p>
+<hr>
+<h2 id="下载PicGo工具-快捷上传图片到Gitee"><a href="#下载PicGo工具-快捷上传图片到Gitee" class="headerlink" title="下载PicGo工具(快捷上传图片到Gitee)"></a>下载PicGo工具(快捷上传图片到Gitee)</h2><p>Github地址：<a href="https://github.com/Molunerfinn/PicGo/releases" title="下载链接(点我)">https://github.com/Molunerfinn/PicGo/releases</a></p>
+<p>这里我们直接选择.exe下载安装包</p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000559.png"   width="40%">
+
+
+
+<hr>
+<h2 id="安装并配置PicGO的Gitee插件"><a href="#安装并配置PicGO的Gitee插件" class="headerlink" title="安装并配置PicGO的Gitee插件"></a>安装并配置PicGO的Gitee插件</h2><p>① 我们搜索gitee，选择下面对应插件，<strong>点击安装</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000855.png"   width="50%">
+
+<br>
+
+<p>② 点击PicGo设置，<strong>勾选时间戳重命名、开启上传提示以及对应显示图床为gitee</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000958.png"   width="50%">
+
+<br>
+
+<p>③ 右击选择配置uploader- gitee，进行配置信息</p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001156.png"   width="50%">
+
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001349.png"   width="50%">
+
+<p><strong>注意这个repo对应的是你仓库浏览器地址的后半部分，如下：</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001455.png"   width="50%">
+
+<p>这样我们就配置完成啦！</p>
+<hr>
+<h2 id="PicGo的使用"><a href="#PicGo的使用" class="headerlink" title="PicGo的使用"></a>PicGo的使用</h2><p>我们到达上传区，选择图片上传的位置gitee(一定要勾选)</p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001726.png"   width="50%">
+
+<p><strong>两种方式上传</strong></p>
+<ul>
+<li>第一种：点击上传，这是从文件夹中选择上传的</li>
+</ul>
+<ul>
+<li>第二种：复制图片，点击下面的剪切板上传即可。</li>
+</ul>
+<br>
+
+<p><strong>这是根据时间戳来命名的，不用担心名字重复的问题，点击确定上传即可</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002140.jpg"   width="30%">
+
+<br>
+
+<p>注意右下角会有上传成功的提示字样，接着我们<strong>点击PicGo的相册进行查看与复制对应链接</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002459.png"   width="50%">
+
+<br>
+
+<p>我们在上传之后也<strong>可以上Gitee进行查看，两个是同步的：</strong></p>
+<img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002602.png"   width="50%">
+
+
+
+<hr>
+<h2 id="注意点说明"><a href="#注意点说明" class="headerlink" title="注意点说明"></a>注意点说明</h2><ol>
+<li>我们上传图片时，不要上传过于大的图片(如3MB)，会上传失败，一般来说对于你网页上截图不会有失败的情况</li>
+<li>对于GicGo，也是在不断更新中，有时候也会出现异常的错误，我们可以随时上官网下载最新版本</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>搭建图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>腾讯云域名绑定Github</title>
     <url>/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</url>
     <content><![CDATA[<h1 id="腾讯云域名-Github绑定"><a href="#腾讯云域名-Github绑定" class="headerlink" title="腾讯云域名+Github绑定"></a>腾讯云域名+Github绑定</h1><p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p>
