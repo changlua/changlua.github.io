@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Changlu&#39;s Blog</title>
+  <icon>https://changlujava.gitee.io/child/icon.png</icon>
   
+  <link href="https://changlujava.gitee.io/child/atom.xml" rel="self"/>
   
-  <link href="https://changlua.github.io/atom.xml" rel="self"/>
-  
-  <link href="https://changlua.github.io/"/>
+  <link href="https://changlujava.gitee.io/child/"/>
   <updated>2020-10-30T16:30:50.000Z</updated>
-  <id>https://changlua.github.io/</id>
+  <id>https://changlujava.gitee.io/child/</id>
   
   <author>
     <name>changlu</name>
@@ -18,12 +18,10 @@
   
   <entry>
     <title>使用Gitee来搭建图床</title>
-    <link href="https://changlua.github.io/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
-    <id>https://changlua.github.io/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
+    <link href="https://changlujava.gitee.io/child/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <id>https://changlujava.gitee.io/child/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
     <published>2020-10-30T16:30:50.000Z</published>
     <updated>2020-10-30T16:30:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>图床的作用：对于在写markdown笔记中有时候会使用到图片，如果使用的是本地的图片，那么上传到别的平台如ccdn、博客园等就会失效。我们也可以将图片放置在贴图库、七牛云等平台使用其链接，过了一段时间也会失效，对于我们记录笔记会造成很大困扰，我们不妨搭建自己图床来存储图片，本期我们使用Gitee来搭建图床。</p></blockquote><h1 id="创建Gitee仓库"><a href="#创建Gitee仓库" class="headerlink" title="创建Gitee仓库"></a>创建Gitee仓库</h1><p><strong>① 注册Gitee账号，新建仓库</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234405.png"   width="60%"><a id="more"></a><br><p><strong>② 选择公开，使用Readme文件初始化，点击创建</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234757.png"   width="60%"><br><p><strong>③ 创建的仓库中，找到服务-Gitee Pages，点击设置静态页面</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235014.png"   width="60%"><br><p><strong>④ 我们不选择HTTPS，点击启动，稍等片刻即可</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235202.png"   width="60%"><hr><h1 id="获取Gitee账号的Token私人令牌"><a href="#获取Gitee账号的Token私人令牌" class="headerlink" title="获取Gitee账号的Token私人令牌"></a>获取Gitee账号的Token私人令牌</h1><br><p><strong>① 点击右上角的设置,找到私人令牌，点击生成令牌</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235453.png"   width="60%"><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235603.png"   width="60%"><br><p><strong>② 我们只选择projects，然后点击提交，输入密码即可获取</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235757.png"   width="60%"><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000009.png"   width="40%"><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000120.png"   width="40%"><p><strong>注意</strong>：私人令牌请自己主动保管，只会在Gitee平台上显示这一次</p><hr><h1 id="下载PicGo工具-快捷上传图片到Gitee"><a href="#下载PicGo工具-快捷上传图片到Gitee" class="headerlink" title="下载PicGo工具(快捷上传图片到Gitee)"></a>下载PicGo工具(快捷上传图片到Gitee)</h1><p>Github地址：<a href="https://github.com/Molunerfinn/PicGo/releases" title="下载链接(点我)">https://github.com/Molunerfinn/PicGo/releases</a></p><p>这里我们直接选择.exe下载安装包</p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000559.png"   width="40%"><hr><h1 id="安装并配置PicGO的Gitee插件"><a href="#安装并配置PicGO的Gitee插件" class="headerlink" title="安装并配置PicGO的Gitee插件"></a>安装并配置PicGO的Gitee插件</h1><p>① 我们搜索gitee，选择下面对应插件，<strong>点击安装</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000855.png"   width="50%"><br><p>② 点击PicGo设置，<strong>勾选时间戳重命名、开启上传提示以及对应显示图床为gitee</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000958.png"   width="50%"><br><p>③ 右击选择配置uploader- gitee，进行配置信息</p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001156.png"   width="50%"><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001349.png"   width="50%"><p><strong>注意这个repo对应的是你仓库浏览器地址的后半部分，如下：</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001455.png"   width="50%"><p>这样我们就配置完成啦！</p><hr><h1 id="PicGo的使用"><a href="#PicGo的使用" class="headerlink" title="PicGo的使用"></a>PicGo的使用</h1><p>我们到达上传区，选择图片上传的位置gitee(一定要勾选)</p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001726.png"   width="50%"><p><strong>两种方式上传</strong></p><ul><li>第一种：点击上传，这是从文件夹中选择上传的</li></ul><ul><li>第二种：复制图片，点击下面的剪切板上传即可。</li></ul><br><p><strong>这是根据时间戳来命名的，不用担心名字重复的问题，点击确定上传即可</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002140.jpg"   width="30%"><br><p>注意右下角会有上传成功的提示字样，接着我们<strong>点击PicGo的相册进行查看与复制对应链接</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002459.png"   width="50%"><br><p>我们在上传之后也<strong>可以上Gitee进行查看，两个是同步的：</strong></p><img src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031002602.png"   width="50%"><hr><h1 id="注意点说明"><a href="#注意点说明" class="headerlink" title="注意点说明"></a>注意点说明</h1><ol><li>我们上传图片时，不要上传过于大的图片(如3MB)，会上传失败，一般来说对于你网页上截图不会有失败的情况</li><li>对于GicGo，也是在不断更新中，有时候也会出现异常的错误，我们可以随时上官网下载最新版本</li></ol>]]></content>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -34,21 +32,19 @@
     
     
     
-    <category term="博客搭建" scheme="https://changlua.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <category term="博客搭建" scheme="https://changlujava.gitee.io/child/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-    <category term="搭建图床" scheme="https://changlua.github.io/tags/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+    <category term="搭建图床" scheme="https://changlujava.gitee.io/child/tags/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
   <entry>
     <title>腾讯云域名绑定Github</title>
-    <link href="https://changlua.github.io/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/"/>
-    <id>https://changlua.github.io/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</id>
+    <link href="https://changlujava.gitee.io/child/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/"/>
+    <id>https://changlujava.gitee.io/child/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</id>
     <published>2020-08-21T08:40:41.000Z</published>
     <updated>2020-08-21T08:40:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p><h1 id="购买域名，实名认证"><a href="#购买域名，实名认证" class="headerlink" title="购买域名，实名认证"></a>购买域名，实名认证</h1><p>对于域名的购买我们可以选择腾讯云</p><p><strong>腾讯云地址：</strong><a href="https://cloud.tencent.com/">https://cloud.tencent.com/</a><br>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img src="/images/2020.8.21/yumingbangding1.jpg">  </p><br><a id="more"></a><p><strong>如何查看自己购买的域名？</strong><br><img src="/images/2020.8.21/yumingbangding2.jpg"></p><br><p><strong>以下则为我接下来演示的域名：</strong>  建议是最好实名注册一下<br><img src="/images/2020.8.21/yumingbangding3.jpg"></p><p><br><br></p><hr><h1 id="增加解析地址"><a href="#增加解析地址" class="headerlink" title="增加解析地址"></a>增加解析地址</h1><br><p><strong>点击解析：</strong><br><img src="/images/2020.8.21/yumingbangding4.jpg"></p><p><strong>点击添加记录：</strong><br>&nbsp;&nbsp;添加两条，两条的主机记录与记录类型与我一样<br>&nbsp;&nbsp;第一条的记录值填写对应的github网址的ip地址(可以通过cmd，输入指令<strong>ping github地址</strong>获取)<br>&nbsp;&nbsp;第二条的记录值填写你自己的github博客地址<br><img src="/images/2020.8.21/yumingbangding5.jpg"></p><br><hr><h1 id="在GitHub中Custom-domain添加购买的域名-可跳过看4"><a href="#在GitHub中Custom-domain添加购买的域名-可跳过看4" class="headerlink" title="在GitHub中Custom domain添加购买的域名(可跳过看4)"></a>在GitHub中Custom domain添加购买的域名(可跳过看4)</h1><p><strong>进入仓库，点击旁边的setting：</strong><br><img src="/images/2020.8.21/yumingbangding6.jpg"></p><br><p><strong>继续往下翻找到Custom domain，填入你购买的域名地址：</strong><br><img src="/images/2020.8.21/yumingbangding7.jpg"></p><br><p><strong>填入之后你的Github仓库中就会生成一个CNAME</strong><br><img src="/images/2020.8.21/yumingbangding8.jpg"></p><br><hr><h1 id="博客目录-source中添加CNAME，并填入注册域名"><a href="#博客目录-source中添加CNAME，并填入注册域名" class="headerlink" title="博客目录/source中添加CNAME，并填入注册域名"></a>博客目录/source中添加CNAME，并填入注册域名</h1><br><p><strong>进入到你的本地博客目录中：</strong>新建CNAME文件，其中添加你的注册的域名<br><img src="/images/2020.8.21/yumingbangding9.jpg"></p><p>说明：第3步与第四步区别在于第四步在每次部署的时候都会将CNAME上传，如果只在第三步进行设置只是临时设置，下次重新部署还是不存在CNAME。</p><br><br><hr><h1 id="重新进行部署进行访问"><a href="#重新进行部署进行访问" class="headerlink" title="重新进行部署进行访问"></a>重新进行部署进行访问</h1><p><strong>在该文件目录中输入命令：</strong><br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p><p><strong>如下:</strong></p><p><img src="/images/2020.8.21/yumingbangding10.jpg"></p><p><strong>部署成功后即可访问你购买的域名了！</strong></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;前提准备：你的github仓库地址 &lt;strong&gt;如changlua.github.io&lt;/strong&gt;&lt;/p&gt;
@@ -58,10 +54,10 @@
     
     
     
-    <category term="博客搭建" scheme="https://changlua.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <category term="博客搭建" scheme="https://changlujava.gitee.io/child/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-    <category term="域名绑定" scheme="https://changlua.github.io/tags/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/"/>
+    <category term="域名绑定" scheme="https://changlujava.gitee.io/child/tags/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A/"/>
     
   </entry>
   
