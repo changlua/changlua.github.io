@@ -26,9 +26,7 @@
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;图床的作用：对于在写markdown笔记中有时候会使用到图片，如果使用的是本地的图片，那么上传到别的平台如ccdn、博客园等就会失效。我们也可以将图片放置在贴图库、七牛云等平台使用其链接，过了一段时间也会失效，对于我们记录笔记会造成很大困扰，我们不妨搭建自己图床来存储图片，本期我们使用Gitee来搭建图床。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;创建Gitee仓库&quot;&gt;&lt;a href=&quot;#创建Gitee仓库&quot; class=&quot;headerlink&quot; title=&quot;创建Gitee仓库&quot;&gt;&lt;/a&gt;创建Gitee仓库&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;① 注册Gitee账号，新建仓库&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234405.png&quot;   width=&quot;60%&quot;&gt;</summary>
+&lt;/blockquote&gt;</summary>
     
     
     
