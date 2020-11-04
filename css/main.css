@@ -3035,3 +3035,6 @@ mjx-container[display="true"] + br {
     margin: 8px 0 0;
   }
 }
+* {
+  cursor: url("https://changlujava.gitee.io/images/Arrow.cur"), auto;
+}
