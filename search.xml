@@ -7,7 +7,8 @@
 <p>图床的作用：对于在写markdown笔记中有时候会使用到图片，如果使用的是本地的图片，那么上传到别的平台如csdn、博客园等就会失效。我们也可以将图片放置在贴图库、七牛云等平台使用其链接，过了一段时间也会失效，对于我们记录笔记会造成很大困扰，我们不妨搭建自己图床来存储图片，本期我们使用Gitee来搭建图床。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="创建Gitee仓库"><a href="#创建Gitee仓库" class="headerlink" title="创建Gitee仓库"></a>创建Gitee仓库</h2><p>① 注册Gitee账号，新建仓库</p>
+
+<h2 id="一、Gitee相关操作"><a href="#一、Gitee相关操作" class="headerlink" title="一、Gitee相关操作"></a>一、Gitee相关操作</h2><h3 id="1、创建Gitee仓库"><a href="#1、创建Gitee仓库" class="headerlink" title="1、创建Gitee仓库"></a>1、创建Gitee仓库</h3><p>① 注册Gitee账号，新建仓库</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030234405.png"   width="60%">
 
 
@@ -29,7 +30,7 @@
 
 
 <hr>
-<h2 id="获取Gitee账号的Token私人令牌"><a href="#获取Gitee账号的Token私人令牌" class="headerlink" title="获取Gitee账号的Token私人令牌"></a>获取Gitee账号的Token私人令牌</h2><br>
+<h3 id="2、获取Gitee账号的Token私人令牌"><a href="#2、获取Gitee账号的Token私人令牌" class="headerlink" title="2、获取Gitee账号的Token私人令牌"></a>2、获取Gitee账号的Token私人令牌</h3><br>
 
 <p>① 点击右上角的设置,找到私人令牌，点击生成令牌</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201030235453.png"   width="60%">
@@ -47,14 +48,14 @@
 
 <p><strong>注意</strong>：私人令牌请自己主动保管，只会在Gitee平台上显示这一次</p>
 <hr>
-<h2 id="下载PicGo工具-快捷上传图片到Gitee"><a href="#下载PicGo工具-快捷上传图片到Gitee" class="headerlink" title="下载PicGo工具(快捷上传图片到Gitee)"></a>下载PicGo工具(快捷上传图片到Gitee)</h2><p>Github地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL01vbHVuZXJmaW5uL1BpY0dvL3JlbGVhc2Vz">https://github.com/Molunerfinn/PicGo/releases<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="二、PicGo工具"><a href="#二、PicGo工具" class="headerlink" title="二、PicGo工具"></a>二、PicGo工具</h2><h3 id="1、下载PicGo工具-快捷上传图片到Gitee"><a href="#1、下载PicGo工具-快捷上传图片到Gitee" class="headerlink" title="1、下载PicGo工具(快捷上传图片到Gitee)"></a>1、下载PicGo工具(快捷上传图片到Gitee)</h3><p>Github地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL01vbHVuZXJmaW5uL1BpY0dvL3JlbGVhc2Vz">https://github.com/Molunerfinn/PicGo/releases<i class="fa fa-external-link-alt"></i></span></p>
 <p>这里我们直接选择.exe下载安装包</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000559.png"   width="40%">
 
 
 
 <hr>
-<h2 id="安装并配置PicGO的Gitee插件"><a href="#安装并配置PicGO的Gitee插件" class="headerlink" title="安装并配置PicGO的Gitee插件"></a>安装并配置PicGO的Gitee插件</h2><p>① 我们搜索gitee，选择下面对应插件，点击安装</p>
+<h3 id="2、安装并配置PicGO的Gitee插件"><a href="#2、安装并配置PicGO的Gitee插件" class="headerlink" title="2、安装并配置PicGO的Gitee插件"></a>2、安装并配置PicGO的Gitee插件</h3><p>① 我们搜索gitee，选择下面对应插件，点击安装</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031000855.png"   width="50%">
 
 <br>
@@ -74,7 +75,7 @@
 
 <p>这样我们就配置完成啦！</p>
 <hr>
-<h2 id="PicGo的使用"><a href="#PicGo的使用" class="headerlink" title="PicGo的使用"></a>PicGo的使用</h2><p>我们到达上传区，选择图片上传的位置gitee(一定要勾选)</p>
+<h3 id="3、PicGo的使用"><a href="#3、PicGo的使用" class="headerlink" title="3、PicGo的使用"></a>3、PicGo的使用</h3><p>我们到达上传区，选择图片上传的位置gitee(一定要勾选)</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/img/20201031001726.png"   width="50%">
 
 <p><strong>两种方式上传</strong></p>
@@ -102,7 +103,7 @@
 
 
 <hr>
-<h2 id="注意点说明"><a href="#注意点说明" class="headerlink" title="注意点说明"></a>注意点说明</h2><ol>
+<h3 id="4、注意点说明"><a href="#4、注意点说明" class="headerlink" title="4、注意点说明"></a>4、注意点说明</h3><ol>
 <li>我们上传图片时，不要上传过于大的图片(如3MB)，会上传失败，一般来说对于你网页上截图不会有失败的情况</li>
 <li>对于GicGo，也是在不断更新中，有时候也会出现异常的错误，我们可以随时上官网下载最新版本</li>
 </ol>
