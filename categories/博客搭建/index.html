@@ -528,6 +528,19 @@
       });
   </script>
 
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"RKq07e1mB9ImJNBK1sNX36Qm-gzGzoHsz","appKey":"p9Q0YXonqjlX0h4L2syIP0Tu","placeholder":"ヾﾉ≧∀≦)o快来，快来！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
   <!-- 添加背景特效 -->
   
     <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
