@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>腾讯云域名绑定Github</title>
+    <url>/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</url>
+    <content><![CDATA[<p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p>
+<h2 id="购买域名，实名认证"><a href="#购买域名，实名认证" class="headerlink" title="购买域名，实名认证"></a>购买域名，实名认证</h2><p>对于域名的购买我们可以选择腾讯云</p>
+<p><strong>腾讯云地址：</strong><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS8=">https://cloud.tencent.com/<i class="fa fa-external-link-alt"></i></span> </p>
+<a id="more"></a> 
+<p>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img data-src="/images/2020.8.21/yumingbangding1.jpg">  </p>
+<br>
+
+<p>如何查看自己购买的域名？<br><img data-src="/images/2020.8.21/yumingbangding2.jpg"></p>
+<br>
+
+<p><strong>以下则为我接下来演示的域名：</strong>  建议是最好实名注册一下<br><img data-src="/images/2020.8.21/yumingbangding3.jpg"></p>
+<p><br><br></p>
+<hr>
+<h2 id="增加解析地址"><a href="#增加解析地址" class="headerlink" title="增加解析地址"></a>增加解析地址</h2><br>
+
+<p>点击解析：<br><img data-src="/images/2020.8.21/yumingbangding4.jpg"></p>
+<p>点击添加记录：<br>&nbsp;&nbsp;添加两条，两条的主机记录与记录类型与我一样<br>&nbsp;&nbsp;第一条的记录值填写对应的github网址的ip地址(可以通过cmd，输入指令<strong>ping github地址</strong>获取)<br>&nbsp;&nbsp;第二条的记录值填写你自己的github博客地址<br><img data-src="/images/2020.8.21/yumingbangding5.jpg"></p>
+<br>
+
+
+<hr>
+<h2 id="在GitHub中Custom-domain添加购买的域名-可跳过看4"><a href="#在GitHub中Custom-domain添加购买的域名-可跳过看4" class="headerlink" title="在GitHub中Custom domain添加购买的域名(可跳过看4)"></a>在GitHub中Custom domain添加购买的域名(可跳过看4)</h2><p>进入仓库，点击旁边的setting：<br><img data-src="/images/2020.8.21/yumingbangding6.jpg"></p>
+<br>
+
+<p>继续往下翻找到Custom domain，填入你购买的域名地址：<br><img data-src="/images/2020.8.21/yumingbangding7.jpg"></p>
+<br>
+
+<p>填入之后你的Github仓库中就会生成一个CNAME<br><img data-src="/images/2020.8.21/yumingbangding8.jpg"></p>
+<br>
+
+<hr>
+<h2 id="博客目录-source中添加CNAME，并填入注册域名"><a href="#博客目录-source中添加CNAME，并填入注册域名" class="headerlink" title="博客目录/source中添加CNAME，并填入注册域名"></a>博客目录/source中添加CNAME，并填入注册域名</h2><br>
+
+<p><strong>进入到你的本地博客目录中：</strong>新建CNAME文件，其中添加你的注册的域名<br><img data-src="/images/2020.8.21/yumingbangding9.jpg"></p>
+<p>说明：第3步与第四步区别在于第四步在每次部署的时候都会将CNAME上传，如果只在第三步进行设置只是临时设置，下次重新部署还是不存在CNAME。</p>
+<br>
+
+
+<br>
+
+<hr>
+<h2 id="重新进行部署进行访问"><a href="#重新进行部署进行访问" class="headerlink" title="重新进行部署进行访问"></a>重新进行部署进行访问</h2><p>在该文件目录中输入命令：<br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
+<p><strong>如下:</strong></p>
+<p><img data-src="/images/2020.8.21/yumingbangding10.jpg"></p>
+<p>部署成功后即可访问你购买的域名了！</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>域名绑定</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用Gitee来搭建图床</title>
     <url>/2020/10/31/%E4%BD%BF%E7%94%A8Gitee%E6%9D%A5%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<blockquote>
@@ -113,62 +169,6 @@
       </categories>
       <tags>
         <tag>搭建图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>腾讯云域名绑定Github</title>
-    <url>/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</url>
-    <content><![CDATA[<p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p>
-<h2 id="购买域名，实名认证"><a href="#购买域名，实名认证" class="headerlink" title="购买域名，实名认证"></a>购买域名，实名认证</h2><p>对于域名的购买我们可以选择腾讯云</p>
-<p><strong>腾讯云地址：</strong><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS8=">https://cloud.tencent.com/<i class="fa fa-external-link-alt"></i></span> </p>
-<a id="more"></a> 
-<p>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img data-src="/images/2020.8.21/yumingbangding1.jpg">  </p>
-<br>
-
-<p>如何查看自己购买的域名？<br><img data-src="/images/2020.8.21/yumingbangding2.jpg"></p>
-<br>
-
-<p><strong>以下则为我接下来演示的域名：</strong>  建议是最好实名注册一下<br><img data-src="/images/2020.8.21/yumingbangding3.jpg"></p>
-<p><br><br></p>
-<hr>
-<h2 id="增加解析地址"><a href="#增加解析地址" class="headerlink" title="增加解析地址"></a>增加解析地址</h2><br>
-
-<p>点击解析：<br><img data-src="/images/2020.8.21/yumingbangding4.jpg"></p>
-<p>点击添加记录：<br>&nbsp;&nbsp;添加两条，两条的主机记录与记录类型与我一样<br>&nbsp;&nbsp;第一条的记录值填写对应的github网址的ip地址(可以通过cmd，输入指令<strong>ping github地址</strong>获取)<br>&nbsp;&nbsp;第二条的记录值填写你自己的github博客地址<br><img data-src="/images/2020.8.21/yumingbangding5.jpg"></p>
-<br>
-
-
-<hr>
-<h2 id="在GitHub中Custom-domain添加购买的域名-可跳过看4"><a href="#在GitHub中Custom-domain添加购买的域名-可跳过看4" class="headerlink" title="在GitHub中Custom domain添加购买的域名(可跳过看4)"></a>在GitHub中Custom domain添加购买的域名(可跳过看4)</h2><p>进入仓库，点击旁边的setting：<br><img data-src="/images/2020.8.21/yumingbangding6.jpg"></p>
-<br>
-
-<p>继续往下翻找到Custom domain，填入你购买的域名地址：<br><img data-src="/images/2020.8.21/yumingbangding7.jpg"></p>
-<br>
-
-<p>填入之后你的Github仓库中就会生成一个CNAME<br><img data-src="/images/2020.8.21/yumingbangding8.jpg"></p>
-<br>
-
-<hr>
-<h2 id="博客目录-source中添加CNAME，并填入注册域名"><a href="#博客目录-source中添加CNAME，并填入注册域名" class="headerlink" title="博客目录/source中添加CNAME，并填入注册域名"></a>博客目录/source中添加CNAME，并填入注册域名</h2><br>
-
-<p><strong>进入到你的本地博客目录中：</strong>新建CNAME文件，其中添加你的注册的域名<br><img data-src="/images/2020.8.21/yumingbangding9.jpg"></p>
-<p>说明：第3步与第四步区别在于第四步在每次部署的时候都会将CNAME上传，如果只在第三步进行设置只是临时设置，下次重新部署还是不存在CNAME。</p>
-<br>
-
-
-<br>
-
-<hr>
-<h2 id="重新进行部署进行访问"><a href="#重新进行部署进行访问" class="headerlink" title="重新进行部署进行访问"></a>重新进行部署进行访问</h2><p>在该文件目录中输入命令：<br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
-<p><strong>如下:</strong></p>
-<p><img data-src="/images/2020.8.21/yumingbangding10.jpg"></p>
-<p>部署成功后即可访问你购买的域名了！</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>域名绑定</tag>
       </tags>
   </entry>
 </search>
