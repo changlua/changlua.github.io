@@ -2923,7 +2923,7 @@ mjx-container[display="true"] + br {
   background: initial;
   background-color: rgba(255,255,255,0);
   box-shadow: initial;
-  padding: 0px 40px 40px 40px;
+  padding: 0px 0px 30px 40px;
 }
 .post-block {
   margin-top: 10px;
