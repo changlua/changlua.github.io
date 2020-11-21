@@ -6,7 +6,7 @@
   <link href="https://changlujava.gitee.io/child/atom.xml" rel="self"/>
   
   <link href="https://changlujava.gitee.io/child/"/>
-  <updated>2020-10-30T16:30:50.000Z</updated>
+  <updated>2020-11-21T15:13:30.000Z</updated>
   <id>https://changlujava.gitee.io/child/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown快速学习</title>
+    <link href="https://changlujava.gitee.io/child/2020/11/21/Markdown%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://changlujava.gitee.io/child/2020/11/21/Markdown%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-11-21T15:13:30.000Z</published>
+    <updated>2020-11-21T15:13:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Typora快捷方式介绍&quot;&gt;&lt;a href=&quot;#Typora快捷方式介绍&quot; class=&quot;headerlink&quot; title=&quot;Typora快捷方式介绍&quot;&gt;&lt;/a&gt;Typora快捷方式介绍&lt;/h1&gt;&lt;p&gt;ctrl+shift加上+号或-号：能够放大或缩小软件中的展示大小&lt;/p&gt;
+&lt;p&gt;ctrl加上+号或-号：能够增大或减小该行文字的标题格式&lt;/p&gt;
+&lt;p&gt;ctrl+shift+`：插入小代码块&lt;/p&gt;
+&lt;p&gt;右击：Typora里的文档右击包含更加快捷的效果使用&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发工具" scheme="https://changlujava.gitee.io/child/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Markdown学习" scheme="https://changlujava.gitee.io/child/tags/Markdown%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Gitee来搭建图床</title>
