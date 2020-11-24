@@ -1,6 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux入门及基础</title>
+    <url>/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="一、Linux入门"><a href="#一、Linux入门" class="headerlink" title="一、Linux入门"></a>一、Linux入门</h1><p><strong>学习视频</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<p><strong>配套资料</strong>：链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMWJMbXJXbEg0YVprMjgyX0J1SWRLYlE=">https://pan.baidu.com/s/1bLmrWlH4aZk282_BuIdKbQ<i class="fa fa-external-link-alt"></i></span>     提取码：mw4d </p>
+<a id="more"></a>
+
+<h2 id="1、内容介绍"><a href="#1、内容介绍" class="headerlink" title="1、内容介绍"></a>1、内容介绍</h2><p><strong>内容如下：</strong>  </p>
+<p>基础篇：linux入门、vm和Linux的安装、Linux目录结构</p>
+<p>实操篇：<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122151928.png">  </p>
+<p>Linux之JavaEE定制篇：<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122152035.png">  </p>
+<hr>
+<h2 id="2、职业方向"><a href="#2、职业方向" class="headerlink" title="2、职业方向"></a>2、职业方向</h2><p><strong>主要职业</strong>：Linux运维工程师、Linux嵌入式工程师</p>
+<p>linux下开发项目：JavaEE、大数据、python、php、c/c++ </p>
+<p>需要将项目部署到Linux上，在linux上做程序开发，所以需要学习linux的使用 </p>
+<hr>
+<h2 id="3、应用领域"><a href="#3、应用领域" class="headerlink" title="3、应用领域"></a>3、应用领域</h2><p><u>个人桌面领域应用</u></p>
+<p><u>服务器领域</u>(主要领域，免费稳定高效，初衷就是作为服务器)</p>
+<p><u>嵌入式领域</u>(可以改写linux内核，安卓内核就是linux)</p>
+<hr>
+<h2 id="4、学习流程"><a href="#4、学习流程" class="headerlink" title="4、学习流程"></a>4、学习流程</h2><p>第一阶段：linux环境下的基本操作命令(文件、编辑、用户管理)</p>
+<p>第二阶段：linux的各种配置(环境变量配置、网络配置、服务配置)</p>
+<p>第三阶段：linux下搭建对应语言的开发环境</p>
+<p>第四阶段：编写shell脚本，维护linux</p>
+<p><strong>下面部分对于linux专业人需要掌握：</strong>  </p>
+<p>第五阶段：安全设置、防止攻击、保障服务器正常运行以及系统调优</p>
+<p>第六阶段：深入理解linux系统(内核有研究)，熟练掌握大型网站应用架构组成，熟悉各个环境部署和维护方法</p>
+<p><code>学习方法：高效、建立框架，不需要掌握所有linux命令，学会查询手册与百度；不是编程，重点是实际操作，指令要会用，做中学</code></p>
+<hr>
+<h1 id="二、VM及CentOS的基本使用"><a href="#二、VM及CentOS的基本使用" class="headerlink" title="二、VM及CentOS的基本使用"></a>二、VM及CentOS的基本使用</h1><h2 id="1、Linux介绍"><a href="#1、Linux介绍" class="headerlink" title="1、Linux介绍"></a>1、Linux介绍</h2><p>创始人：linux  林纳斯       吉祥物：企鹅tux</p>
+<p><strong>Linux</strong>：免费、开源、安全、高效、稳定，处理高并发非常强悍，需要企业级项目部署到Linux、unix服务器上运行。</p>
+<p>**主要发行版本(Linux内核)**：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
+<p>这些主要都是从内核上进行修改就成了不同的发行版</p>
+<p><strong>主要操作系统：</strong>windows、android、车载系统、Linux、Mac</p>
+<hr>
+<h3 id="Linux与Unix的关系？"><a href="#Linux与Unix的关系？" class="headerlink" title="Linux与Unix的关系？"></a>Linux与Unix的关系？</h3><p>关键人物：Ken tompson与Dennis richeres</p>
+<p><strong>关系图如下：</strong></p>
+<p>Ken tompson首先是在贝尔实验室工作，在参与分时系统项目后，由于没有起色，后发明了B语言，并用B语言开发了Unix，后因功能不强大。接着同Dennis richeres一起发明C语言(71年)，一起使用C语言进行重写并发布了Linux(73年)</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161509.png"></p>
+<p>后Richard Stallman发布了GNU计划，Linus Torvalds完成了Linux的第一次发布，Linux内核到现如今依旧在不断的由全世界开发人员在维护中：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162210.png" width=70%>  
+
+
+
+<p><strong>最终关系一览图：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162625.png">  </p>
+<p><strong>如何实现人机交互？</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161744.png"></p>
+<hr>
+<h2 id="2、安装VM和Centos"><a href="#2、安装VM和Centos" class="headerlink" title="2、安装VM和Centos"></a>2、安装VM和Centos</h2><blockquote>
+<p>前提说明：需要一个虚拟环境，创建一个虚拟机，再安装Centos系统来学习。</p>
+<p>需要软件：virtual machine vm15 Pro，Linux(CentOS 6.8)</p>
+</blockquote>
+<p><strong>资源链接：</strong></p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTlHQ1FRVmlrSEhfZXdIeHFFVVlxblE=">https://pan.baidu.com/s/19GCQQVikHH_ewHxqEUYqnQ<i class="fa fa-external-link-alt"></i></span><br>    提取码：l503 </p>
+<p><strong>关系示意图：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122164256.png">  </p>
+<p>在虚拟机上安装的操作系统(实际就是文件)，可以放置在任意vm软件中运行</p>
+<h3 id="①-安装VM"><a href="#①-安装VM" class="headerlink" title="① 安装VM"></a>① 安装VM</h3><p>前提说明：需要在BIOS系统中开启虚拟化设备支持(f2、f10)</p>
+<p><strong>(紧急补充说明，使用VM12来创建虚拟机可能开机或者关闭会出现问题，所以接下来不使用12，而使用VM15 pro，安装几乎是一致的—晚上0:17)</strong></p>
+<p>这里给出vm15 pro的百度链接：</p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVRGWFo4OW9aWlR3WEVQSUxUZl8xUlE=">https://pan.baidu.com/s/1TFXZ89oZZTwXEPILTf_1RQ<i class="fa fa-external-link-alt"></i></span><br>    提取码：den5 </p>
+<p><strong>详细步骤如下：</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165359.png">  </p>
+<p>首先下一步，接收条款下一步，接着选择安装位置，如下：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165700.png" with="60%">  
+
+<p>取消勾选，下一步</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165802.png">  </p>
+<p>接着下一步，进行安装即可,等待完成，完成之后选择<strong>许可证</strong>进行输入：</p>
+<p><code>5A02H-AU243-TZJ49-GTC7K-3C61N</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122170226.png">  </p>
+<p><strong>安装完成！！！</strong>  </p>
+<hr>
+<h3 id="②-虚拟机创建及Centos安装"><a href="#②-虚拟机创建及Centos安装" class="headerlink" title="② 虚拟机创建及Centos安装"></a>② 虚拟机创建及Centos安装</h3><p>VM15创建虚拟机以及安装Centos6.8版本的详细步骤我写在了语雀上，链接如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2FyZ3FscA==">创建虚拟机及安装CentOS<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="3、CentOS的终端使用及联网"><a href="#3、CentOS的终端使用及联网" class="headerlink" title="3、CentOS的终端使用及联网"></a>3、CentOS的终端使用及联网</h2><h3 id="①-如何打开终端？"><a href="#①-如何打开终端？" class="headerlink" title="① 如何打开终端？"></a>① 如何打开终端？</h3><p>桌面上，<strong>右击—在终端打开</strong></p>
+<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">  </p>
+<p>如果我们要更改终端背景或字体颜色等，选择<strong>编辑—测写首选项</strong>即可设置</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">  
+
+
+
+<h3 id="②-如何联网？"><a href="#②-如何联网？" class="headerlink" title="② 如何联网？"></a>② 如何联网？</h3><p>右上角点击—System etho，即可上网</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606114003682.png" alt="1606114003682">  </p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">  
+
+
+
+<hr>
+<h2 id="4、vmtools的安装及使用"><a href="#4、vmtools的安装及使用" class="headerlink" title="4、vmtools的安装及使用"></a>4、vmtools的安装及使用</h2><blockquote>
+<p>目的说明：</p>
+<p>​    ① 在Windows与虚拟机中的CentOS能够相互复制粘贴</p>
+<p>​        ② Windows与CentOS之间能够有共享文件夹</p>
+</blockquote>
+<h3 id="详细安装过程"><a href="#详细安装过程" class="headerlink" title="详细安装过程"></a>详细安装过程</h3><p>首先点击<strong>vm上的虚拟机，选择安装vmware tools</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151253.png" width="40%">      
+
+<p>此时我们虚拟机上出现了VMwareTools-10.3.10-139562.tar.gz，这个就是vmtools的压缩包</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151642.png">  </p>
+<p>我们将这个压缩文件手动复制到/opt目录下(点击桌面-计算机-文件目录)，你可以手动右击直接解压，接着运行vmware-install.pl这个脚本文件，紧接着一直回车即可安装完成，安装完成之后，需要重启Centos才能够使用！！！</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123152251.png">  </p>
+<h4 id="命令演示安装"><a href="#命令演示安装" class="headerlink" title="命令演示安装"></a>命令演示安装</h4><p><code>cd /opt</code>    <strong>#</strong> 打开根目录下的opt文件</p>
+<p><code>tar -zxvf  VMwareTools-10.3.10-139562.tar.gz</code>   <strong>#</strong> 这个是解压命令，来对其中压缩文件解压</p>
+<p><code>ll</code>   <strong>#</strong> 查看opt目录中的详细信息 其中vmware-tools-distrib就是解压目录</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153424.png">  </p>
+<p><code>cd vmware-tools-distrib</code>   <strong>#</strong> 打开这个压缩文件</p>
+<p>ls   <strong>#</strong> 查看下该目录的所有文件</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153655.png">  </p>
+<p><code>./vmware-install.pl</code>    <strong>#</strong> 安装这个.pl结尾的脚本文件</p>
+<p>紧接着一直回车即可！</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606117302135.png" alt="1606117302135">  </p>
+<p>最后执行重启系统命令：<code>reboot</code></p>
+<p><strong>重启完成之后，我们可以在windows与虚拟机中的centos进行相互复制粘贴了！！！</strong></p>
+<hr>
+<h3 id="设置与主机的共享文件夹"><a href="#设置与主机的共享文件夹" class="headerlink" title="设置与主机的共享文件夹"></a>设置与主机的共享文件夹</h3><p>在进行下面操作之前我们首先在自己的windows系统中创建一个文件夹，随便在哪里都行，来作为我们之后与CentOS的<strong>共享文件夹</strong></p>
+<p>① 在vm上选择虚拟机—设置</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123154920.png" width="40%">    
+
+<p>② 选项—总是启动—添加目录</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155503.png" width="70%">  
+
+<p><strong>最后点击确定即可！</strong></p>
+<p>我们在CentOS的共享文件夹在/mnt/hgfs目录中就可以找到啦，快去试试是否能够共享吧。</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155651.png">  </p>
+<hr>
+<h1 id="三、Linux的目录结构"><a href="#三、Linux的目录结构" class="headerlink" title="三、Linux的目录结构"></a>三、Linux的目录结构</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>Windows系统：分为多个盘符，盘符下有着各种文件</p>
+<p>Linux：其文件系统的最上层为根目录，用/表示，采用层级式的树状目录结构</p>
+<p><strong>Linux世界里，一切皆为文件！</strong></p>
+<hr>
+<h2 id="文件目录介绍"><a href="#文件目录介绍" class="headerlink" title="文件目录介绍"></a>文件目录介绍</h2><p>我们来查看一下Linux的文件目录分布：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123164013.png">  </p>
+<p><strong>下面是对应目录的说明及总结：</strong></p>
+<p><strong>/mnt</strong>【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>**/sys、/proc、/srv<strong>【重点】：这三个目录都与linux内核相关，千万不能乱动<br>**/opt：</strong>给主机额外安装软件所存放地方，注意不是安装后的软件<br>**/user/local<strong>【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>**/bin</strong>【重点】:存放常用指令 如cat、cp、cd指令…<br><strong>/etc</strong>【重点】:存放配置文件,如my.conf<br>**/home<strong>【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>**/root</strong>【重点】：root用户的文件及一些其他东西<br>**/user<strong>【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>**/var</strong>【重点】：存放变量，不断变化的东西及日志<br>**/dev：<strong>设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>**/lib：</strong>动态库，.so结尾<br>**/media：<strong>能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>**/sbin：</strong>系统管理员能够使用的系统管理程序<br>**/selinux** (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>**/tmp：<strong>存放临时文件夹<br>**/boot：</strong>存放启动linux命令的核心文件</p>
+<hr>
+<h1 id="本章Linux终端命令汇总"><a href="#本章Linux终端命令汇总" class="headerlink" title="本章Linux终端命令汇总"></a>本章Linux终端命令汇总</h1><p><code>cd /文件名</code>                      <strong>#</strong> 打开根目录下的文件，只能单个单个目录打开</p>
+<p><code>cd 文件名</code>                           # 如果在目录中，可以直接打开其中的文件</p>
+<p><code>tar -zxvf  压缩文件</code>      <strong>#</strong> 压缩现目录下文件</p>
+<p><code>ll</code>                       <strong>#</strong> 查看该目录的详细信息，包含总用量及所有文件名   与ls -1相同</p>
+<p><code>ls</code>                          <strong>#</strong> 仅仅查看该目录的下的文件详情</p>
+<p><code>reboot</code>                            <strong>#</strong> 重启系统</p>
+<p><strong>用户相关操作：</strong></p>
+<p><code>useradd 用户名</code>              <strong>#</strong> 添加对应用户目录到/home目中</p>
+<p><code>userdel -r 用户名</code>            <strong>#</strong> 删除/home中的对应用户目录</p>
+<hr>
+<p>​                                                <strong>整理者：长路   时间：2020/11/22-2020/11/23</strong></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown快速学习</title>
     <url>/2020/11/21/Markdown%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Typora快捷方式介绍"><a href="#Typora快捷方式介绍" class="headerlink" title="Typora快捷方式介绍"></a>Typora快捷方式介绍</h1><p>ctrl+shift加上+号或-号：能够放大或缩小软件中的展示大小</p>

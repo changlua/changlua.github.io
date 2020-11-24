@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto+Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"changlujava.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":true,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="一、Linux入门学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   配套资料：链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1bLmrWlH4aZk282_BuIdKbQ     提取码：mw4d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux入门及基础">
+<meta property="og:url" content="https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Changlu&#39;s Blog">
+<meta property="og:description" content="一、Linux入门学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   配套资料：链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1bLmrWlH4aZk282_BuIdKbQ     提取码：mw4d">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122151928.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122152035.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161509.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162210.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162625.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161744.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122164256.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165359.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165700.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165802.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122170226.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png">
+<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606114003682.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151253.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151642.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123152251.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153424.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153655.png">
+<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606117302135.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123154920.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155503.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155651.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123164013.png">
+<meta property="article:published_time" content="2020-11-24T14:00:09.000Z">
+<meta property="article:modified_time" content="2020-11-24T14:00:09.000Z">
+<meta property="article:author" content="changlu">
+<meta property="article:tag" content="Linux基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122151928.png">
+
+<link rel="canonical" href="https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux入门及基础 | Changlu's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d799723b49054783f9671bcbc95d020";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Changlu's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <!-- fork me on github右上角设置 -->
+    <a target="_blank" rel="noopener" href="https://github.com/changlua/changlua.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Changlu's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81Linux%E5%85%A5%E9%97%A8"><span class="nav-text">一、Linux入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、内容介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%81%8C%E4%B8%9A%E6%96%B9%E5%90%91"><span class="nav-text">2、职业方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-text">3、应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B"><span class="nav-text">4、学习流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81VM%E5%8F%8ACentOS%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">二、VM及CentOS的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Linux%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、Linux介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E4%B8%8EUnix%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-text">Linux与Unix的关系？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85VM%E5%92%8CCentos"><span class="nav-text">2、安装VM和Centos</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%AE%89%E8%A3%85VM"><span class="nav-text">① 安装VM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%E5%8F%8ACentos%E5%AE%89%E8%A3%85"><span class="nav-text">② 虚拟机创建及Centos安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81CentOS%E7%9A%84%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%E5%8F%8A%E8%81%94%E7%BD%91"><span class="nav-text">3、CentOS的终端使用及联网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%EF%BC%9F"><span class="nav-text">① 如何打开终端？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%A6%82%E4%BD%95%E8%81%94%E7%BD%91%EF%BC%9F"><span class="nav-text">② 如何联网？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81vmtools%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">4、vmtools的安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-text">详细安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%BC%94%E7%A4%BA%E5%AE%89%E8%A3%85"><span class="nav-text">命令演示安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%8E%E4%B8%BB%E6%9C%BA%E7%9A%84%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">设置与主机的共享文件夹</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-text">三、Linux的目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">文件目录介绍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="nav-text">本章Linux终端命令汇总</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="/about">
+    <img class="site-author-image" itemprop="image" alt="changlu"
+      src="/images/avator_image.jpg">
+  <p class="site-author-name" itemprop="name">changlu</p>
+  <div class="site-description" itemprop="description">欢迎来到长路的个人博客！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVh" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;changlua"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cDovL3dwYS5xcS5jb20vbXNncmQ/dj0zJnVpbj05Mzk5NzQ4ODMmc2l0ZT1xcSZtZW51PXllcw==" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;939974883&amp;site&#x3D;qq&amp;menu&#x3D;yes"><i class="fab fa-qq fa-fw"></i>QQ</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NsOTM5OTc0ODgz" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;cl939974883">CSDN</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGc=" title="https:&#x2F;&#x2F;www.yuque.com&#x2F;changlu-xs5pg">语雀</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vY2hhbmdsdUphdmE=" title="https:&#x2F;&#x2F;gitee.com&#x2F;changluJava">Gitee</span>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+
+      <!--网易云插件-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+        src="////music.163.com/outchain/player?type=2&id=757911&auto=1&height=66">
+      </iframe>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVhL2NoYW5nbHVhLmdpdGh1Yi5pbw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator_image.jpg">
+      <meta itemprop="name" content="changlu">
+      <meta itemprop="description" content="欢迎来到长路的个人博客！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changlu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux入门及基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-24 22:00:09" itemprop="dateCreated datePublished" datetime="2020-11-24T22:00:09+08:00">2020-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、Linux入门"><a href="#一、Linux入门" class="headerlink" title="一、Linux入门"></a>一、Linux入门</h1><p><strong>学习视频</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<p><strong>配套资料</strong>：链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMWJMbXJXbEg0YVprMjgyX0J1SWRLYlE=">https://pan.baidu.com/s/1bLmrWlH4aZk282_BuIdKbQ<i class="fa fa-external-link-alt"></i></span>     提取码：mw4d </p>
+<a id="more"></a>
+
+<h2 id="1、内容介绍"><a href="#1、内容介绍" class="headerlink" title="1、内容介绍"></a>1、内容介绍</h2><p><strong>内容如下：</strong>  </p>
+<p>基础篇：linux入门、vm和Linux的安装、Linux目录结构</p>
+<p>实操篇：<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122151928.png">  </p>
+<p>Linux之JavaEE定制篇：<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122152035.png">  </p>
+<hr>
+<h2 id="2、职业方向"><a href="#2、职业方向" class="headerlink" title="2、职业方向"></a>2、职业方向</h2><p><strong>主要职业</strong>：Linux运维工程师、Linux嵌入式工程师</p>
+<p>linux下开发项目：JavaEE、大数据、python、php、c/c++ </p>
+<p>需要将项目部署到Linux上，在linux上做程序开发，所以需要学习linux的使用 </p>
+<hr>
+<h2 id="3、应用领域"><a href="#3、应用领域" class="headerlink" title="3、应用领域"></a>3、应用领域</h2><p><u>个人桌面领域应用</u></p>
+<p><u>服务器领域</u>(主要领域，免费稳定高效，初衷就是作为服务器)</p>
+<p><u>嵌入式领域</u>(可以改写linux内核，安卓内核就是linux)</p>
+<hr>
+<h2 id="4、学习流程"><a href="#4、学习流程" class="headerlink" title="4、学习流程"></a>4、学习流程</h2><p>第一阶段：linux环境下的基本操作命令(文件、编辑、用户管理)</p>
+<p>第二阶段：linux的各种配置(环境变量配置、网络配置、服务配置)</p>
+<p>第三阶段：linux下搭建对应语言的开发环境</p>
+<p>第四阶段：编写shell脚本，维护linux</p>
+<p><strong>下面部分对于linux专业人需要掌握：</strong>  </p>
+<p>第五阶段：安全设置、防止攻击、保障服务器正常运行以及系统调优</p>
+<p>第六阶段：深入理解linux系统(内核有研究)，熟练掌握大型网站应用架构组成，熟悉各个环境部署和维护方法</p>
+<p><code>学习方法：高效、建立框架，不需要掌握所有linux命令，学会查询手册与百度；不是编程，重点是实际操作，指令要会用，做中学</code></p>
+<hr>
+<h1 id="二、VM及CentOS的基本使用"><a href="#二、VM及CentOS的基本使用" class="headerlink" title="二、VM及CentOS的基本使用"></a>二、VM及CentOS的基本使用</h1><h2 id="1、Linux介绍"><a href="#1、Linux介绍" class="headerlink" title="1、Linux介绍"></a>1、Linux介绍</h2><p>创始人：linux  林纳斯       吉祥物：企鹅tux</p>
+<p><strong>Linux</strong>：免费、开源、安全、高效、稳定，处理高并发非常强悍，需要企业级项目部署到Linux、unix服务器上运行。</p>
+<p>**主要发行版本(Linux内核)**：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
+<p>这些主要都是从内核上进行修改就成了不同的发行版</p>
+<p><strong>主要操作系统：</strong>windows、android、车载系统、Linux、Mac</p>
+<hr>
+<h3 id="Linux与Unix的关系？"><a href="#Linux与Unix的关系？" class="headerlink" title="Linux与Unix的关系？"></a>Linux与Unix的关系？</h3><p>关键人物：Ken tompson与Dennis richeres</p>
+<p><strong>关系图如下：</strong></p>
+<p>Ken tompson首先是在贝尔实验室工作，在参与分时系统项目后，由于没有起色，后发明了B语言，并用B语言开发了Unix，后因功能不强大。接着同Dennis richeres一起发明C语言(71年)，一起使用C语言进行重写并发布了Linux(73年)</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161509.png"></p>
+<p>后Richard Stallman发布了GNU计划，Linus Torvalds完成了Linux的第一次发布，Linux内核到现如今依旧在不断的由全世界开发人员在维护中：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162210.png" width=70%>  
+
+
+
+<p><strong>最终关系一览图：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122162625.png">  </p>
+<p><strong>如何实现人机交互？</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122161744.png"></p>
+<hr>
+<h2 id="2、安装VM和Centos"><a href="#2、安装VM和Centos" class="headerlink" title="2、安装VM和Centos"></a>2、安装VM和Centos</h2><blockquote>
+<p>前提说明：需要一个虚拟环境，创建一个虚拟机，再安装Centos系统来学习。</p>
+<p>需要软件：virtual machine vm15 Pro，Linux(CentOS 6.8)</p>
+</blockquote>
+<p><strong>资源链接：</strong></p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTlHQ1FRVmlrSEhfZXdIeHFFVVlxblE=">https://pan.baidu.com/s/19GCQQVikHH_ewHxqEUYqnQ<i class="fa fa-external-link-alt"></i></span><br>    提取码：l503 </p>
+<p><strong>关系示意图：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122164256.png">  </p>
+<p>在虚拟机上安装的操作系统(实际就是文件)，可以放置在任意vm软件中运行</p>
+<h3 id="①-安装VM"><a href="#①-安装VM" class="headerlink" title="① 安装VM"></a>① 安装VM</h3><p>前提说明：需要在BIOS系统中开启虚拟化设备支持(f2、f10)</p>
+<p><strong>(紧急补充说明，使用VM12来创建虚拟机可能开机或者关闭会出现问题，所以接下来不使用12，而使用VM15 pro，安装几乎是一致的—晚上0:17)</strong></p>
+<p>这里给出vm15 pro的百度链接：</p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVRGWFo4OW9aWlR3WEVQSUxUZl8xUlE=">https://pan.baidu.com/s/1TFXZ89oZZTwXEPILTf_1RQ<i class="fa fa-external-link-alt"></i></span><br>    提取码：den5 </p>
+<p><strong>详细步骤如下：</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165359.png">  </p>
+<p>首先下一步，接收条款下一步，接着选择安装位置，如下：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165700.png" with="60%">  
+
+<p>取消勾选，下一步</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122165802.png">  </p>
+<p>接着下一步，进行安装即可,等待完成，完成之后选择<strong>许可证</strong>进行输入：</p>
+<p><code>5A02H-AU243-TZJ49-GTC7K-3C61N</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201122170226.png">  </p>
+<p><strong>安装完成！！！</strong>  </p>
+<hr>
+<h3 id="②-虚拟机创建及Centos安装"><a href="#②-虚拟机创建及Centos安装" class="headerlink" title="② 虚拟机创建及Centos安装"></a>② 虚拟机创建及Centos安装</h3><p>VM15创建虚拟机以及安装Centos6.8版本的详细步骤我写在了语雀上，链接如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2FyZ3FscA==">创建虚拟机及安装CentOS<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="3、CentOS的终端使用及联网"><a href="#3、CentOS的终端使用及联网" class="headerlink" title="3、CentOS的终端使用及联网"></a>3、CentOS的终端使用及联网</h2><h3 id="①-如何打开终端？"><a href="#①-如何打开终端？" class="headerlink" title="① 如何打开终端？"></a>① 如何打开终端？</h3><p>桌面上，<strong>右击—在终端打开</strong></p>
+<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">  </p>
+<p>如果我们要更改终端背景或字体颜色等，选择<strong>编辑—测写首选项</strong>即可设置</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">  
+
+
+
+<h3 id="②-如何联网？"><a href="#②-如何联网？" class="headerlink" title="② 如何联网？"></a>② 如何联网？</h3><p>右上角点击—System etho，即可上网</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606114003682.png" alt="1606114003682">  </p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">  
+
+
+
+<hr>
+<h2 id="4、vmtools的安装及使用"><a href="#4、vmtools的安装及使用" class="headerlink" title="4、vmtools的安装及使用"></a>4、vmtools的安装及使用</h2><blockquote>
+<p>目的说明：</p>
+<p>​    ① 在Windows与虚拟机中的CentOS能够相互复制粘贴</p>
+<p>​        ② Windows与CentOS之间能够有共享文件夹</p>
+</blockquote>
+<h3 id="详细安装过程"><a href="#详细安装过程" class="headerlink" title="详细安装过程"></a>详细安装过程</h3><p>首先点击<strong>vm上的虚拟机，选择安装vmware tools</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151253.png" width="40%">      
+
+<p>此时我们虚拟机上出现了VMwareTools-10.3.10-139562.tar.gz，这个就是vmtools的压缩包</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123151642.png">  </p>
+<p>我们将这个压缩文件手动复制到/opt目录下(点击桌面-计算机-文件目录)，你可以手动右击直接解压，接着运行vmware-install.pl这个脚本文件，紧接着一直回车即可安装完成，安装完成之后，需要重启Centos才能够使用！！！</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123152251.png">  </p>
+<h4 id="命令演示安装"><a href="#命令演示安装" class="headerlink" title="命令演示安装"></a>命令演示安装</h4><p><code>cd /opt</code>    <strong>#</strong> 打开根目录下的opt文件</p>
+<p><code>tar -zxvf  VMwareTools-10.3.10-139562.tar.gz</code>   <strong>#</strong> 这个是解压命令，来对其中压缩文件解压</p>
+<p><code>ll</code>   <strong>#</strong> 查看opt目录中的详细信息 其中vmware-tools-distrib就是解压目录</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153424.png">  </p>
+<p><code>cd vmware-tools-distrib</code>   <strong>#</strong> 打开这个压缩文件</p>
+<p>ls   <strong>#</strong> 查看下该目录的所有文件</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153655.png">  </p>
+<p><code>./vmware-install.pl</code>    <strong>#</strong> 安装这个.pl结尾的脚本文件</p>
+<p>紧接着一直回车即可！</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606117302135.png" alt="1606117302135">  </p>
+<p>最后执行重启系统命令：<code>reboot</code></p>
+<p><strong>重启完成之后，我们可以在windows与虚拟机中的centos进行相互复制粘贴了！！！</strong></p>
+<hr>
+<h3 id="设置与主机的共享文件夹"><a href="#设置与主机的共享文件夹" class="headerlink" title="设置与主机的共享文件夹"></a>设置与主机的共享文件夹</h3><p>在进行下面操作之前我们首先在自己的windows系统中创建一个文件夹，随便在哪里都行，来作为我们之后与CentOS的<strong>共享文件夹</strong></p>
+<p>① 在vm上选择虚拟机—设置</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123154920.png" width="40%">    
+
+<p>② 选项—总是启动—添加目录</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155503.png" width="70%">  
+
+<p><strong>最后点击确定即可！</strong></p>
+<p>我们在CentOS的共享文件夹在/mnt/hgfs目录中就可以找到啦，快去试试是否能够共享吧。</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123155651.png">  </p>
+<hr>
+<h1 id="三、Linux的目录结构"><a href="#三、Linux的目录结构" class="headerlink" title="三、Linux的目录结构"></a>三、Linux的目录结构</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>Windows系统：分为多个盘符，盘符下有着各种文件</p>
+<p>Linux：其文件系统的最上层为根目录，用/表示，采用层级式的树状目录结构</p>
+<p><strong>Linux世界里，一切皆为文件！</strong></p>
+<hr>
+<h2 id="文件目录介绍"><a href="#文件目录介绍" class="headerlink" title="文件目录介绍"></a>文件目录介绍</h2><p>我们来查看一下Linux的文件目录分布：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123164013.png">  </p>
+<p><strong>下面是对应目录的说明及总结：</strong></p>
+<p><strong>/mnt</strong>【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>**/sys、/proc、/srv<strong>【重点】：这三个目录都与linux内核相关，千万不能乱动<br>**/opt：</strong>给主机额外安装软件所存放地方，注意不是安装后的软件<br>**/user/local<strong>【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>**/bin</strong>【重点】:存放常用指令 如cat、cp、cd指令…<br><strong>/etc</strong>【重点】:存放配置文件,如my.conf<br>**/home<strong>【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>**/root</strong>【重点】：root用户的文件及一些其他东西<br>**/user<strong>【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>**/var</strong>【重点】：存放变量，不断变化的东西及日志<br>**/dev：<strong>设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>**/lib：</strong>动态库，.so结尾<br>**/media：<strong>能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>**/sbin：</strong>系统管理员能够使用的系统管理程序<br>**/selinux** (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>**/tmp：<strong>存放临时文件夹<br>**/boot：</strong>存放启动linux命令的核心文件</p>
+<hr>
+<h1 id="本章Linux终端命令汇总"><a href="#本章Linux终端命令汇总" class="headerlink" title="本章Linux终端命令汇总"></a>本章Linux终端命令汇总</h1><p><code>cd /文件名</code>                      <strong>#</strong> 打开根目录下的文件，只能单个单个目录打开</p>
+<p><code>cd 文件名</code>                           # 如果在目录中，可以直接打开其中的文件</p>
+<p><code>tar -zxvf  压缩文件</code>      <strong>#</strong> 压缩现目录下文件</p>
+<p><code>ll</code>                       <strong>#</strong> 查看该目录的详细信息，包含总用量及所有文件名   与ls -1相同</p>
+<p><code>ls</code>                          <strong>#</strong> 仅仅查看该目录的下的文件详情</p>
+<p><code>reboot</code>                            <strong>#</strong> 重启系统</p>
+<p><strong>用户相关操作：</strong></p>
+<p><code>useradd 用户名</code>              <strong>#</strong> 添加对应用户目录到/home目中</p>
+<p><code>userdel -r 用户名</code>            <strong>#</strong> 删除/home中的对应用户目录</p>
+<hr>
+<p>​                                                <strong>整理者：长路   时间：2020/11/22-2020/11/23</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>changlu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/" title="Linux入门及基础">https://changlujava.gitee.io/child/2020/11/24/Linux入门及基础/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> Linux基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/21/Markdown%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/" rel="prev" title="Markdown快速学习">
+      <i class="fa fa-chevron-left"></i> Markdown快速学习
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">changlu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">6k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6 分钟</span>
+</div>
+  <!--
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+  <br/>
+  -->
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"RKq07e1mB9ImJNBK1sNX36Qm-gzGzoHsz","appKey":"p9Q0YXonqjlX0h4L2syIP0Tu","placeholder":"ヾﾉ≧∀≦)o快来，快来！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+  <!-- 添加背景特效 -->
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 添加点击特效 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

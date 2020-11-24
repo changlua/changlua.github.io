@@ -6,7 +6,7 @@
   <link href="https://changlujava.gitee.io/child/atom.xml" rel="self"/>
   
   <link href="https://changlujava.gitee.io/child/"/>
-  <updated>2020-11-21T15:13:30.000Z</updated>
+  <updated>2020-11-24T14:00:09.000Z</updated>
   <id>https://changlujava.gitee.io/child/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux入门及基础</title>
+    <link href="https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/"/>
+    <id>https://changlujava.gitee.io/child/2020/11/24/Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-11-24T14:00:09.000Z</published>
+    <updated>2020-11-24T14:00:09.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;一、Linux入门&quot;&gt;&lt;a href=&quot;#一、Linux入门&quot; class=&quot;headerlink&quot; title=&quot;一、Linux入门&quot;&gt;&lt;/a&gt;一、Linux入门&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;学习视频&lt;/strong&gt;：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配套资料&lt;/strong&gt;：链接：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMWJMbXJXbEg0YVprMjgyX0J1SWRLYlE=&quot;&gt;https://pan.baidu.com/s/1bLmrWlH4aZk282_BuIdKbQ&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;     提取码：mw4d &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://changlujava.gitee.io/child/categories/Linux/"/>
+    
+    
+    <category term="Linux基础" scheme="https://changlujava.gitee.io/child/tags/Linux%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown快速学习</title>
