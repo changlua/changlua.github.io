@@ -116,6 +116,62 @@
       </tags>
   </entry>
   <entry>
+    <title>腾讯云域名绑定Github</title>
+    <url>/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</url>
+    <content><![CDATA[<p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p>
+<h2 id="1、购买域名，实名认证"><a href="#1、购买域名，实名认证" class="headerlink" title="1、购买域名，实名认证"></a>1、购买域名，实名认证</h2><p>对于域名的购买我们可以选择腾讯云</p>
+<p><strong>腾讯云地址：</strong><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS8=">https://cloud.tencent.com/<i class="fa fa-external-link-alt"></i></span> </p>
+<a id="more"></a> 
+<p>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img data-src="/images/2020.8.21/yumingbangding1.jpg">  </p>
+<br>
+
+<p>如何查看自己购买的域名？<br><img data-src="/images/2020.8.21/yumingbangding2.jpg"></p>
+<br>
+
+<p><strong>以下则为我接下来演示的域名：</strong>  建议是最好实名注册一下<br><img data-src="/images/2020.8.21/yumingbangding3.jpg"></p>
+<p><br><br></p>
+<hr>
+<h2 id="2、增加解析地址"><a href="#2、增加解析地址" class="headerlink" title="2、增加解析地址"></a>2、增加解析地址</h2><br>
+
+<p>点击解析：<br><img data-src="/images/2020.8.21/yumingbangding4.jpg"></p>
+<p>点击添加记录：<br>&nbsp;&nbsp;添加两条，两条的主机记录与记录类型与我一样<br>&nbsp;&nbsp;第一条的记录值填写对应的github网址的ip地址(可以通过cmd，输入指令<strong>ping github地址</strong>获取)<br>&nbsp;&nbsp;第二条的记录值填写你自己的github博客地址<br><img data-src="/images/2020.8.21/yumingbangding5.jpg"></p>
+<br>
+
+
+<hr>
+<h2 id="3、在GitHub中Custom-domain添加购买的域名-可跳过看4"><a href="#3、在GitHub中Custom-domain添加购买的域名-可跳过看4" class="headerlink" title="3、在GitHub中Custom domain添加购买的域名(可跳过看4)"></a>3、在GitHub中Custom domain添加购买的域名(可跳过看4)</h2><p>进入仓库，点击旁边的setting：<br><img data-src="/images/2020.8.21/yumingbangding6.jpg"></p>
+<br>
+
+<p>继续往下翻找到Custom domain，填入你购买的域名地址：<br><img data-src="/images/2020.8.21/yumingbangding7.jpg"></p>
+<br>
+
+<p>填入之后你的Github仓库中就会生成一个CNAME<br><img data-src="/images/2020.8.21/yumingbangding8.jpg"></p>
+<br>
+
+<hr>
+<h2 id="4、博客目录-source中添加CNAME，并填入注册域名"><a href="#4、博客目录-source中添加CNAME，并填入注册域名" class="headerlink" title="4、博客目录/source中添加CNAME，并填入注册域名"></a>4、博客目录/source中添加CNAME，并填入注册域名</h2><br>
+
+<p><strong>进入到你的本地博客目录中：</strong>新建CNAME文件，其中添加你的注册的域名<br><img data-src="/images/2020.8.21/yumingbangding9.jpg"></p>
+<p>说明：第3步与第四步区别在于第四步在每次部署的时候都会将CNAME上传，如果只在第三步进行设置只是临时设置，下次重新部署还是不存在CNAME。</p>
+<br>
+
+
+<br>
+
+<hr>
+<h2 id="5、重新进行部署进行访问"><a href="#5、重新进行部署进行访问" class="headerlink" title="5、重新进行部署进行访问"></a>5、重新进行部署进行访问</h2><p>在该文件目录中输入命令：<br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
+<p><strong>如下:</strong></p>
+<p><img data-src="/images/2020.8.21/yumingbangding10.jpg"></p>
+<p>部署成功后即可访问你购买的域名了！</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>域名绑定</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown快速学习</title>
     <url>/2020/11/21/Markdown%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="Typora快捷方式介绍"><a href="#Typora快捷方式介绍" class="headerlink" title="Typora快捷方式介绍"></a>Typora快捷方式介绍</h1><p>ctrl+shift加上+号或-号：能够放大或缩小软件中的展示大小</p>
@@ -246,7 +302,7 @@
 <hr>
 <h1 id="二、VM及CentOS的基本使用"><a href="#二、VM及CentOS的基本使用" class="headerlink" title="二、VM及CentOS的基本使用"></a>二、VM及CentOS的基本使用</h1><h2 id="1、Linux介绍"><a href="#1、Linux介绍" class="headerlink" title="1、Linux介绍"></a>1、Linux介绍</h2><p>创始人：linux  林纳斯       吉祥物：企鹅tux</p>
 <p><strong>Linux</strong>：免费、开源、安全、高效、稳定，处理高并发非常强悍，需要企业级项目部署到Linux、unix服务器上运行。</p>
-<p>**主要发行版本(Linux内核)**：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
+<p><strong>主要发行版本(Linux内核)</strong> ：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
 <p>这些主要都是从内核上进行修改就成了不同的发行版</p>
 <p><strong>主要操作系统：</strong>windows、android、车载系统、Linux、Mac</p>
 <hr>
@@ -292,15 +348,16 @@
 <h3 id="②-虚拟机创建及Centos安装"><a href="#②-虚拟机创建及Centos安装" class="headerlink" title="② 虚拟机创建及Centos安装"></a>② 虚拟机创建及Centos安装</h3><p>VM15创建虚拟机以及安装Centos6.8版本的详细步骤我写在了语雀上，链接如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2FyZ3FscA==">创建虚拟机及安装CentOS<i class="fa fa-external-link-alt"></i></span></p>
 <hr>
 <h2 id="3、CentOS的终端使用及联网"><a href="#3、CentOS的终端使用及联网" class="headerlink" title="3、CentOS的终端使用及联网"></a>3、CentOS的终端使用及联网</h2><h3 id="①-如何打开终端？"><a href="#①-如何打开终端？" class="headerlink" title="① 如何打开终端？"></a>① 如何打开终端？</h3><p>桌面上，<strong>右击—在终端打开</strong></p>
-<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">  </p>
+<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">    </p>
 <p>如果我们要更改终端背景或字体颜色等，选择<strong>编辑—测写首选项</strong>即可设置</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">  
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">    
 
 
 
 <h3 id="②-如何联网？"><a href="#②-如何联网？" class="headerlink" title="② 如何联网？"></a>② 如何联网？</h3><p>右上角点击—System etho，即可上网</p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606114003682.png" alt="1606114003682">  </p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">  
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201125075757.png">    </p>
+<p>此时我们使用火狐来访问百度测试一下，成功啦！</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">    
 
 
 
@@ -326,8 +383,7 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153655.png">  </p>
 <p><code>./vmware-install.pl</code>    <strong>#</strong> 安装这个.pl结尾的脚本文件</p>
 <p>紧接着一直回车即可！</p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606117302135.png" alt="1606117302135">  </p>
-<p>最后执行重启系统命令：<code>reboot</code></p>
+<p>安装完后之后执行重启系统命令：<code>reboot</code></p>
 <p><strong>重启完成之后，我们可以在windows与虚拟机中的centos进行相互复制粘贴了！！！</strong></p>
 <hr>
 <h3 id="设置与主机的共享文件夹"><a href="#设置与主机的共享文件夹" class="headerlink" title="设置与主机的共享文件夹"></a>设置与主机的共享文件夹</h3><p>在进行下面操作之前我们首先在自己的windows系统中创建一个文件夹，随便在哪里都行，来作为我们之后与CentOS的<strong>共享文件夹</strong></p>
@@ -348,7 +404,7 @@
 <h2 id="文件目录介绍"><a href="#文件目录介绍" class="headerlink" title="文件目录介绍"></a>文件目录介绍</h2><p>我们来查看一下Linux的文件目录分布：</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123164013.png">  </p>
 <p><strong>下面是对应目录的说明及总结：</strong></p>
-<p><strong>/mnt</strong>【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>**/sys、/proc、/srv<strong>【重点】：这三个目录都与linux内核相关，千万不能乱动<br>**/opt：</strong>给主机额外安装软件所存放地方，注意不是安装后的软件<br>**/user/local<strong>【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>**/bin</strong>【重点】:存放常用指令 如cat、cp、cd指令…<br><strong>/etc</strong>【重点】:存放配置文件,如my.conf<br>**/home<strong>【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>**/root</strong>【重点】：root用户的文件及一些其他东西<br>**/user<strong>【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>**/var</strong>【重点】：存放变量，不断变化的东西及日志<br>**/dev：<strong>设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>**/lib：</strong>动态库，.so结尾<br>**/media：<strong>能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>**/sbin：</strong>系统管理员能够使用的系统管理程序<br>**/selinux** (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>**/tmp：<strong>存放临时文件夹<br>**/boot：</strong>存放启动linux命令的核心文件</p>
+<p>/mnt 【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>/sys、/proc、/srv  【重点】：这三个目录都与linux内核相关，千万不能乱动<br>/opt    给主机额外安装软件所存放地方，注意不是安装后的软件<br>/user/local   【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>/bin  【重点】:存放常用指令 如cat、cp、cd指令…<br>/etc  【重点】:存放配置文件,如my.conf<br>/home 【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>/root 【重点】：root用户的文件及一些其他东西<br>/user 【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>/var 【重点】：存放变量，不断变化的东西及日志<br>/dev： 设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>/lib： 动态库，.so结尾<br>/media： 能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>/sbin： 系统管理员能够使用的系统管理程序<br>/selinux  (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>/tmp： 存放临时文件夹<br>/boot： 存放启动linux命令的核心文件</p>
 <hr>
 <h1 id="本章Linux终端命令汇总"><a href="#本章Linux终端命令汇总" class="headerlink" title="本章Linux终端命令汇总"></a>本章Linux终端命令汇总</h1><p><code>cd /文件名</code>                      <strong>#</strong> 打开根目录下的文件，只能单个单个目录打开</p>
 <p><code>cd 文件名</code>                           # 如果在目录中，可以直接打开其中的文件</p>
@@ -367,62 +423,6 @@
       </categories>
       <tags>
         <tag>Linux基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>腾讯云域名绑定Github</title>
-    <url>/2020/08/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AGithub/</url>
-    <content><![CDATA[<p>前提准备：你的github仓库地址 <strong>如changlua.github.io</strong></p>
-<h2 id="1、购买域名，实名认证"><a href="#1、购买域名，实名认证" class="headerlink" title="1、购买域名，实名认证"></a>1、购买域名，实名认证</h2><p>对于域名的购买我们可以选择腾讯云</p>
-<p><strong>腾讯云地址：</strong><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS8=">https://cloud.tencent.com/<i class="fa fa-external-link-alt"></i></span> </p>
-<a id="more"></a> 
-<p>没有注册的先注册一下，并且进行实名认证(认证还是很快的)<br><img data-src="/images/2020.8.21/yumingbangding1.jpg">  </p>
-<br>
-
-<p>如何查看自己购买的域名？<br><img data-src="/images/2020.8.21/yumingbangding2.jpg"></p>
-<br>
-
-<p><strong>以下则为我接下来演示的域名：</strong>  建议是最好实名注册一下<br><img data-src="/images/2020.8.21/yumingbangding3.jpg"></p>
-<p><br><br></p>
-<hr>
-<h2 id="2、增加解析地址"><a href="#2、增加解析地址" class="headerlink" title="2、增加解析地址"></a>2、增加解析地址</h2><br>
-
-<p>点击解析：<br><img data-src="/images/2020.8.21/yumingbangding4.jpg"></p>
-<p>点击添加记录：<br>&nbsp;&nbsp;添加两条，两条的主机记录与记录类型与我一样<br>&nbsp;&nbsp;第一条的记录值填写对应的github网址的ip地址(可以通过cmd，输入指令<strong>ping github地址</strong>获取)<br>&nbsp;&nbsp;第二条的记录值填写你自己的github博客地址<br><img data-src="/images/2020.8.21/yumingbangding5.jpg"></p>
-<br>
-
-
-<hr>
-<h2 id="3、在GitHub中Custom-domain添加购买的域名-可跳过看4"><a href="#3、在GitHub中Custom-domain添加购买的域名-可跳过看4" class="headerlink" title="3、在GitHub中Custom domain添加购买的域名(可跳过看4)"></a>3、在GitHub中Custom domain添加购买的域名(可跳过看4)</h2><p>进入仓库，点击旁边的setting：<br><img data-src="/images/2020.8.21/yumingbangding6.jpg"></p>
-<br>
-
-<p>继续往下翻找到Custom domain，填入你购买的域名地址：<br><img data-src="/images/2020.8.21/yumingbangding7.jpg"></p>
-<br>
-
-<p>填入之后你的Github仓库中就会生成一个CNAME<br><img data-src="/images/2020.8.21/yumingbangding8.jpg"></p>
-<br>
-
-<hr>
-<h2 id="4、博客目录-source中添加CNAME，并填入注册域名"><a href="#4、博客目录-source中添加CNAME，并填入注册域名" class="headerlink" title="4、博客目录/source中添加CNAME，并填入注册域名"></a>4、博客目录/source中添加CNAME，并填入注册域名</h2><br>
-
-<p><strong>进入到你的本地博客目录中：</strong>新建CNAME文件，其中添加你的注册的域名<br><img data-src="/images/2020.8.21/yumingbangding9.jpg"></p>
-<p>说明：第3步与第四步区别在于第四步在每次部署的时候都会将CNAME上传，如果只在第三步进行设置只是临时设置，下次重新部署还是不存在CNAME。</p>
-<br>
-
-
-<br>
-
-<hr>
-<h2 id="5、重新进行部署进行访问"><a href="#5、重新进行部署进行访问" class="headerlink" title="5、重新进行部署进行访问"></a>5、重新进行部署进行访问</h2><p>在该文件目录中输入命令：<br><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
-<p><strong>如下:</strong></p>
-<p><img data-src="/images/2020.8.21/yumingbangding10.jpg"></p>
-<p>部署成功后即可访问你购买的域名了！</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>域名绑定</tag>
       </tags>
   </entry>
 </search>
