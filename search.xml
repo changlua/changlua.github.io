@@ -31,7 +31,7 @@
 <hr>
 <h1 id="二、VM及CentOS的基本使用"><a href="#二、VM及CentOS的基本使用" class="headerlink" title="二、VM及CentOS的基本使用"></a>二、VM及CentOS的基本使用</h1><h2 id="1、Linux介绍"><a href="#1、Linux介绍" class="headerlink" title="1、Linux介绍"></a>1、Linux介绍</h2><p>创始人：linux  林纳斯       吉祥物：企鹅tux</p>
 <p><strong>Linux</strong>：免费、开源、安全、高效、稳定，处理高并发非常强悍，需要企业级项目部署到Linux、unix服务器上运行。</p>
-<p><strong>主要发行版本(Linux内核)</strong> ：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
+<p>**主要发行版本(Linux内核)**：CentOSE、Redhat(自己公司做)、Ubuntu、Suse、红旗Llnux(中国做的)</p>
 <p>这些主要都是从内核上进行修改就成了不同的发行版</p>
 <p><strong>主要操作系统：</strong>windows、android、车载系统、Linux、Mac</p>
 <hr>
@@ -77,16 +77,14 @@
 <h3 id="②-虚拟机创建及Centos安装"><a href="#②-虚拟机创建及Centos安装" class="headerlink" title="② 虚拟机创建及Centos安装"></a>② 虚拟机创建及Centos安装</h3><p>VM15创建虚拟机以及安装Centos6.8版本的详细步骤我写在了语雀上，链接如下：<span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2FyZ3FscA==">创建虚拟机及安装CentOS<i class="fa fa-external-link-alt"></i></span></p>
 <hr>
 <h2 id="3、CentOS的终端使用及联网"><a href="#3、CentOS的终端使用及联网" class="headerlink" title="3、CentOS的终端使用及联网"></a>3、CentOS的终端使用及联网</h2><h3 id="①-如何打开终端？"><a href="#①-如何打开终端？" class="headerlink" title="① 如何打开终端？"></a>① 如何打开终端？</h3><p>桌面上，<strong>右击—在终端打开</strong></p>
-<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">    </p>
+<p>  <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144307.png">  </p>
 <p>如果我们要更改终端背景或字体颜色等，选择<strong>编辑—测写首选项</strong>即可设置</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">    
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144516.png" width="70%">  
 
 
 
-<h3 id="②-如何联网？"><a href="#②-如何联网？" class="headerlink" title="② 如何联网？"></a>② 如何联网？</h3><p>右上角点击—System etho，即可上网</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201125075757.png">    </p>
-<p>此时我们使用火狐来访问百度测试一下，成功啦！</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">    
+<h3 id="②-如何联网？"><a href="#②-如何联网？" class="headerlink" title="② 如何联网？"></a>② 如何联网？</h3><p>右上角小电脑点击—System etho，即可上网</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123144929.png" width="70%">  
 
 
 
@@ -112,7 +110,7 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123153655.png">  </p>
 <p><code>./vmware-install.pl</code>    <strong>#</strong> 安装这个.pl结尾的脚本文件</p>
 <p>紧接着一直回车即可！</p>
-<p>安装完后之后执行重启系统命令：<code>reboot</code></p>
+<p>最后执行重启系统命令：<code>reboot</code></p>
 <p><strong>重启完成之后，我们可以在windows与虚拟机中的centos进行相互复制粘贴了！！！</strong></p>
 <hr>
 <h3 id="设置与主机的共享文件夹"><a href="#设置与主机的共享文件夹" class="headerlink" title="设置与主机的共享文件夹"></a>设置与主机的共享文件夹</h3><p>在进行下面操作之前我们首先在自己的windows系统中创建一个文件夹，随便在哪里都行，来作为我们之后与CentOS的<strong>共享文件夹</strong></p>
@@ -133,17 +131,17 @@
 <h2 id="文件目录介绍"><a href="#文件目录介绍" class="headerlink" title="文件目录介绍"></a>文件目录介绍</h2><p>我们来查看一下Linux的文件目录分布：</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123164013.png">  </p>
 <p><strong>下面是对应目录的说明及总结：</strong></p>
-<p>/mnt 【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>/sys、/proc、/srv  【重点】：这三个目录都与linux内核相关，千万不能乱动<br>/opt    给主机额外安装软件所存放地方，注意不是安装后的软件<br>/user/local   【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>/bin  【重点】:存放常用指令 如cat、cp、cd指令…<br>/etc  【重点】:存放配置文件,如my.conf<br>/home 【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>/root 【重点】：root用户的文件及一些其他东西<br>/user 【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>/var 【重点】：存放变量，不断变化的东西及日志<br>/dev： 设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>/lib： 动态库，.so结尾<br>/media： 能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>/sbin： 系统管理员能够使用的系统管理程序<br>/selinux  (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>/tmp： 存放临时文件夹<br>/boot： 存放启动linux命令的核心文件</p>
+<p><strong>/mnt</strong>【重点】:让用户挂载别的临时系统，如我们的共享文件夹<br>**/sys、/proc、/srv<strong>【重点】：这三个目录都与linux内核相关，千万不能乱动<br>**/opt</strong>：给主机额外安装软件所存放地方，注意不是安装后的软件<br>**/user/local<strong>【重点】：另一个给主机额外安装软件所安装目录，一般通过编译源码方式安装，如安装mysql目录<br>**/bin</strong>【重点】:存放常用指令 如cat、cp、cd指令…<br><strong>/etc</strong>【重点】:存放配置文件,如my.conf     <strong>/etc/profile</strong>：配置环境变量的文件<br>**/home<strong>【重点】：存放普通用户的目录，添加用户后，会产生对应的文件<br>**/root</strong>【重点】：root用户的文件及一些其他东西<br>**/user<strong>【重点】：用户的应用程序和文件都放这里，类似windows的program files目录<br>**/var</strong>【重点】：存放变量，不断变化的东西及日志<br>**/dev<strong>：设备管理器，硬件映射为文件来管理，如cpu、disk、console….<br>**/lib</strong>：动态库，.so结尾<br>**/media<strong>：能够识别插入的dvd、u盘等，识别之后挂载在这个目录<br>**/sbin</strong>：系统管理员能够使用的系统管理程序<br>**/selinux** (security-enhanced linux)：安全子系统，如出现了黑客攻击等，后进行触发，就像linux的360<br>**/tmp<strong>：存放临时文件夹<br>**/boot</strong>：存放启动linux命令的核心文件</p>
 <hr>
 <h1 id="本章Linux终端命令汇总"><a href="#本章Linux终端命令汇总" class="headerlink" title="本章Linux终端命令汇总"></a>本章Linux终端命令汇总</h1><p><code>cd /文件名</code>                      <strong>#</strong> 打开根目录下的文件，只能单个单个目录打开</p>
-<p><code>cd 文件名</code>                           # 如果在目录中，可以直接打开其中的文件</p>
+<p><code>cd 文件名</code>                        <strong>#</strong> 如果在目录中，可以直接打开其中的文件</p>
 <p><code>tar -zxvf  压缩文件</code>      <strong>#</strong> 压缩现目录下文件</p>
 <p><code>ll</code>                       <strong>#</strong> 查看该目录的详细信息，包含总用量及所有文件名   与ls -1相同</p>
 <p><code>ls</code>                          <strong>#</strong> 仅仅查看该目录的下的文件详情</p>
 <p><code>reboot</code>                            <strong>#</strong> 重启系统</p>
 <p><strong>用户相关操作：</strong></p>
 <p><code>useradd 用户名</code>              <strong>#</strong> 添加对应用户目录到/home目中</p>
-<p><code>userdel -r 用户名</code>            <strong>#</strong> 删除对应用户及其组</p>
+<p><code>userdel -r 用户名</code>        <strong>#</strong> 删除/home中的对应用户目录</p>
 <hr>
 <p>​                                                <strong>整理者：长路   时间：2020/11/22-2020/11/23</strong></p>
 ]]></content>
@@ -155,276 +153,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux的相关工具及操作</title>
-    <url>/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="一、远程登录Linux系统"><a href="#一、远程登录Linux系统" class="headerlink" title="一、远程登录Linux系统"></a>一、远程登录Linux系统</h1><h2 id="1、XShell及XFtp介绍"><a href="#1、XShell及XFtp介绍" class="headerlink" title="1、XShell及XFtp介绍"></a>1、XShell及XFtp介绍</h2><a id="more"></a>
-
-<blockquote>
-<p>为什么需要远程登录Linux以及公司开发情况说明：</p>
-<p>① linux服务器时开发小组共享的            ② 正式上线项目在公网上运行</p>
-<p>③ 程序员需要远程登录到 centos 进行项目管理或者开发 </p>
-</blockquote>
-<p><strong>示例图：</strong></p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png" width="70%">  
-
-<p>当我们要登录到远程机房的Linux系统，我们就会使用到<strong>XShell</strong>这个软件，可以进行发送指令；</p>
-<p>当我们与远程机房Linux要进行文件上传及下载(如mysql等)就需要使用<strong>XFtp</strong>；</p>
-<hr>
-<h2 id="2、工具安装"><a href="#2、工具安装" class="headerlink" title="2、工具安装"></a>2、工具安装</h2><h3 id="①-XShell5安装及使用"><a href="#①-XShell5安装及使用" class="headerlink" title="① XShell5安装及使用"></a>① XShell5安装及使用</h3><blockquote>
-<p>介绍说明：</p>
-<p>① Xshell 是目前最好的远程登录到 Linux 操作的软件，流畅的速度并且完美解决了中文乱码</p>
-<p>的问题， 是目前程序员首选的软件。    </p>
-<p>② Xshell [1] 是一个强大的安全终端模拟软件，它支持 SSH1, SSH2, 以及 Microsoft Windows 平台的 TELNET 协议。</p>
-<p>③ Xshell 可以在 Windows 界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。</p>
-</blockquote>
-<p><strong>特别注意：</strong>想要让Xshell5下载安装之后访问Linux的话，需要提前在Linux中启用SSHD服务，该服务会监听22号端口。</p>
-<p><strong>网盘链接：</strong>  </p>
-<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVNfSHBYVEFrNTBYN0Q1RkNvUnozd2c=">https://pan.baidu.com/s/1S_HpXTAk50X7D5FCoRz3wg<i class="fa fa-external-link-alt"></i></span> </p>
-<p>​    提取码：am5k </p>
-<h4 id="查看Linux是否开启SSHD服务"><a href="#查看Linux是否开启SSHD服务" class="headerlink" title="查看Linux是否开启SSHD服务"></a>查看Linux是否开启SSHD服务</h4><p>① 终端输入命令：<code>setup</code></p>
-<p>② 上下键选择系统服务，直接回车</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">  </p>
-<p>③ 往下翻，我们能够看到sshd标注了*号，表示已经打开</p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606126728122.png">  </p>
-<hr>
-<h4 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，下一步，接着选择<strong>免费为家庭/学校</strong>，接受许可，选择安装路径，点击完成</p>
-<p>打开如下：</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191127.png">  </p>
-<p>我们也可以更改<strong>主题、编码以及字体大小</strong> </p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">  </p>
-<hr>
-<h4 id="如何连接到远程Linux？"><a href="#如何连接到远程Linux？" class="headerlink" title="如何连接到远程Linux？"></a>如何连接到远程Linux？</h4><p><strong>① 新建Xshell的会话</strong>    </p>
-<p>我们打开Xshell5，点击打开</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png" width="50%">  
-
-
-
-<p>点击新建会话</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191405.png"> </p>
-<p><strong>② 获取到Linux的ip地址</strong>   </p>
-<p>我们回到虚拟机的Linux(此时就假设它为远程的Linux)，打开网络连接</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191627.png">  </p>
-<p>在终端输入命令获取到ip地址：<code>ipconfig</code>，下面红框的就是Linux的ip地址</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191904.png">  </p>
-<p><strong>③ 回到和会话，进行连接</strong>  </p>
-<p>注意填写其中远程Linux的ip地址以及其协议、端口号，点击确定</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192106.png" width="60%">  
-
-<p>点击连接</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192253.png" width="60%">    
-
-<p>我们选择接收并保存</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192350.png" width="60%">  
-
-<p>输入Linux的用户名：<strong>root</strong> (此时一个root用户)</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192538.png">  </p>
-<p>输入密码，点击确定即可</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192822.png" width="60%">    
-
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192927.png" width="70%">  
-
-<p><strong>此时我们已经连接到远程的Linux了，快点去操作一下吧!</strong>     </p>
-<p>此时我们在/root目录下，输入<code>ls</code>,能够查看到当前目录下的内容，接着打开home目录，进行一下测试吧</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123193554.png">  </p>
-<hr>
-<h3 id="②-XFtp5安装及使用"><a href="#②-XFtp5安装及使用" class="headerlink" title="② XFtp5安装及使用"></a>② XFtp5安装及使用</h3><blockquote>
-<p>是一个基于 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS93aW5kb3dz">windows <i class="fa fa-external-link-alt"></i></span>平台的功能强大的 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9TRlRQ">SFTP<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9GVFA=">FTP <i class="fa fa-external-link-alt"></i></span>文件传输软件。使用了 Xftp  以后，windows 用户能安全地在 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9VTklY">UNIX<i class="fa fa-external-link-alt"></i></span>/<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9MaW51eA==">Linux <i class="fa fa-external-link-alt"></i></span>和 Windows PC 之间传输文件。</p>
-</blockquote>
-<p>网盘链接：</p>
-<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTloZk1ObHJINlg2RkdVTFZpLWVXVnc=">https://pan.baidu.com/s/19hfMNlrH6X6FGULVi-eWVw<i class="fa fa-external-link-alt"></i></span><br>    提取码：r0fb </p>
-<h4 id="安装步骤-1"><a href="#安装步骤-1" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，之后next，选择免费为家庭/学校，之后更改安装地址即可</p>
-<p>下面即为安装好的Xftp5：</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200621.png" width="70%">  
-
-
-
-<h4 id="如何连接虚拟机以及上传文件？"><a href="#如何连接虚拟机以及上传文件？" class="headerlink" title="如何连接虚拟机以及上传文件？"></a>如何连接虚拟机以及上传文件？</h4><p>打开文件—新建会话—填写会话名、ip地址、协议、端口以及账号密码，点击确定</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201005.png"></p>
-<p>之后点击连接即可，下面则是连接之后的展览。</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201236.png">  </p>
-<p><strong>上传文件看过来！！！</strong></p>
-<p>我们只需要在想要上传的资源上右击—传输即可，下面演示的是主机传输到Linux，Linux传输到主机方法相同</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201647.png"> </p>
-<hr>
-<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>我们可以看到连接完之后出现了中文乱码的问题，如何解决呢，我们只需要设置一下，再刷新即可！</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201449.png"> </p>
-<p>确定之后还是乱码的，在右边部分<strong>刷新</strong>即可。</p>
-<hr>
-<h1 id="二、Vi和Vim编辑器"><a href="#二、Vi和Vim编辑器" class="headerlink" title="二、Vi和Vim编辑器"></a>二、Vi和Vim编辑器</h1><h2 id="1、Vi和Vim的基本介绍"><a href="#1、Vi和Vim的基本介绍" class="headerlink" title="1、Vi和Vim的基本介绍"></a>1、Vi和Vim的基本介绍</h2><blockquote>
-<p>所有的Linux系统都会内建vi文本编辑器</p>
-<p>Vim具有程序编辑的能力，可以看做是vi的增强版，能够辨识语法展示不同的颜色进行区分，更方便程序设计。包含代码补完、编译、错误跳转等功能。</p>
-</blockquote>
-<p>Vi与Vim包含三种常见模式分别为：<strong>正常(一般)模式、插入(编辑)模式、命令行模式</strong></p>
-<p><strong>正常模式：</strong>终端输入<code>vim 文件名</code>即可进入到该模式，能够上下左右移动光标，删除字符或整行、复制粘贴操作来处理文档数据。</p>
-<p><strong>插入模式：</strong>在正常模式中按<code>i, I, o, O, a, A, r, R 等任何一个字母</code>即可进入插入模式，注意只有在这个模式下才能对文档进行编辑操作，可以输入任意内容。(一般按i来进入，因为i表示insert)。</p>
-<p><strong>命令行模式：</strong>在正常模式中按<code>:</code>即可进入到命令行模式，常用命令为这三个： <code>:wq</code>     <code>:q</code>       <code> :q!</code> 来分别进行退出操作。</p>
-<p><strong>vi与vim三种模式相互切换图：</strong></p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124151024.png" width="70%">  
-
-
-
-<hr>
-<h2 id="2、案例演示：开发Helle-java程序"><a href="#2、案例演示：开发Helle-java程序" class="headerlink" title="2、案例演示：开发Helle.java程序"></a>2、案例演示：开发Helle.java程序</h2><p>① 按下<code>vim Hello.java</code></p>
-<p>此时进入到了正常模式，我们想进行编辑的话需要进入到插入模式</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124154257.png" width="50%">  
-
-
-
-<p>② 输入i，进入到插入(编辑)模式</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155337.png" width="50%">    
-
-<p>接着我们进行编辑，编写一个简单的java输出程序</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155007.png" width="60%">      
-
-
-
-<p>③ 回到正常模式，准备保存退出</p>
-<p>我们按下<code>Esc</code>快捷键，即可退出插入编辑模式到正常模式</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155126.png" width="60%">    
-
-<p>此时我们想保存退出，我们按:，接着输入为完整的保存退出命令<code>:wq</code></p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155557.png" width="60%">    
-
-
-
-<p><strong>最后我们输入命令来查看一下，已经保存了，如下：</strong>  </p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155723.png">  </p>
-<hr>
-<h2 id="3、其他案例练习-命令"><a href="#3、其他案例练习-命令" class="headerlink" title="3、其他案例练习(命令)"></a>3、其他案例练习(命令)</h2><ol>
-<li><p>拷贝当前行        <strong>#</strong>  正常模式   <code>yy</code> ,  拷贝当前行向下的 5 行    <code>5yy</code>，并粘贴<code>p</code>。</p>
-</li>
-<li><p>删除当前行        <strong>#</strong>  正常模式   <code>dd</code>    , 删除当前行向下的 5 行     <code>5dd</code></p>
-</li>
-<li><p>在文件中查找某个单词       <strong>#</strong>  命令模式 <code>/关键字</code> ， 回车查找 ，输入 n 就是查找下一个</p>
-</li>
-<li><p>设置文件的行号，取消文件的行号        <strong>#</strong>  命令行模式   <code> :set nu</code>     <code>:set nonu</code></p>
-</li>
-<li><p>编辑 /etc/profile 文件，使用快捷键到底文档的最末行      <strong>#</strong> 正常模式    <code>gg</code>(顶部)   <code>G</code>(末尾)</p>
-</li>
-<li><p>在一个文件中输入 “hello” ,然后又撤销这个动作              <strong>#</strong> 正常模式  <code>u</code></p>
-</li>
-<li><p>编辑 /etc/profile 文件，并将光标移动到第 20 行    <strong>#</strong> 正常模式  首先输入20      <code>shift+g</code></p>
-</li>
-</ol>
-<hr>
-<h1 id="三、Linux的相关使用操作"><a href="#三、Linux的相关使用操作" class="headerlink" title="三、Linux的相关使用操作"></a>三、Linux的相关使用操作</h1><h2 id="1、关机重启以及注销用户"><a href="#1、关机重启以及注销用户" class="headerlink" title="1、关机重启以及注销用户"></a>1、关机重启以及注销用户</h2><p><strong>关机：</strong>  </p>
-<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
-<p>​    <code>halt</code>：立即关机，与shutdown -h now等价</p>
-<p><strong>重启：</strong>  </p>
-<p>​    <code>shutdown -r now</code>：立即重启</p>
-<p>​    <code>reboot</code>：重启系统</p>
-<p><code>syn</code>：把内存的数据同步到磁盘中</p>
-<p><strong>注意点：</strong><u>当我们关机前，需要执行<code>syn</code>这条指令，将内存的数据写入到磁盘中，放置数据丢失</u>。  </p>
-<p><strong>登陆用户：</strong>尽量不使用root登陆，因为root是系统管理员拥有最大的权限，所以通常使用普通用户登录。</p>
-<p><strong>注销用户</strong>：  </p>
-<p>​    <code>logout</code>：注销用户，使用XShell连接到服务器输入(失去连接)，运行级别三下有效，在当地Centos中输入无效</p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165106.png">  </p>
-<hr>
-<h2 id="2、用户管理"><a href="#2、用户管理" class="headerlink" title="2、用户管理"></a>2、用户管理</h2><p>在Linux中，每个用户都会被分类到组中去，并且每个用户都有它自己的家目录，它们的关系如下：</p>
-<p>​    主要有三个部分的概念：<strong>用户、组、家目录</strong>(一定要分清其中概念)</p>
-<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165721.png" width="70%">  
-
-<p><strong>说明:</strong> </p>
-<p>​    ① Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，并且可以使用管理员创建的账号进入到系统中。</p>
-<p>​    ② Linux的用户至少要属于一个组。</p>
-<hr>
-<h3 id="①-创建用户及密码"><a href="#①-创建用户及密码" class="headerlink" title="① 创建用户及密码"></a>① 创建用户及密码</h3><blockquote>
-<p>前提说明：只有root用户才有权限能够创建用户以及修改密码</p>
-</blockquote>
-<p><strong>创建用户语法：</strong><code>useradd [选项] 用户名</code></p>
-<p>​    创建用户(不带选项)：<code>useradd  xm</code>        <strong>#</strong> 创建一个名为xm的用户将其添加到新创建的/home/xm这个目录</p>
-<p>​    创建用户(带选项)：<code>useradd  -d  /home/tiger  xm</code>     <strong>#</strong> 创建一个xm的用户放置到/home/tiger这个目录</p>
-<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124183539.png">     </p>
-<p><strong>注意：</strong>在使用<u>带选项的这条命令前不能提前将对应家目录创建后使用</u>，否则我们在使用该用户远程连接时会找不到对应的目录，远程连接后自动进入到家目录中。</p>
-<p><strong>设置密码语法</strong>：<code>passwd 用户名</code></p>
-<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184427.png" >  </p>
-<p><strong>最后我们尝试来使用xiaoming用户来远程连接到linux：</strong>  </p>
-<p>​    成功连接，并且对应目录在之前设置的组中</p>
-<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184335.png">  </p>
-<hr>
-<h3 id="②-删除用户"><a href="#②-删除用户" class="headerlink" title="② 删除用户"></a>② 删除用户</h3><p><strong>语法</strong>：<code>userdel [选项] 用户</code></p>
-<p>仅仅删除用户,不删除家目录：<code>userdel  用户</code></p>
-<p>删除用户以及家目录：<code>userdel -r  用户</code></p>
-<p><strong>实际操作：</strong></p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124194223.png">  </p>
-<hr>
-<h3 id="③-查询信息"><a href="#③-查询信息" class="headerlink" title="③ 查询信息"></a>③ 查询信息</h3><p>查询用户信息：<code>id  用户名</code>        <strong>#</strong> 当该用户不存在时，会返回”无此用户”</p>
-<p>查询当前用户：<code>whoami</code>  或  <code>who am i</code>      <strong>#</strong> 返回当前用户名</p>
-<p><strong>实操演示：</strong></p>
-<p>​    <strong>查询用户信息：</strong></p>
-<p>​        uid：用户id       gid：组id      组=0：指的是root的组</p>
-<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124195527.png">  </p>
-<p>​    <strong>查询当前用户：</strong></p>
-<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124201124.png"></p>
-<hr>
-<h3 id="④-切换用户"><a href="#④-切换用户" class="headerlink" title="④ 切换用户"></a>④ 切换用户</h3><p>切换用户：<code>su -  切换用户名</code></p>
-<p>需要返回到原来连接用户：<code>exit </code>     # 原本从高权限用户切换低权限用户，想要再回到高权限用户时使用</p>
-<p><strong>注意：</strong>① 高权限切换到低权限用户时不需要输入密码     ② 低权限切换到高权限用户需要输入密码</p>
-<p><strong>实例演示：</strong></p>
-<p>​    高权限-&gt;低权限以及低权限-&gt;高权限演示：</p>
-<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200245.png">  </p>
-<p>​    使用exit切换到原来用户：</p>
-<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200417.png">  </p>
-<hr>
-<h2 id="3、用户组管理"><a href="#3、用户组管理" class="headerlink" title="3、用户组管理"></a>3、用户组管理</h2><blockquote>
-<p>类似于角色，系统可以对有共性的多个用户进行统一的管理</p>
-</blockquote>
-<p>添加组：<code>groupadd  用户组名</code></p>
-<p>删除组：<code>groupdel  用户组名</code></p>
-<p><strong>与用户组相关联的操作：</strong> </p>
-<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
-<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
-<p><strong>实际操作演示:</strong>   </p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">    </p>
-<hr>
-<h1 id="本章Linux命令汇总"><a href="#本章Linux命令汇总" class="headerlink" title="本章Linux命令汇总"></a>本章Linux命令汇总</h1><p><code>setup</code>             <strong>#</strong> 打开文本模式设置工具</p>
-<p><code>touch 文件</code>     <strong>#</strong> 创建文件</p>
-<p><code>ifconfig</code>        <strong>#</strong> 可以查看其中的ip地址信息等</p>
-<p><code>clear </code>              <strong>#</strong> 清理控制台</p>
-<p><code>pwd</code>                  <strong>#</strong> 展示当前目录</p>
-<p><strong>vim三种模式：</strong>  </p>
-<p><code>vim 文件名</code>(终端进入①)    </p>
-<p>① 正常模式：<code>yy</code>(拷贝)   <code>dd</code>(删除)    <code>gg</code>(到顶部)   <code>G</code>(到末尾)    <code>u</code>(撤销上一步动作)  <code>数字 shift+g</code>(到达指定行)</p>
-<p>​    <strong>切换操作</strong>：①按下i，进入②       ②③按下Esc，回到①     ①按下:进入③     </p>
-<p>② 编辑模式：</p>
-<p>③ 命令行模式：<code>:wq</code>(保存退出)  <code>:q</code>(不作修改，仅查看后退出)     <code>:q!</code>(作修改，不保存退出)</p>
-<pre><code>             `/关键词`(查询关键词)     ` :set nu`(设置行号)     `:set nonu`(取消行号)</code></pre>
-<p><strong>关机：</strong>  </p>
-<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
-<p>   ​ <code>halt</code>：立即关机，与shutdown -h now等价</p>
-<p><strong>重启：</strong>  </p>
-<p>​    <code>shutdown -r now</code>：立即重启</p>
-<p>​    <code>reboot</code>：重启系统</p>
-<p><code>syn</code>：把内存的数据同步到磁盘中</p>
-<p><code>logout</code>：注销用户</p>
-<p><strong>用户管理：</strong></p>
-<p>​    创建用户：     <code>useradd 用户名</code>(创建用户及家目录)       <code>useradd -d  /user/家目录  用户名</code>(创建用户及指定家目录)</p>
-<p>​    修改用户密码：  <code>passwd  用户名</code>(之后修改密码即可)</p>
-<p>​    删除用户 :     ：<code>userdel 用户名 </code>(只删除该用户)   <code>userdel -r 用户名</code>(删除该用户及组)</p>
-<p>​    查询用户：      <code>id  用户名</code>(获取其用户id及组id)    <code>whoami</code>(查询当前用户)</p>
-<p>​    切换用户：      <code>su  -  用户名</code>      <code>exit</code>(切换到原来连接用户) </p>
-<p><strong>用户组管理：</strong></p>
-<p>​    添加组：<code>groupadd  用户组名</code></p>
-<p>​    删除组：<code>groupdel  用户组名</code></p>
-<p><strong>与用户组相关联的操作：</strong> </p>
-<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
-<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
-<p>参考视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
-<hr>
-<p>​                                                <strong>整理者：长路   时间：2020/11/23-2020/11/24</strong></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux相关工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>05、JavaEE定制篇</title>
     <url>/2020/12/02/05%E3%80%81JavaEE%E5%AE%9A%E5%88%B6%E7%AF%87/</url>
-    <content><![CDATA[<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p><strong>学习视频</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
-<p>我们接下来通过XFtp来将对应安装包从windows传入到Linux中，看一下原理图</p>
+    <content><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>我们接下来通过XFtp来将对应安装包从windows传入到Linux中，看一下原理图</p>
 <a id="more"></a>
 
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130152204.png"></p>
@@ -496,7 +228,7 @@
 <p>我们可以使用命令  <code>ln -s /opt/eclipse/eclipse eclipse</code>，如下图：</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130205849.png">  </p>
 <hr>
-<h3 id="③-测试eclipse运行web项目"><a href="#③-测试eclipse运行web项目" class="headerlink" title="③ 测试eclipse运行web项目"></a>③ 测试eclipse运行web项目</h3><p>我们在**/root/桌面**目录中使用命令打开eclipse  <code>./eclipse</code></p>
+<h3 id="③-测试eclipse运行web项目"><a href="#③-测试eclipse运行web项目" class="headerlink" title="③ 测试eclipse运行web项目"></a>③ 测试eclipse运行web项目</h3><p>我们在/root/桌面目录中使用命令打开eclipse  <code>./eclipse</code></p>
 <p>具体创建过程见语雀：  <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2txbm1rdg==">创建web工程<i class="fa fa-external-link-alt"></i></span></p>
 <hr>
 <h3 id="Linux上访问web项目"><a href="#Linux上访问web项目" class="headerlink" title="Linux上访问web项目"></a>Linux上访问web项目</h3><p>我们使用火狐来访问一下：访问成功！</p>
@@ -849,9 +581,281 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux的相关工具及操作</title>
+    <url>/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="一、远程登录Linux系统"><a href="#一、远程登录Linux系统" class="headerlink" title="一、远程登录Linux系统"></a>一、远程登录Linux系统</h1><a id="more"></a>
+
+<h2 id="1、XShell及XFtp介绍"><a href="#1、XShell及XFtp介绍" class="headerlink" title="1、XShell及XFtp介绍"></a>1、XShell及XFtp介绍</h2><blockquote>
+<p>为什么需要远程登录Linux以及公司开发情况说明：</p>
+<p>① linux服务器时开发小组共享的            ② 正式上线项目在公网上运行</p>
+<p>③ 程序员需要远程登录到 centos 进行项目管理或者开发 </p>
+</blockquote>
+<p><strong>示例图：</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png" width="70%">  
+
+<p>当我们要登录到远程机房的Linux系统，我们就会使用到<strong>XShell</strong>这个软件，可以进行发送指令；</p>
+<p>当我们与远程机房Linux要进行文件上传及下载(如mysql等)就需要使用<strong>XFtp</strong>；</p>
+<hr>
+<h2 id="2、工具安装"><a href="#2、工具安装" class="headerlink" title="2、工具安装"></a>2、工具安装</h2><h3 id="①-XShell5安装及使用"><a href="#①-XShell5安装及使用" class="headerlink" title="① XShell5安装及使用"></a>① XShell5安装及使用</h3><blockquote>
+<p>介绍说明：</p>
+<p>① Xshell 是目前最好的远程登录到 Linux 操作的软件，流畅的速度并且完美解决了中文乱码</p>
+<p>的问题， 是目前程序员首选的软件。    </p>
+<p>② Xshell [1] 是一个强大的安全终端模拟软件，它支持 SSH1, SSH2, 以及 Microsoft Windows 平台的 TELNET 协议。</p>
+<p>③ Xshell 可以在 Windows 界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。</p>
+</blockquote>
+<p><strong>特别注意</strong>：想要让Xshell5下载安装之后访问Linux的话，需要提前在Linux中启用SSHD服务，该服务会监听22号端口。</p>
+<p><strong>网盘链接：</strong>  </p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVNfSHBYVEFrNTBYN0Q1RkNvUnozd2c=">https://pan.baidu.com/s/1S_HpXTAk50X7D5FCoRz3wg<i class="fa fa-external-link-alt"></i></span> </p>
+<p>​    提取码：am5k </p>
+<h4 id="查看Linux是否开启SSHD服务"><a href="#查看Linux是否开启SSHD服务" class="headerlink" title="查看Linux是否开启SSHD服务"></a>查看Linux是否开启SSHD服务</h4><p>① 终端输入命令：<code>setup</code></p>
+<p>② 上下键选择系统服务，直接回车</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">  </p>
+<p>③ 往下翻，我们能够看到sshd标注了*号，表示已经打开</p>
+<hr>
+<h4 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，下一步，接着选择<strong>免费为家庭/学校</strong>，接受许可，选择安装路径，点击完成</p>
+<p>打开如下：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191127.png">  </p>
+<p>我们也可以更改<strong>主题、编码以及字体大小</strong> </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">  </p>
+<hr>
+<h4 id="如何连接到远程Linux？"><a href="#如何连接到远程Linux？" class="headerlink" title="如何连接到远程Linux？"></a>如何连接到远程Linux？</h4><p><strong>① 新建Xshell的会话</strong> </p>
+<p>我们打开Xshell5，点击打开</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png" width="50%">  
+
+
+
+<p>点击新建会话</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191405.png"> </p>
+<p><strong>② 获取到Linux的ip地址</strong> </p>
+<p>我们回到虚拟机的Linux(此时就假设它为远程的Linux)，打开网络连接</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191627.png">  </p>
+<p>在终端输入命令获取到ip地址：<code>ipconfig</code>，下面红框的就是Linux的ip地址</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191904.png">  </p>
+<p><strong>③ 回到和会话,进行连接</strong>  </p>
+<p>注意填写其中远程Linux的ip地址以及其协议、端口号，点击确定</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192106.png" width="60%">  
+
+<p>点击连接</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192253.png" width="60%">    
+
+<p>我们选择接收并保存</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192350.png" width="60%">  
+
+<p>输入Linux的用户名：<strong>root</strong> (此时一个root用户)</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192538.png">  </p>
+<p>输入密码，点击确定即可</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192822.png" width="60%">    
+
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192927.png" width="70%">  
+
+<p><strong>此时我们已经连接到远程的Linux了，快点去操作一下吧!</strong> </p>
+<p>此时我们在/root目录下，输入<code>ls</code>,能够查看到当前目录下的内容，接着打开home目录，进行一下测试吧</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123193554.png">  </p>
+<hr>
+<h3 id="②-XFtp5安装及使用"><a href="#②-XFtp5安装及使用" class="headerlink" title="② XFtp5安装及使用"></a>② XFtp5安装及使用</h3><blockquote>
+<p>是一个基于 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS93aW5kb3dz">windows <i class="fa fa-external-link-alt"></i></span>平台的功能强大的 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9TRlRQ">SFTP<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9GVFA=">FTP <i class="fa fa-external-link-alt"></i></span>文件传输软件。使用了 Xftp  以后，windows 用户能安全地在 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9VTklY">UNIX<i class="fa fa-external-link-alt"></i></span>/<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9MaW51eA==">Linux <i class="fa fa-external-link-alt"></i></span>和 Windows PC 之间传输文件。</p>
+</blockquote>
+<p><strong>网盘链接</strong>：</p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTloZk1ObHJINlg2RkdVTFZpLWVXVnc=">https://pan.baidu.com/s/19hfMNlrH6X6FGULVi-eWVw<i class="fa fa-external-link-alt"></i></span>   提取码：r0fb </p>
+<h4 id="安装步骤-1"><a href="#安装步骤-1" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，之后next，选择免费为家庭/学校，之后更改安装地址即可</p>
+<p>下面即为安装好的Xftp5：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200621.png" width="70%">  
+
+
+
+<h4 id="如何连接虚拟机以及上传文件？"><a href="#如何连接虚拟机以及上传文件？" class="headerlink" title="如何连接虚拟机以及上传文件？"></a>如何连接虚拟机以及上传文件？</h4><p>打开文件—新建会话—填写会话名、ip地址、协议、端口以及账号密码，点击确定</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201005.png"></p>
+<p>之后点击连接即可，下面则是连接之后的展览。</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201236.png">  </p>
+<p><strong>上传文件看过来！！！</strong></p>
+<p>我们只需要在想要上传的资源上右击—传输即可，下面演示的是主机传输到Linux，Linux传输到主机方法相同</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201647.png"> </p>
+<hr>
+<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>我们可以看到连接完之后出现了中文乱码的问题，如何解决呢，我们只需要设置一下，再刷新即可！</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201449.png"> </p>
+<p>确定之后还是乱码的，在右边部分<strong>刷新</strong>即可。</p>
+<hr>
+<h1 id="二、Vi和Vim编辑器"><a href="#二、Vi和Vim编辑器" class="headerlink" title="二、Vi和Vim编辑器"></a>二、Vi和Vim编辑器</h1><h2 id="1、Vi和Vim的基本介绍"><a href="#1、Vi和Vim的基本介绍" class="headerlink" title="1、Vi和Vim的基本介绍"></a>1、Vi和Vim的基本介绍</h2><blockquote>
+<p>所有的Linux系统都会内建vi文本编辑器</p>
+<p>Vim具有程序编辑的能力，可以看做是vi的增强版，能够辨识语法展示不同的颜色进行区分，更方便程序设计。包含代码补完、编译、错误跳转等功能。</p>
+</blockquote>
+<p>Vi与Vim包含三种常见模式分别为：<strong>正常(一般)模式、插入(编辑)模式、命令行模式</strong></p>
+<p><strong>正常模式</strong>：终端输入<code>vim 文件名</code>即可进入到该模式，能够上下左右移动光标，删除字符或整行、复制粘贴操作来处理文档数据。</p>
+<p><strong>插入模式</strong>：在正常模式中按<code>i, I, o, O, a, A, r, R 等任何一个字母</code>即可进入插入模式，注意只有在这个模式下才能对文档进行编辑操作，可以输入任意内容。(一般按i来进入，因为i表示insert)。</p>
+<p><strong>命令行模式</strong>：在正常模式中按<code>:</code>即可进入到命令行模式，常用命令为这三个： <code>:wq</code>     <code>:q</code>       <code> :q!</code> 来分别进行退出操作。</p>
+<p><strong>vi与vim三种模式相互切换图</strong>：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124151024.png" width="70%">  
+
+
+
+<hr>
+<h2 id="2、案例演示：开发Helle-java程序"><a href="#2、案例演示：开发Helle-java程序" class="headerlink" title="2、案例演示：开发Helle.java程序"></a>2、案例演示：开发Helle.java程序</h2><p>① 按下<code>vim Hello.java</code></p>
+<p>此时进入到了正常模式，我们想进行编辑的话需要进入到插入模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124154257.png" width="50%">  
+
+
+
+<p>② 输入i，进入到插入(编辑)模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155337.png" width="50%">    
+
+<p>接着我们进行编辑，编写一个简单的java输出程序</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155007.png" width="60%">      
+
+
+
+<p>③ 回到正常模式，准备保存退出</p>
+<p>我们按下<code>Esc</code>快捷键，即可退出插入编辑模式到正常模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155126.png" width="60%">    
+
+<p>此时我们想保存退出，我们按:，接着输入为完整的保存退出命令<code>:wq</code></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155557.png" width="60%">    
+
+
+
+<p><strong>最后我们输入命令来查看一下，已经保存了，如下：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155723.png">  </p>
+<hr>
+<h2 id="3、其他案例练习-命令"><a href="#3、其他案例练习-命令" class="headerlink" title="3、其他案例练习(命令)"></a>3、其他案例练习(命令)</h2><blockquote>
+<p>下面#右边是使用方式</p>
+</blockquote>
+<ol>
+<li><p>拷贝当前行        <strong>#</strong>  正常模式   <code>yy</code> ,  拷贝当前行向下的 5 行    <code>5yy</code>，并粘贴<code>p</code>。</p>
+</li>
+<li><p>删除当前行        <strong>#</strong>  正常模式   <code>dd</code>    , 删除当前行向下的 5 行     <code>5dd</code></p>
+</li>
+<li><p>在文件中查找某个单词       <strong>#</strong>  命令模式 <code>/关键字</code> ， 回车查找 ，输入 n 就是查找下一个</p>
+</li>
+<li><p>设置文件的行号，取消文件的行号        <strong>#</strong>  命令行模式   <code> :set nu</code>     <code>:set nonu</code></p>
+</li>
+<li><p>编辑 /etc/profile 文件，使用快捷键到底文档的最末行      <strong>#</strong> 正常模式    <code>gg</code>(顶部)   <code>G</code>(末尾)</p>
+</li>
+<li><p>在一个文件中输入 “hello” ,然后又撤销这个动作              <strong>#</strong> 正常模式  <code>u</code></p>
+</li>
+<li><p>编辑 /etc/profile 文件，并将光标移动到第 20 行    <strong>#</strong> 正常模式  首先输入20      <code>shift+g</code></p>
+</li>
+</ol>
+<hr>
+<h1 id="三、Linux的相关使用操作"><a href="#三、Linux的相关使用操作" class="headerlink" title="三、Linux的相关使用操作"></a>三、Linux的相关使用操作</h1><h2 id="1、关机重启以及注销用户"><a href="#1、关机重启以及注销用户" class="headerlink" title="1、关机重启以及注销用户"></a>1、关机重启以及注销用户</h2><p><strong>关机：</strong>  </p>
+<p>​      <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
+<p>​    <code>halt</code>：立即关机，与shutdown -h now等价</p>
+<p><strong>重启：</strong>  </p>
+<p>​    <code>shutdown -r now</code>：立即重启</p>
+<p>​    <code>reboot</code>：重启系统</p>
+<p><code>syn</code>：把内存的数据同步到磁盘中</p>
+<p><strong>注意点：</strong><u>当我们关机前，需要执行<code>syn</code>这条指令，将内存的数据写入到磁盘中，放置数据丢失</u>。  </p>
+<p><strong>登陆用户</strong>：尽量不使用root登陆，因为root是系统管理员拥有最大的权限，所以通常使用普通用户登录。</p>
+<p><strong>注销用户</strong>：  </p>
+<p>​    <code>logout</code>：注销用户，使用XShell连接到服务器输入(失去连接)，运行级别三下有效，在当地Centos中输入无效</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165106.png">  </p>
+<hr>
+<h2 id="2、用户管理"><a href="#2、用户管理" class="headerlink" title="2、用户管理"></a>2、用户管理</h2><p>在Linux中，每个用户都会被分类到组中去，并且每个用户都有它自己的家目录，它们的关系如下：</p>
+<p>​    主要有三个部分的概念：<strong>用户、组、家目录</strong>(一定要分清其中概念)</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165721.png" width="70%">  
+
+<p><strong>说明</strong>： </p>
+<p>​    ① Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，并且可以使用管理员创建的账号进入到系统中。</p>
+<p>​    ② Linux的用户至少要属于一个组。</p>
+<hr>
+<h3 id="①-创建用户及密码"><a href="#①-创建用户及密码" class="headerlink" title="① 创建用户及密码"></a>① 创建用户及密码</h3><blockquote>
+<p>前提说明：只有root用户才有权限能够创建用户以及修改密码.</p>
+<p>若我们只是创建一个用户，在创建用户的同时已经指定好默认家目录以及组，如用户为pp,家目录默认为/home/pp,组为pp，密码暂未设置</p>
+</blockquote>
+<p><strong>创建用户语法：</strong><code>useradd [选项] 用户名</code></p>
+<p>​    创建用户(不带选项)：<code>useradd  xm</code>        <strong>#</strong> 创建一个名为xm的用户将其添加到新创建的/home/xm这个目录</p>
+<p>​    创建用户(带选项)：<code>useradd  -d  /home/tiger  xm</code>     <strong>#</strong> 创建一个xm的用户放置到/home/tiger这个目录</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124183539.png">     </p>
+<p><strong>注意</strong>：在使用<u>带选项的这条命令前不能提前将对应家目录创建后使用</u>，否则我们在使用该用户远程连接时会找不到对应的目录，远程连接后自动进入到家目录中。</p>
+<p><strong>设置密码语法</strong>：<code>passwd 用户名</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184427.png" >  </p>
+<p><strong>最后我们尝试来使用xiaoming用户来远程连接到linux：</strong>  </p>
+<p>​    成功连接，并且对应目录在之前设置的组中</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184335.png">  </p>
+<hr>
+<h3 id="②-删除用户"><a href="#②-删除用户" class="headerlink" title="② 删除用户"></a>② 删除用户</h3><p><strong>语法</strong>：<code>userdel [选项] 用户</code></p>
+<p>仅仅删除用户,不删除家目录：<code>userdel  用户</code></p>
+<p>删除用户以及家目录：<code>userdel -r  用户</code></p>
+<p><strong>实际操作：</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124194223.png">  </p>
+<p>说明一下图片中所说的组应该是对应的家目录，而不是组、</p>
+<hr>
+<h3 id="③-查询信息"><a href="#③-查询信息" class="headerlink" title="③ 查询信息"></a>③ 查询信息</h3><p>查询用户信息：<code>id  用户名</code>        <strong>#</strong> 当该用户不存在时，会返回”无此用户”</p>
+<p>查询当前用户：<code>whoami</code>  或  <code>who am i</code>      <strong>#</strong> 返回当前用户名</p>
+<p><strong>实操演示：</strong></p>
+<p>​    <strong>查询用户信息：</strong></p>
+<p>​        uid：用户id       gid：组id      组=0：指的是root的组</p>
+<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124195527.png">  </p>
+<p>​    <strong>查询当前用户：</strong></p>
+<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124201124.png"></p>
+<hr>
+<h3 id="④-切换用户"><a href="#④-切换用户" class="headerlink" title="④ 切换用户"></a>④ 切换用户</h3><p>切换用户：<code>su -  切换用户名</code></p>
+<p>需要返回到原来连接用户：<code>exit </code>     # 原本从高权限用户切换低权限用户，想要再回到高权限用户时使用</p>
+<p><strong>注意</strong>：① 高权限切换到低权限用户时不需要输入密码     ② 低权限切换到高权限用户需要输入密码</p>
+<p><strong>实例演示</strong>：</p>
+<p>​    高权限-&gt;低权限以及低权限-&gt;高权限演示：</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200245.png">  </p>
+<p>​    使用exit切换到原来用户：</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200417.png">  </p>
+<hr>
+<h2 id="3、用户组管理"><a href="#3、用户组管理" class="headerlink" title="3、用户组管理"></a>3、用户组管理</h2><blockquote>
+<p>类似于角色，系统可以对有共性的多个用户进行统一的管理</p>
+</blockquote>
+<p>添加组：<code>groupadd  用户组名</code></p>
+<p>删除组：<code>groupdel  用户组名</code></p>
+<p><strong>与用户组相关联的操作</strong>： </p>
+<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
+<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
+<p>​    </p>
+<p>**实际操作演示： ** </p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">  </p>
+<hr>
+<h1 id="本章Linux命令汇总"><a href="#本章Linux命令汇总" class="headerlink" title="本章Linux命令汇总"></a>本章Linux命令汇总</h1><p><code>setup</code>             <strong>#</strong> 打开文本模式设置工具</p>
+<p><code>touch 文件</code>     <strong>#</strong> 创建文件</p>
+<p><code>ifconfig</code>        <strong>#</strong> 可以查看其中的ip地址信息等</p>
+<p><code>clear </code>              <strong>#</strong> 清理控制台</p>
+<p><code>pwd</code>                  <strong>#</strong> 展示当前目录</p>
+<p><strong>vim三种模式：</strong>  </p>
+<p><code>vim 文件名</code>(终端进入①)    </p>
+<p>① 正常模式：<code>yy</code>(拷贝)   <code>dd</code>(删除)    <code>gg</code>(到顶部)   <code>G</code>(到末尾)    <code>u</code>(撤销上一步动作)  <code>数字 shift+g</code>(到达指定行)</p>
+<p>​    <strong>切换操作</strong>：①按下i，进入②       ②③按下Esc，回到①     ①按下:进入③     </p>
+<p>② 编辑模式：</p>
+<p>③ 命令行模式：<code>:wq</code>(保存退出)  <code>:q</code>(不作修改，仅查看后退出)     <code>:q!</code>(作修改，不保存退出)</p>
+<pre><code>             `/关键词`(查询关键词)     ` :set nu`(设置行号)     `:set nonu`(取消行号)</code></pre>
+<p><strong>关机：</strong>  </p>
+<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
+<p>   ​ <code>halt</code>：立即关机，与shutdown -h now等价</p>
+<p><strong>重启：</strong>  </p>
+<p>​    <code>shutdown -r now</code>：立即重启</p>
+<p>​    <code>reboot</code>：重启系统</p>
+<p><code>syn</code>：把内存的数据同步到磁盘中</p>
+<p><code>logout</code>：注销用户</p>
+<p><strong>用户管理：</strong></p>
+<p>​    创建用户：     <code>useradd 用户名</code>(创建用户及家目录)       <code>useradd -d  /user/家目录  用户名</code>(创建用户及指定家目录)</p>
+<p>​    修改用户密码：  <code>passwd  用户名</code>(之后修改密码即可)</p>
+<p>​    删除用户 :     ：<code>userdel 用户名 </code>(只删除该用户)   <code>userdel -r 用户名</code>(删除该用户及组)</p>
+<p>​    查询用户：      <code>id  用户名</code>(获取其用户id及组id)    <code>whoami</code>(查询当前用户)</p>
+<p>​    切换用户：      <code>su  -  用户名</code>      <code>exit</code>(切换到原来连接用户) </p>
+<p><strong>用户组管理：</strong></p>
+<p>​    添加组：<code>groupadd  用户组名</code></p>
+<p>​    删除组：<code>groupdel  用户组名</code></p>
+<p><strong>与用户组相关联的操作：</strong> </p>
+<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
+<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
+<hr>
+<p>​                                                <strong>整理者：长路   时间：2020/11/23-2020/11/24</strong></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux相关工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux实用指令</title>
     <url>/2020/11/27/03%E3%80%81Linux%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="1、指定运行级别-init-数字"><a href="#1、指定运行级别-init-数字" class="headerlink" title="1、指定运行级别(init 数字)"></a>1、指定运行级别(init 数字)</h1><h2 id="运行级别介绍"><a href="#运行级别介绍" class="headerlink" title="运行级别介绍"></a>运行级别介绍</h2><p>设置运行级别：<code>init  数字</code>       <strong>/etc/inittab</strong>  这个目录存放着默认启动时的运行级别</p>
+    <content><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="1、指定运行级别-init-数字"><a href="#1、指定运行级别-init-数字" class="headerlink" title="1、指定运行级别(init 数字)"></a>1、指定运行级别(init 数字)</h1><h2 id="运行级别介绍"><a href="#运行级别介绍" class="headerlink" title="运行级别介绍"></a>运行级别介绍</h2><p>设置运行级别：<code>init  数字</code>       <strong>/etc/inittab</strong>  这个目录存放着默认启动时的运行级别</p>
 <a id="more"></a>
 
 <p><strong>运行级别说明：</strong>  </p>
@@ -898,7 +902,7 @@
 <p>​    ⑤ 接着我们输入   <code>passwd  root</code>，来修改root用户的密码即可</p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126144231.png"></p>
 <p><strong>最后来重新启动试一下是否能够更改密码吧！</strong>   重新启动命令：<code>reboot</code></p>
-<p><strong>注意：</strong>此时我们就会在想，如果是这样的话，那么每个知道这么操作的人不都可以进行更改root密码了嘛，安全性也太低了吧。实际上还是有个条件，只有你在本地机房的Linux上才能够这么操作，一般远程操作是不会给你在启动时进入到单击模式的！！！</p>
+<p><strong>注意</strong>：此时我们就会在想，如果是这样的话，那么每个知道这么操作的人不都可以进行更改root密码了嘛，安全性也太低了吧。实际上还是有个条件，只有你在本地机房的Linux上才能够这么操作，一般远程操作是不会给你在启动时进入到单击模式的！！！</p>
 <hr>
 <h3 id="②-如何设置系统默认运行级别？"><a href="#②-如何设置系统默认运行级别？" class="headerlink" title="② 如何设置系统默认运行级别？"></a>② 如何设置系统默认运行级别？</h3><blockquote>
 <p>解决思路：我们只需要到  /etc/inittab 这个文档中修改默认的运行级别即可在下次启动时进入到对应的运行级别。</p>
@@ -929,6 +933,8 @@
 <p>或</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126160043.png">  </p>
 <p>​    -lh：以列表方式显示，并且能够按单位换算容量大小</p>
+<p>​    -R：递归展示包含子文件夹的内容</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128211345.png"></p>
 <hr>
 <h2 id="cd指令-切换目录"><a href="#cd指令-切换目录" class="headerlink" title="cd指令(切换目录)"></a>cd指令(切换目录)</h2><p><strong>语法：</strong><code>cd  [参数]</code>     (切换到指定目录)</p>
 <p><strong>常用参数：</strong> </p>
@@ -960,7 +966,7 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126164749.png">  </p>
 <hr>
 <h2 id="touch指令-创建文档"><a href="#touch指令-创建文档" class="headerlink" title="touch指令(创建文档)"></a>touch指令(创建文档)</h2><p><strong>语法：</strong><code>touch 文件名称</code>     (创建单个或多个空文件)</p>
-<p><strong>案例演示：</strong>创建一个空文件   <code>touch  cl.java</code>     创建多个空文件   <code>touch cl1.txt cl2.txt</code></p>
+<p><strong>案例演示</strong>：创建一个空文件   <code>touch  cl.java</code>     创建多个空文件   <code>touch cl1.txt cl2.txt</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126170355.png">   </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126170433.png"> </p>
 <hr>
@@ -983,8 +989,7 @@
 <p><strong>实际案例：</strong></p>
 <p>​    案例1：删除单个文档        <code> rm  1.txt</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126190725.png">  </p>
-<p>​    案例2：删除非空文件     <code>rm -rf  test</code></p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606388940206.png" alt="1606388940206">  </p>
+<p>​    案例2：删除非空文件     `rm -rf  test</p>
 <p>​    案例3：强制直接删除单个文档，没有提示      <code>rm -f test</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191103.png">  </p>
 <hr>
@@ -995,7 +1000,7 @@
 <p>​    案例1：重命名文档        <code>mv 2.txt 1.txt</code>         重命名文件   <code>mv test3 test</code> </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191551.png">  </p>
 <p>​    案例2：移动文档到目录         <code>mv 1.txt test</code>        移动非空目录到目录  <code>mv test1 test</code><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191959.png">  </p>
-<p><strong>重命名的原理：</strong>例如 mv 1.txt  2.txt ，首先会执行移动操作，移动到对应目录中如果有1.txt的话，那么执行重命名更改为2.txt</p>
+<p><strong>重命名的原理</strong>：例如 mv 1.txt  2.txt ，首先会执行移动操作，移动到对应目录中如果有1.txt的话，那么执行重命名更改为2.txt</p>
 <hr>
 <h2 id="cat、more、less-查看指令"><a href="#cat、more、less-查看指令" class="headerlink" title="cat、more、less(查看指令)"></a>cat、more、less(查看指令)</h2><blockquote>
 <p>cat介绍：查看文件内容，是以只读的方式打开，只能浏览文件不能修改。</p>
@@ -1038,11 +1043,11 @@
 </blockquote>
 <p><strong>语法：</strong><code>head  [选项]  文件</code></p>
 <p>​    选项：-n  5     查看头部5行内容</p>
-<p><strong>案例演示：</strong>查看/etc/profile 的前面 5 行代码      <code>head -n 5 /etc/profile</code></p>
+<p><strong>案例演示</strong>：查看/etc/profile 的前面 5 行代码      <code>head -n 5 /etc/profile</code></p>
 <blockquote>
 <p>tail介绍：用于输出文件中尾部的内容，默认情况下 tail 指令显示文件的后 10 行内容</p>
 </blockquote>
-<p><strong>语法：</strong>tail  [选项]  文件</p>
+<p><strong>语法</strong>：tail  [选项]  文件</p>
 <p>​    选项：-n  5     查看尾部5条语句</p>
 <p>​           -f       实时追踪该文档的所有更新，<strong>工作经常使用</strong></p>
 <p><strong>案例演示：</strong></p>
@@ -1055,19 +1060,19 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126234324.png">  </p>
 <p>​    </p>
 <hr>
-<h2 id="in指令-软链接"><a href="#in指令-软链接" class="headerlink" title="in指令(软链接)"></a>in指令(软链接)</h2><blockquote>
+<h2 id="ln指令-软链接"><a href="#ln指令-软链接" class="headerlink" title="ln指令(软链接)"></a>ln指令(软链接)</h2><blockquote>
 <p>in指令描述：软链接也叫符号链接，类似于 windows 里的快捷方式，主要存放了链接其他文件的路径</p>
 </blockquote>
 <p>基本语法：<code>ln -s [原文件或目录][软链接名]</code>       (在当前目录添加一个软链接，进入该链接能够查看原文件内容)</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：在/home 目录下创建一个软连接 linktoroot，连接到 /root  目录    <code>ln -s /root linktoroot</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127143313.png">  </p>
-<p>​    <strong>注意：</strong>使用<code>pwd</code> 查看路径依然是/home/linktoroot的原路径，<code>ls</code>能够查看到/root下的内容</p>
+<pre><code> **注意**：使用`pwd` 查看路径依然是/home/linktoroot的原路径，`ls`能够查看到/root下的内容</code></pre>
 <p>​    案例2：删除软链接linktoroot      <code>rm -rf linktoroot</code></p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127143658.png"></p>
-<p>​    <strong>注意：</strong>在lintoroot后不要带有/，否则会提示资源忙</p>
+<p>​    <strong>注意</strong>：在lintoroot后不要带有/，否则会提示资源忙</p>
 <hr>
-<h2 id="history指令-历史指令"><a href="#history指令-历史指令" class="headerlink" title="history指令(历史指令)"></a>history指令(历史指令)</h2><p><strong>语法：</strong>history    功能描述：查看已经执行过历史命令</p>
+<h2 id="history指令-历史指令"><a href="#history指令-历史指令" class="headerlink" title="history指令(历史指令)"></a>history指令(历史指令)</h2><p><strong>语法</strong>：history    功能描述：查看已经执行过历史命令</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例 1: 显示所有的历史命令    <code>history</code></p>
 <p>​    案例 2: 显示最近使用过的 10 个指令   <code>history 10</code></p>
@@ -1090,7 +1095,7 @@
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：设置系统当前时间为2020-11-27 15:15:30      <code>date -s 2020-11-27 15:15:30</code></p>
 <hr>
-<h2 id="cal指令-日历指令"><a href="#cal指令-日历指令" class="headerlink" title="cal指令(日历指令)"></a>cal指令(日历指令)</h2><p>**语法： **<code>cal [选项] </code>             功能描述：不加选项，显示本月日历</p>
+<h2 id="cal指令-日历指令"><a href="#cal指令-日历指令" class="headerlink" title="cal指令(日历指令)"></a>cal指令(日历指令)</h2><p><strong>语法</strong>：<code>cal [选项] </code>             功能描述：不加选项，显示本月日历</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：打印当前月份日历     <code>cal</code></p>
 <p>​        案例2：打印当前年所有日历    <code>cal 2020</code> </p>
@@ -1110,14 +1115,14 @@
 <p>​    案例3：查找整个 linux 系统下大于或小于或等于20m 的文件（+n  大于    -n 小于    n 等于） </p>
 <p>​        分别为：       <code>find / -size +20M</code>     <code>find / -size -20M</code>       <code>find / -size 20M</code>   </p>
 <p>​    案例4：查找所有文件名以.txt结尾的文件       <code>find / -name *.txt</code>      <strong>使用通配符来查找</strong></p>
-<p><strong>注意：</strong>查询目录下文件列表以及对应文件的容量使用  <code>ls -lh</code></p>
+<p><strong>注意</strong>：查询目录下文件列表以及对应文件的容量使用  <code>ls -lh</code></p>
 <hr>
 <h2 id="locate指令-快速定位"><a href="#locate指令-快速定位" class="headerlink" title="locate指令(快速定位)"></a>locate指令(快速定位)</h2><blockquote>
 <p>介绍：locate 指令可以快速定位文件路径。locate 指令利用事先建立的系统中所有文件名称及路径的locate 数据库实现快速定位给定的文件。Locate 指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新 locate 时刻。</p>
 </blockquote>
 <p><strong>注意第一次使用前需要创建locate数据库：</strong><code>updatedb</code></p>
 <p><strong>语法</strong>：<code>locate  搜索文件名</code></p>
-<p><strong>实际案例：</strong></p>
+<p><strong>实际案例</strong>：</p>
 <p>​    案例 1: 请使用 locate 指令快速定位 hello.txt 文件所在目录   <code>locate hello.txt</code></p>
 <hr>
 <h2 id="管道符号-和grep-指令"><a href="#管道符号-和grep-指令" class="headerlink" title="管道符号 |和grep 指令"></a>管道符号 |和grep 指令</h2><blockquote>
@@ -1175,7 +1180,7 @@
 <p>案例1：压缩多个文件，将 /home/a1.txt 和 /home/a2.txt  <strong>压缩</strong>成  a.tar.gz  <code>tar -zcvf a.tar.gz a1.txt a2.txt</code></p>
 <p>案例2：将/home 的文件夹 压缩成 myhome.tar.gz   <code>tar -zcvf myhome.tar.gz /home/</code></p>
 <p>案例3：将myhome.tar.gzio<strong>解压</strong>到/opt/tmp目录下   <code>tar -zxvf myhome.tar.gz -C /opt/tmp/</code></p>
-<p><strong>注意：</strong>① 在案例2中，依旧是将整个home目录打包为myhome.tar.gz压缩包，解压之后包含一个home文件夹。</p>
+<p><strong>注意</strong>：① 在案例2中，依旧是将整个home目录打包为myhome.tar.gz压缩包，解压之后包含一个home文件夹。</p>
 <p>​       ② 选项说明：压缩使用-zcvf；解压用-zxvf 并且后面还有个-C</p>
 <hr>
 <h1 id="本章Linux常用指令集合"><a href="#本章Linux常用指令集合" class="headerlink" title="本章Linux常用指令集合"></a>本章Linux常用指令集合</h1><p>① 在命令行中能够使用<code>上下按键</code>切换最近的命令</p>
@@ -1190,7 +1195,7 @@
 <p>​       <code>pwd</code>        <strong>#</strong> 显示当前工作路径</p>
 <p>​        <code>ls</code>    <code>ls -a</code>  <code>ls -l</code>   <strong>#</strong> 查看当前目录下文件</p>
 <p>​      <code>cd</code>   <code>cd ~</code>   <code>cd  ../home</code>    <code>cd /home </code>   <strong>#</strong>  切换目录</p>
-<p> ​       <code>mkdir 文件目录</code>     <strong>#</strong> 单级目录     <code> mkdir  -p  文件目录</code>    # 多级目录</p>
+<p>​        <code>mkdir 文件目录</code>     <strong>#</strong> 单级目录     <code> mkdir  -p  文件目录</code>    # 多级目录</p>
 <p>​    <code>rmdir  文件目录</code>   <strong>#</strong> 空目录      <code>rm -rf 文件目录</code>   # 非空目录</p>
 <p>​    <code>touch 文件名称</code>     <strong>#</strong> 创建文件(单、多)</p>
 <p>​    <code>cp 1.txt  2.txt  文件名称</code>       <code>cp -r test/ test2/</code>   <strong>#</strong> 复制非空整个文件过去    </p>
@@ -1231,10 +1236,10 @@
   <entry>
     <title>04、Linux高级部分</title>
     <url>/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/</url>
-    <content><![CDATA[<h1 id="一、组管理与权限管理"><a href="#一、组管理与权限管理" class="headerlink" title="一、组管理与权限管理"></a>一、组管理与权限管理</h1><p><strong>学习视频</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
-<h2 id="1、组管理基本介绍"><a href="#1、组管理基本介绍" class="headerlink" title="1、组管理基本介绍"></a>1、组管理基本介绍</h2><a id="more"></a>
+    <content><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="一、组管理与权限管理"><a href="#一、组管理与权限管理" class="headerlink" title="一、组管理与权限管理"></a>一、组管理与权限管理</h1><a id="more"></a>
 
-<p>组的管理分为：所有者(即用户)、所在组以及其他组</p>
+<h2 id="1、组管理基本介绍"><a href="#1、组管理基本介绍" class="headerlink" title="1、组管理基本介绍"></a>1、组管理基本介绍</h2><p>组的管理分为：所有者(即用户)、所在组以及其他组</p>
 <h3 id="1-1、查看目录文档"><a href="#1-1、查看目录文档" class="headerlink" title="1.1、查看目录文档"></a>1.1、查看目录文档</h3><p><strong>查看文件的详细信息：</strong>ls -alh</p>
 <p>其中包含了所有者(即用户)，以及所在组</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127180553.png">  </p>
@@ -1258,7 +1263,7 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183334.png">  </p>
 <p>​    案例2：我们依旧修改/home/xh目录1.txt的所在组为root  <code>chgrp root 1.txt</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183532.png">  </p>
-<p><strong>总结：</strong>我们在初始建立用户时就会默认家目录及用户组，之后我们可以在root权限下使用命令来更改对应用户组以及更改文件的所有者及所在组这些都是可以的。</p>
+<p><strong>总结</strong>：我们在初始建立用户时就会默认家目录及用户组，之后我们可以在root权限下使用命令来更改对应用户组以及更改文件的所有者及所在组这些都是可以的。</p>
 <hr>
 <h3 id="1-4、其他组"><a href="#1-4、其他组" class="headerlink" title="1.4、其他组"></a>1.4、其他组</h3><p>除文件的所有者和所在组的用户外，系统的其它用户都是文件的其它组.</p>
 <hr>
@@ -1314,7 +1319,7 @@
 <p>​    <code>chmod 755 /home/abc.txt</code></p>
 <p>​    </p>
 <hr>
-<h3 id="2-3、chown指令-修改文件所有者"><a href="#2-3、chown指令-修改文件所有者" class="headerlink" title="2.3、chown指令(修改文件所有者)"></a>2.3、chown指令(修改文件所有者)</h3><p><strong>语法介绍</strong>：</p>
+<h3 id="2-4、chown指令-修改文件所有者"><a href="#2-4、chown指令-修改文件所有者" class="headerlink" title="2.4、chown指令(修改文件所有者)"></a>2.4、chown指令(修改文件所有者)</h3><p><strong>语法介绍</strong>：</p>
 <p>​    <code>chown [选项] newowner file</code>        改变文件的所有者</p>
 <p>​    <code>chown [选项] newowner:newgroup file</code>    改变文件的所有者和所有组</p>
 <p><strong>选项</strong>：</p>
@@ -1326,7 +1331,7 @@
 <p>​    案例3：将/home/kkk 目录下所有文件及目录的所有者、所有组为 xh、xh     <code>chown -R xh:xh /home/kkk</code>      </p>
 <p>​       <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128101114.png"></p>
 <hr>
-<h3 id="2-4、chgrp指令-修改文件所在组"><a href="#2-4、chgrp指令-修改文件所在组" class="headerlink" title="2.4、chgrp指令(修改文件所在组)"></a>2.4、chgrp指令(修改文件所在组)</h3><p><strong>语法</strong>：<code>chgrp [选项] newgroup file 改变文件的所有组</code></p>
+<h3 id="2-5、chgrp指令-修改文件所在组"><a href="#2-5、chgrp指令-修改文件所在组" class="headerlink" title="2.5、chgrp指令(修改文件所在组)"></a>2.5、chgrp指令(修改文件所在组)</h3><p><strong>语法</strong>：<code>chgrp [选项] newgroup file 改变文件的所有组</code></p>
 <p><strong>选项：</strong></p>
 <p>​    -R：如果是目录，则使其下所有子文件或目录递归生效</p>
 <p><strong>案例演示</strong>：</p>
@@ -1439,7 +1444,6 @@
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128151012.png">  </p>
 <p><strong>案例2</strong>：查看当前任务调度以及删除当前的任务</p>
 <p><code>crontab l</code>    # 查看当前crontab的定时任务     <code>crontab -r</code>   # 删除当前的crontab任务</p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606547665929.png" alt="1606547665929">  </p>
 <hr>
 <h2 id="应用案例-配合脚本"><a href="#应用案例-配合脚本" class="headerlink" title="应用案例(配合脚本)"></a>应用案例(配合脚本)</h2><p><strong>案例 1</strong>：每隔 1 分钟，就将当前的日期信息，追加到 /tmp/mydate 文件中   (脚本)</p>
 <p>​    ① 首先编写脚本/home/mytash1.sh：      <code>vim /home/mytash1.sh</code> ，编辑命令   <code>date &gt;&gt; /tmp/mydate</code></p>
@@ -1460,6 +1464,8 @@
 </blockquote>
 <ol>
 <li>最多支持四个主分区</li>
+</ol>
+<ol>
 <li>系统只能安装在主分区</li>
 <li>扩展分区要占一个主分区</li>
 <li>MBR 最大只支持 2TB，但拥有最好的兼容性</li>
@@ -1499,7 +1505,7 @@
 <ol>
 <li><p>Linux 硬盘分 IDE 硬盘和 SCSI 硬盘，目前基本上是 SCSI 硬盘</p>
 </li>
-<li><p>对于 IDE 硬盘，驱动器标识符为“hdx-”,其中“hd”表明分区所在设备的类型，这里是指 IDE 硬盘了。“x”为盘号（a 为基本盘，b 为基本从属盘，c 为辅助主盘，d 为辅助从属盘）,“-”代表分区， 前四个分区用数字 1 到 4 表示，它们是主分区或扩展分区，从 5 开始就是逻辑分区。例，hda3 表示为第一个IDE 硬盘上的第三个主分区或扩展分区,hdb2 表示为第二个IDE 硬盘上的第二个主分区或扩展分区。</p>
+<li><p>对于 IDE 硬盘，驱动器标识符为“hdx<del>”,其中“hd”表明分区所在设备的类型，这里是指 IDE 硬盘了。“x”为盘号（a 为基本盘，b 为基本从属盘，c 为辅助主盘，d 为辅助从属盘）,“</del>”代表分区， 前四个分区用数字 1 到 4 表示，它们是主分区或扩展分区，从 5 开始就是逻辑分区。例，hda3 表示为第一个IDE 硬盘上的第三个主分区或扩展分区,hdb2 表示为第二个IDE 硬盘上的第二个主分区或扩展分区。</p>
 </li>
 </ol>
 <p>3)对于 SCSI 硬盘则标识为“sdx~”，SCSI 硬盘是用“sd”来表示分区所在设备的类型的，其余则和 IDE 硬盘的表示方法一样。</p>
@@ -1511,14 +1517,14 @@
 <h2 id="2、如何添加一个硬盘-分区挂载"><a href="#2、如何添加一个硬盘-分区挂载" class="headerlink" title="2、如何添加一个硬盘(分区挂载)"></a>2、如何添加一个硬盘(分区挂载)</h2><p>详细步骤内容请点击右边链接： <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2ZtZDdoNw==">增加硬盘(如何挂载)<i class="fa fa-external-link-alt"></i></span></p>
 <p><strong>简略总结命令</strong>：</p>
 <p>​    1) 虚拟机添加硬盘</p>
-<p>​    2) 分区   <code>fdisk /dev/sdb</code></p>
-<p>​    3) 格式化  <code>mkfs -t ext4/dev/sdb1</code></p>
-<p>​    4) 挂载   先创建一个 /home/newdisk,  挂载    <code>mount/dev/sdb1 /home/newdisk</code></p>
-<p>​     5) 设置可以自动挂载(永久挂载，当你重启系统，仍然可以挂载到 /home/newdisk) 。</p>
+<p>​    2) 分区            <code>fdisk /dev/sdb</code></p>
+<p>​    3) 格式化      <code>mkfs -t ext4/dev/sdb1</code></p>
+<p>​    4) 挂载    先创建一个 /home/newdisk    ,  挂载    <code>mount/dev/sdb1 /home/newdisk</code></p>
+<p>​    5) 设置可以自动挂载(永久挂载，当你重启系统，仍然可以挂载到 /home/newdisk) 。</p>
 <p>​    <code>vim /etc/fstab</code></p>
 <p>​    <code>/dev/sdb1 /home/newdisk ext4 defaults 0 0</code></p>
 <hr>
-<h2 id="3、磁盘情况查询"><a href="#3、磁盘情况查询" class="headerlink" title="3、磁盘情况查询"></a>3、磁盘情况查询</h2><h4 id="df-查询系统整体磁盘使用情况"><a href="#df-查询系统整体磁盘使用情况" class="headerlink" title="df(查询系统整体磁盘使用情况)"></a>df(查询系统整体磁盘使用情况)</h4><blockquote>
+<h2 id="3、磁盘情况查询"><a href="#3、磁盘情况查询" class="headerlink" title="3、磁盘情况查询"></a>3、磁盘情况查询</h2><h3 id="df-查询系统整体磁盘使用情况"><a href="#df-查询系统整体磁盘使用情况" class="headerlink" title="df(查询系统整体磁盘使用情况)"></a>df(查询系统整体磁盘使用情况)</h3><blockquote>
 <p>df指令介绍：查询系统整体磁盘使用情况</p>
 </blockquote>
 <p><strong>语法</strong>：<code>df [选项]</code></p>
@@ -1529,7 +1535,7 @@
 <p>输入命令：<code>df -lh</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128205227.png">  </p>
 <hr>
-<h4 id="du-查询指定目录的磁盘占用情况"><a href="#du-查询指定目录的磁盘占用情况" class="headerlink" title="du(查询指定目录的磁盘占用情况)"></a>du(查询指定目录的磁盘占用情况)</h4><blockquote>
+<h3 id="du-查询指定目录的磁盘占用情况"><a href="#du-查询指定目录的磁盘占用情况" class="headerlink" title="du(查询指定目录的磁盘占用情况)"></a>du(查询指定目录的磁盘占用情况)</h3><blockquote>
 <p>du介绍：查询指定目录的磁盘占用情况，默认为当前目录</p>
 </blockquote>
 <p><strong>语法</strong>：<code>du  [选项]  /目录</code>      一般选项联合使用：<code>-ach --max-depth=1 </code> </p>
@@ -1583,6 +1589,7 @@
 <hr>
 <h3 id="查看网关"><a href="#查看网关" class="headerlink" title="查看网关"></a>查看网关</h3><p>我们和上面一样打开编辑—虚拟网络编辑器，然后选定NAT模式，接着点击NAT设置即可看到对应<strong>网关信息</strong></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105950.png">  </p>
+<hr>
 <h3 id="查看windows-环境的中VMnet8-网络配置"><a href="#查看windows-环境的中VMnet8-网络配置" class="headerlink" title="查看windows 环境的中VMnet8 网络配置"></a>查看windows 环境的中VMnet8 网络配置</h3><blockquote>
 <p>方式一：直接在cmd中输入命令ipconfig</p>
 </blockquote>
@@ -1608,12 +1615,12 @@
 <p>①终端输入命令：<code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
 <p>②编辑添加对应内容，保存退出</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129143727.png">    </p>
-<p>注意：需要提前看一下你自己的网关号，再设置对应的ip地址，否则会连接不上网络</p>
+<p><strong>注意</strong>：需要提前看一下你自己的网关号，再设置对应的ip地址，否则会连接不上网络</p>
 <p>③ 我们重启服务：<code>service network restart</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129113917.png">  </p>
 <p>最后重启<code>reboot</code>，查看是否能够访问网络</p>
 <hr>
-<h4 id="ifcfg-eth0配置信息"><a href="#ifcfg-eth0配置信息" class="headerlink" title="ifcfg-eth0配置信息"></a>ifcfg-eth0配置信息</h4><p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129114520.png">  </p>
+<h3 id="ifcfg-eth0配置信息"><a href="#ifcfg-eth0配置信息" class="headerlink" title="ifcfg-eth0配置信息"></a>ifcfg-eth0配置信息</h3><p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129114520.png">  </p>
 <hr>
 <h1 id="五、进程管理"><a href="#五、进程管理" class="headerlink" title="五、进程管理"></a>五、进程管理</h1><blockquote>
 <p>基本介绍：</p>
@@ -1969,12 +1976,12 @@
 <blockquote>
 <p>安装rpm包</p>
 </blockquote>
-<p><strong>首先我们得先有rpm包，那么到哪里去找呢？</strong>那么我们需要挂载上对应的iso文件，如果没有挂载的按下面步骤进行挂载即可！</p>
+<p>**首先我们得先有rpm包,那么到哪里去找呢?**那么我们需要挂载上对应的iso文件，如果没有挂载的按下面步骤进行挂载即可！</p>
 <p><strong>① 通过挂载光驱后，我们可以从对应目录中去找到rpm包</strong></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130110319.png"></p>
 <p><strong>② 进入到挂载目录中的rpm包的管理目录，复制firefox的rpm到/opt目录下</strong></p>
 <p>挂载完之后我们可以看到桌面上有个光盘，说明挂载成功了</p>
-<p>接着我们可以从**/media/Centos_6.8_Final/Packages**中来找到对应的火狐rpm安装包</p>
+<p>接着我们可以从/media/Centos_6.8_Final/Packages目录中来找到对应的火狐rpm安装包</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111623.png">  </p>
 <p>  我们将该rpm复制到/opt目录下：<code>cp firefox-45.0.1-1.el6.centos.x86_64.rpm /opt/</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111813.png">  </p>

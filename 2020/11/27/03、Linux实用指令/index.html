@@ -25,12 +25,12 @@
     var CONFIG = {"hostname":"changlujava.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":true,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="1、指定运行级别(init 数字)运行级别介绍设置运行级别：init  数字       &#x2F;etc&#x2F;inittab  这个目录存放着默认启动时的运行级别">
+  <meta name="description" content="参考资料学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   1、指定运行级别(init 数字)运行级别介绍设置运行级别：init  数字       &#x2F;etc&#x2F;inittab  这个目录存放着默认启动时的运行级别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux实用指令">
 <meta property="og:url" content="https://changlujava.gitee.io/child/2020/11/27/03%E3%80%81Linux%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Changlu&#39;s Blog">
-<meta property="og:description" content="1、指定运行级别(init 数字)运行级别介绍设置运行级别：init  数字       &#x2F;etc&#x2F;inittab  这个目录存放着默认启动时的运行级别">
+<meta property="og:description" content="参考资料学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   1、指定运行级别(init 数字)运行级别介绍设置运行级别：init  数字       &#x2F;etc&#x2F;inittab  这个目录存放着默认启动时的运行级别">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126113416.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126141604.png">
@@ -50,6 +50,7 @@
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126155945.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126160018.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126160043.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128211345.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126163920.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126164749.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126170355.png">
@@ -58,7 +59,6 @@
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126184442.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126184733.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126190725.png">
-<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606388940206.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191103.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191551.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191959.png">
@@ -266,7 +266,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB-init-%E6%95%B0%E5%AD%97"><span class="nav-text">1、指定运行级别(init 数字)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E4%BB%8B%E7%BB%8D"><span class="nav-text">运行级别介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%BB%8B%E7%BB%8D"><span class="nav-text">案例介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B"><span class="nav-text">实际案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81%EF%BC%9F"><span class="nav-text">① 如何找回root密码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%EF%BC%9F"><span class="nav-text">② 如何设置系统默认运行级别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81man%E3%80%81help-%E5%B8%AE%E5%8A%A9%E6%8C%87%E4%BB%A4"><span class="nav-text">2、man、help(帮助指令)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB"><span class="nav-text">3、文件目录类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E8%B7%AF%E5%BE%84"><span class="nav-text">pwd指令(查看路径)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E5%86%85"><span class="nav-text">ls指令(查看目录内)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd%E6%8C%87%E4%BB%A4-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="nav-text">cd指令(切换目录)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir%E3%80%81rmdir%E6%8C%87%E4%BB%A4-%E5%88%9B%E5%BB%BA%E3%80%81%E7%A7%BB%E9%99%A4"><span class="nav-text">mkdir、rmdir指令(创建、移除)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch%E6%8C%87%E4%BB%A4-%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3"><span class="nav-text">touch指令(创建文档)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp%E6%8C%87%E4%BB%A4-%E5%A4%8D%E5%88%B6%E6%96%87%E6%A1%A3%E6%96%87%E4%BB%B6"><span class="nav-text">cp指令(复制文档文件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm%E6%8C%87%E4%BB%A4-%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%E6%96%87%E4%BB%B6"><span class="nav-text">rm指令(删除文档文件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv%E6%8C%87%E4%BB%A4-%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%8E%E7%A7%BB%E5%8A%A8"><span class="nav-text">mv指令(重命名与移动)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat%E3%80%81more%E3%80%81less-%E6%9F%A5%E7%9C%8B%E6%8C%87%E4%BB%A4"><span class="nav-text">cat、more、less(查看指令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gt-%E6%8C%87%E4%BB%A4%E4%B8%8E-gt-gt-%E6%8C%87%E4%BB%A4-%E8%A6%86%E7%9B%96%E4%B8%8E%E8%BF%BD%E5%8A%A0"><span class="nav-text">&gt;指令与&gt;&gt;指令(覆盖与追加)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo%E6%8C%87%E4%BB%A4-%E6%98%BE%E7%A4%BA%E8%BE%93%E5%87%BA"><span class="nav-text">echo指令(显示输出)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head%E3%80%81tail-%E6%98%BE%E7%A4%BA%E5%BC%80%E5%A4%B4%E7%BB%93%E5%B0%BE%E9%83%A8%E5%88%86"><span class="nav-text">head、tail(显示开头结尾部分)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in%E6%8C%87%E4%BB%A4-%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-text">in指令(软链接)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E6%8C%87%E4%BB%A4-%E5%8E%86%E5%8F%B2%E6%8C%87%E4%BB%A4"><span class="nav-text">history指令(历史指令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="nav-text">4、时间日期类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data%E6%8C%87%E4%BB%A4-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%97%A5%E6%9C%9F"><span class="nav-text">data指令(显示当前日期)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date%E6%8C%87%E4%BB%A4-%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F"><span class="nav-text">date指令(设置日期)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cal%E6%8C%87%E4%BB%A4-%E6%97%A5%E5%8E%86%E6%8C%87%E4%BB%A4"><span class="nav-text">cal指令(日历指令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB"><span class="nav-text">5、搜索查找类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#find%E6%8C%87%E4%BB%A4"><span class="nav-text">find指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate%E6%8C%87%E4%BB%A4-%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D"><span class="nav-text">locate指令(快速定位)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6%E5%8F%B7-%E5%92%8Cgrep-%E6%8C%87%E4%BB%A4"><span class="nav-text">管道符号 |和grep 指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%B1%BB"><span class="nav-text">6、压缩和解压类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gzip%E3%80%81gunzip%E6%8C%87%E4%BB%A4"><span class="nav-text">gzip、gunzip指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip%E3%80%81unzip%E6%8C%87%E4%BB%A4"><span class="nav-text">zip、unzip指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar%E6%8C%87%E4%BB%A4"><span class="nav-text">tar指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%9B%86%E5%90%88"><span class="nav-text">本章Linux常用指令集合</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB-init-%E6%95%B0%E5%AD%97"><span class="nav-text">1、指定运行级别(init 数字)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E4%BB%8B%E7%BB%8D"><span class="nav-text">运行级别介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%BB%8B%E7%BB%8D"><span class="nav-text">案例介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B"><span class="nav-text">实际案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81%EF%BC%9F"><span class="nav-text">① 如何找回root密码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%EF%BC%9F"><span class="nav-text">② 如何设置系统默认运行级别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81man%E3%80%81help-%E5%B8%AE%E5%8A%A9%E6%8C%87%E4%BB%A4"><span class="nav-text">2、man、help(帮助指令)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB"><span class="nav-text">3、文件目录类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E8%B7%AF%E5%BE%84"><span class="nav-text">pwd指令(查看路径)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ls%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E5%86%85"><span class="nav-text">ls指令(查看目录内)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd%E6%8C%87%E4%BB%A4-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="nav-text">cd指令(切换目录)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir%E3%80%81rmdir%E6%8C%87%E4%BB%A4-%E5%88%9B%E5%BB%BA%E3%80%81%E7%A7%BB%E9%99%A4"><span class="nav-text">mkdir、rmdir指令(创建、移除)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch%E6%8C%87%E4%BB%A4-%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3"><span class="nav-text">touch指令(创建文档)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp%E6%8C%87%E4%BB%A4-%E5%A4%8D%E5%88%B6%E6%96%87%E6%A1%A3%E6%96%87%E4%BB%B6"><span class="nav-text">cp指令(复制文档文件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm%E6%8C%87%E4%BB%A4-%E5%88%A0%E9%99%A4%E6%96%87%E6%A1%A3%E6%96%87%E4%BB%B6"><span class="nav-text">rm指令(删除文档文件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv%E6%8C%87%E4%BB%A4-%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%8E%E7%A7%BB%E5%8A%A8"><span class="nav-text">mv指令(重命名与移动)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat%E3%80%81more%E3%80%81less-%E6%9F%A5%E7%9C%8B%E6%8C%87%E4%BB%A4"><span class="nav-text">cat、more、less(查看指令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gt-%E6%8C%87%E4%BB%A4%E4%B8%8E-gt-gt-%E6%8C%87%E4%BB%A4-%E8%A6%86%E7%9B%96%E4%B8%8E%E8%BF%BD%E5%8A%A0"><span class="nav-text">&gt;指令与&gt;&gt;指令(覆盖与追加)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo%E6%8C%87%E4%BB%A4-%E6%98%BE%E7%A4%BA%E8%BE%93%E5%87%BA"><span class="nav-text">echo指令(显示输出)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head%E3%80%81tail-%E6%98%BE%E7%A4%BA%E5%BC%80%E5%A4%B4%E7%BB%93%E5%B0%BE%E9%83%A8%E5%88%86"><span class="nav-text">head、tail(显示开头结尾部分)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln%E6%8C%87%E4%BB%A4-%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-text">ln指令(软链接)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E6%8C%87%E4%BB%A4-%E5%8E%86%E5%8F%B2%E6%8C%87%E4%BB%A4"><span class="nav-text">history指令(历史指令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB"><span class="nav-text">4、时间日期类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data%E6%8C%87%E4%BB%A4-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%97%A5%E6%9C%9F"><span class="nav-text">data指令(显示当前日期)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#date%E6%8C%87%E4%BB%A4-%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F"><span class="nav-text">date指令(设置日期)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cal%E6%8C%87%E4%BB%A4-%E6%97%A5%E5%8E%86%E6%8C%87%E4%BB%A4"><span class="nav-text">cal指令(日历指令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB"><span class="nav-text">5、搜索查找类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#find%E6%8C%87%E4%BB%A4"><span class="nav-text">find指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate%E6%8C%87%E4%BB%A4-%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D"><span class="nav-text">locate指令(快速定位)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6%E5%8F%B7-%E5%92%8Cgrep-%E6%8C%87%E4%BB%A4"><span class="nav-text">管道符号 |和grep 指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%B1%BB"><span class="nav-text">6、压缩和解压类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gzip%E3%80%81gunzip%E6%8C%87%E4%BB%A4"><span class="nav-text">gzip、gunzip指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip%E3%80%81unzip%E6%8C%87%E4%BB%A4"><span class="nav-text">zip、unzip指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar%E6%8C%87%E4%BB%A4"><span class="nav-text">tar指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%9B%86%E5%90%88"><span class="nav-text">本章Linux常用指令集合</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -443,7 +443,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="1、指定运行级别-init-数字"><a href="#1、指定运行级别-init-数字" class="headerlink" title="1、指定运行级别(init 数字)"></a>1、指定运行级别(init 数字)</h1><h2 id="运行级别介绍"><a href="#运行级别介绍" class="headerlink" title="运行级别介绍"></a>运行级别介绍</h2><p>设置运行级别：<code>init  数字</code>       <strong>/etc/inittab</strong>  这个目录存放着默认启动时的运行级别</p>
+        <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="1、指定运行级别-init-数字"><a href="#1、指定运行级别-init-数字" class="headerlink" title="1、指定运行级别(init 数字)"></a>1、指定运行级别(init 数字)</h1><h2 id="运行级别介绍"><a href="#运行级别介绍" class="headerlink" title="运行级别介绍"></a>运行级别介绍</h2><p>设置运行级别：<code>init  数字</code>       <strong>/etc/inittab</strong>  这个目录存放着默认启动时的运行级别</p>
 <a id="more"></a>
 
 <p><strong>运行级别说明：</strong>  </p>
@@ -490,7 +491,7 @@
 <p>​    ⑤ 接着我们输入   <code>passwd  root</code>，来修改root用户的密码即可</p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126144231.png"></p>
 <p><strong>最后来重新启动试一下是否能够更改密码吧！</strong>   重新启动命令：<code>reboot</code></p>
-<p><strong>注意：</strong>此时我们就会在想，如果是这样的话，那么每个知道这么操作的人不都可以进行更改root密码了嘛，安全性也太低了吧。实际上还是有个条件，只有你在本地机房的Linux上才能够这么操作，一般远程操作是不会给你在启动时进入到单击模式的！！！</p>
+<p><strong>注意</strong>：此时我们就会在想，如果是这样的话，那么每个知道这么操作的人不都可以进行更改root密码了嘛，安全性也太低了吧。实际上还是有个条件，只有你在本地机房的Linux上才能够这么操作，一般远程操作是不会给你在启动时进入到单击模式的！！！</p>
 <hr>
 <h3 id="②-如何设置系统默认运行级别？"><a href="#②-如何设置系统默认运行级别？" class="headerlink" title="② 如何设置系统默认运行级别？"></a>② 如何设置系统默认运行级别？</h3><blockquote>
 <p>解决思路：我们只需要到  /etc/inittab 这个文档中修改默认的运行级别即可在下次启动时进入到对应的运行级别。</p>
@@ -521,6 +522,8 @@
 <p>或</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126160043.png">  </p>
 <p>​    -lh：以列表方式显示，并且能够按单位换算容量大小</p>
+<p>​    -R：递归展示包含子文件夹的内容</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128211345.png"></p>
 <hr>
 <h2 id="cd指令-切换目录"><a href="#cd指令-切换目录" class="headerlink" title="cd指令(切换目录)"></a>cd指令(切换目录)</h2><p><strong>语法：</strong><code>cd  [参数]</code>     (切换到指定目录)</p>
 <p><strong>常用参数：</strong> </p>
@@ -552,7 +555,7 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126164749.png">  </p>
 <hr>
 <h2 id="touch指令-创建文档"><a href="#touch指令-创建文档" class="headerlink" title="touch指令(创建文档)"></a>touch指令(创建文档)</h2><p><strong>语法：</strong><code>touch 文件名称</code>     (创建单个或多个空文件)</p>
-<p><strong>案例演示：</strong>创建一个空文件   <code>touch  cl.java</code>     创建多个空文件   <code>touch cl1.txt cl2.txt</code></p>
+<p><strong>案例演示</strong>：创建一个空文件   <code>touch  cl.java</code>     创建多个空文件   <code>touch cl1.txt cl2.txt</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126170355.png">   </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126170433.png"> </p>
 <hr>
@@ -575,8 +578,7 @@
 <p><strong>实际案例：</strong></p>
 <p>​    案例1：删除单个文档        <code> rm  1.txt</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126190725.png">  </p>
-<p>​    案例2：删除非空文件     <code>rm -rf  test</code></p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606388940206.png" alt="1606388940206">  </p>
+<p>​    案例2：删除非空文件     `rm -rf  test</p>
 <p>​    案例3：强制直接删除单个文档，没有提示      <code>rm -f test</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191103.png">  </p>
 <hr>
@@ -587,7 +589,7 @@
 <p>​    案例1：重命名文档        <code>mv 2.txt 1.txt</code>         重命名文件   <code>mv test3 test</code> </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191551.png">  </p>
 <p>​    案例2：移动文档到目录         <code>mv 1.txt test</code>        移动非空目录到目录  <code>mv test1 test</code><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126191959.png">  </p>
-<p><strong>重命名的原理：</strong>例如 mv 1.txt  2.txt ，首先会执行移动操作，移动到对应目录中如果有1.txt的话，那么执行重命名更改为2.txt</p>
+<p><strong>重命名的原理</strong>：例如 mv 1.txt  2.txt ，首先会执行移动操作，移动到对应目录中如果有1.txt的话，那么执行重命名更改为2.txt</p>
 <hr>
 <h2 id="cat、more、less-查看指令"><a href="#cat、more、less-查看指令" class="headerlink" title="cat、more、less(查看指令)"></a>cat、more、less(查看指令)</h2><blockquote>
 <p>cat介绍：查看文件内容，是以只读的方式打开，只能浏览文件不能修改。</p>
@@ -630,11 +632,11 @@
 </blockquote>
 <p><strong>语法：</strong><code>head  [选项]  文件</code></p>
 <p>​    选项：-n  5     查看头部5行内容</p>
-<p><strong>案例演示：</strong>查看/etc/profile 的前面 5 行代码      <code>head -n 5 /etc/profile</code></p>
+<p><strong>案例演示</strong>：查看/etc/profile 的前面 5 行代码      <code>head -n 5 /etc/profile</code></p>
 <blockquote>
 <p>tail介绍：用于输出文件中尾部的内容，默认情况下 tail 指令显示文件的后 10 行内容</p>
 </blockquote>
-<p><strong>语法：</strong>tail  [选项]  文件</p>
+<p><strong>语法</strong>：tail  [选项]  文件</p>
 <p>​    选项：-n  5     查看尾部5条语句</p>
 <p>​           -f       实时追踪该文档的所有更新，<strong>工作经常使用</strong></p>
 <p><strong>案例演示：</strong></p>
@@ -647,19 +649,19 @@
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126234324.png">  </p>
 <p>​    </p>
 <hr>
-<h2 id="in指令-软链接"><a href="#in指令-软链接" class="headerlink" title="in指令(软链接)"></a>in指令(软链接)</h2><blockquote>
+<h2 id="ln指令-软链接"><a href="#ln指令-软链接" class="headerlink" title="ln指令(软链接)"></a>ln指令(软链接)</h2><blockquote>
 <p>in指令描述：软链接也叫符号链接，类似于 windows 里的快捷方式，主要存放了链接其他文件的路径</p>
 </blockquote>
 <p>基本语法：<code>ln -s [原文件或目录][软链接名]</code>       (在当前目录添加一个软链接，进入该链接能够查看原文件内容)</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：在/home 目录下创建一个软连接 linktoroot，连接到 /root  目录    <code>ln -s /root linktoroot</code></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127143313.png">  </p>
-<p>​    <strong>注意：</strong>使用<code>pwd</code> 查看路径依然是/home/linktoroot的原路径，<code>ls</code>能够查看到/root下的内容</p>
+<pre><code> **注意**：使用`pwd` 查看路径依然是/home/linktoroot的原路径，`ls`能够查看到/root下的内容</code></pre>
 <p>​    案例2：删除软链接linktoroot      <code>rm -rf linktoroot</code></p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127143658.png"></p>
-<p>​    <strong>注意：</strong>在lintoroot后不要带有/，否则会提示资源忙</p>
+<p>​    <strong>注意</strong>：在lintoroot后不要带有/，否则会提示资源忙</p>
 <hr>
-<h2 id="history指令-历史指令"><a href="#history指令-历史指令" class="headerlink" title="history指令(历史指令)"></a>history指令(历史指令)</h2><p><strong>语法：</strong>history    功能描述：查看已经执行过历史命令</p>
+<h2 id="history指令-历史指令"><a href="#history指令-历史指令" class="headerlink" title="history指令(历史指令)"></a>history指令(历史指令)</h2><p><strong>语法</strong>：history    功能描述：查看已经执行过历史命令</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例 1: 显示所有的历史命令    <code>history</code></p>
 <p>​    案例 2: 显示最近使用过的 10 个指令   <code>history 10</code></p>
@@ -682,7 +684,7 @@
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：设置系统当前时间为2020-11-27 15:15:30      <code>date -s 2020-11-27 15:15:30</code></p>
 <hr>
-<h2 id="cal指令-日历指令"><a href="#cal指令-日历指令" class="headerlink" title="cal指令(日历指令)"></a>cal指令(日历指令)</h2><p>**语法： **<code>cal [选项] </code>             功能描述：不加选项，显示本月日历</p>
+<h2 id="cal指令-日历指令"><a href="#cal指令-日历指令" class="headerlink" title="cal指令(日历指令)"></a>cal指令(日历指令)</h2><p><strong>语法</strong>：<code>cal [选项] </code>             功能描述：不加选项，显示本月日历</p>
 <p><strong>案例演示：</strong></p>
 <p>​    案例1：打印当前月份日历     <code>cal</code></p>
 <p>​        案例2：打印当前年所有日历    <code>cal 2020</code> </p>
@@ -702,14 +704,14 @@
 <p>​    案例3：查找整个 linux 系统下大于或小于或等于20m 的文件（+n  大于    -n 小于    n 等于） </p>
 <p>​        分别为：       <code>find / -size +20M</code>     <code>find / -size -20M</code>       <code>find / -size 20M</code>   </p>
 <p>​    案例4：查找所有文件名以.txt结尾的文件       <code>find / -name *.txt</code>      <strong>使用通配符来查找</strong></p>
-<p><strong>注意：</strong>查询目录下文件列表以及对应文件的容量使用  <code>ls -lh</code></p>
+<p><strong>注意</strong>：查询目录下文件列表以及对应文件的容量使用  <code>ls -lh</code></p>
 <hr>
 <h2 id="locate指令-快速定位"><a href="#locate指令-快速定位" class="headerlink" title="locate指令(快速定位)"></a>locate指令(快速定位)</h2><blockquote>
 <p>介绍：locate 指令可以快速定位文件路径。locate 指令利用事先建立的系统中所有文件名称及路径的locate 数据库实现快速定位给定的文件。Locate 指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新 locate 时刻。</p>
 </blockquote>
 <p><strong>注意第一次使用前需要创建locate数据库：</strong><code>updatedb</code></p>
 <p><strong>语法</strong>：<code>locate  搜索文件名</code></p>
-<p><strong>实际案例：</strong></p>
+<p><strong>实际案例</strong>：</p>
 <p>​    案例 1: 请使用 locate 指令快速定位 hello.txt 文件所在目录   <code>locate hello.txt</code></p>
 <hr>
 <h2 id="管道符号-和grep-指令"><a href="#管道符号-和grep-指令" class="headerlink" title="管道符号 |和grep 指令"></a>管道符号 |和grep 指令</h2><blockquote>
@@ -767,7 +769,7 @@
 <p>案例1：压缩多个文件，将 /home/a1.txt 和 /home/a2.txt  <strong>压缩</strong>成  a.tar.gz  <code>tar -zcvf a.tar.gz a1.txt a2.txt</code></p>
 <p>案例2：将/home 的文件夹 压缩成 myhome.tar.gz   <code>tar -zcvf myhome.tar.gz /home/</code></p>
 <p>案例3：将myhome.tar.gzio<strong>解压</strong>到/opt/tmp目录下   <code>tar -zxvf myhome.tar.gz -C /opt/tmp/</code></p>
-<p><strong>注意：</strong>① 在案例2中，依旧是将整个home目录打包为myhome.tar.gz压缩包，解压之后包含一个home文件夹。</p>
+<p><strong>注意</strong>：① 在案例2中，依旧是将整个home目录打包为myhome.tar.gz压缩包，解压之后包含一个home文件夹。</p>
 <p>​       ② 选项说明：压缩使用-zcvf；解压用-zxvf 并且后面还有个-C</p>
 <hr>
 <h1 id="本章Linux常用指令集合"><a href="#本章Linux常用指令集合" class="headerlink" title="本章Linux常用指令集合"></a>本章Linux常用指令集合</h1><p>① 在命令行中能够使用<code>上下按键</code>切换最近的命令</p>
@@ -782,7 +784,7 @@
 <p>​       <code>pwd</code>        <strong>#</strong> 显示当前工作路径</p>
 <p>​        <code>ls</code>    <code>ls -a</code>  <code>ls -l</code>   <strong>#</strong> 查看当前目录下文件</p>
 <p>​      <code>cd</code>   <code>cd ~</code>   <code>cd  ../home</code>    <code>cd /home </code>   <strong>#</strong>  切换目录</p>
-<p> ​       <code>mkdir 文件目录</code>     <strong>#</strong> 单级目录     <code> mkdir  -p  文件目录</code>    # 多级目录</p>
+<p>​        <code>mkdir 文件目录</code>     <strong>#</strong> 单级目录     <code> mkdir  -p  文件目录</code>    # 多级目录</p>
 <p>​    <code>rmdir  文件目录</code>   <strong>#</strong> 空目录      <code>rm -rf 文件目录</code>   # 非空目录</p>
 <p>​    <code>touch 文件名称</code>     <strong>#</strong> 创建文件(单、多)</p>
 <p>​    <code>cp 1.txt  2.txt  文件名称</code>       <code>cp -r test/ test2/</code>   <strong>#</strong> 复制非空整个文件过去    </p>

@@ -25,16 +25,15 @@
     var CONFIG = {"hostname":"changlujava.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":true,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="一、远程登录Linux系统1、XShell及XFtp介绍">
+  <meta name="description" content="参考资料学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   一、远程登录Linux系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux的相关工具及操作">
 <meta property="og:url" content="https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Changlu&#39;s Blog">
-<meta property="og:description" content="一、远程登录Linux系统1、XShell及XFtp介绍">
+<meta property="og:description" content="参考资料学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   一、远程登录Linux系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">
-<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606126728122.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191127.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">
 <meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png">
@@ -265,7 +264,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E7%B3%BB%E7%BB%9F"><span class="nav-text">一、远程登录Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81XShell%E5%8F%8AXFtp%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、XShell及XFtp介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="nav-text">2、工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-XShell5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">① XShell5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BLinux%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AFSSHD%E6%9C%8D%E5%8A%A1"><span class="nav-text">查看Linux是否开启SSHD服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%BF%9C%E7%A8%8BLinux%EF%BC%9F"><span class="nav-text">如何连接到远程Linux？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-XFtp5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">② XFtp5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-1"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BB%A5%E5%8F%8A%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="nav-text">如何连接虚拟机以及上传文件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">解决中文乱码问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Vi%E5%92%8CVim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">二、Vi和Vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Vi%E5%92%8CVim%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、Vi和Vim的基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%A1%88%E4%BE%8B%E6%BC%94%E7%A4%BA%EF%BC%9A%E5%BC%80%E5%8F%91Helle-java%E7%A8%8B%E5%BA%8F"><span class="nav-text">2、案例演示：开发Helle.java程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%85%B6%E4%BB%96%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0-%E5%91%BD%E4%BB%A4"><span class="nav-text">3、其他案例练习(命令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">三、Linux的相关使用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E4%BB%A5%E5%8F%8A%E6%B3%A8%E9%94%80%E7%94%A8%E6%88%B7"><span class="nav-text">1、关机重启以及注销用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">2、用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%8F%8A%E5%AF%86%E7%A0%81"><span class="nav-text">① 创建用户及密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="nav-text">② 删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2-%E6%9F%A5%E8%AF%A2%E4%BF%A1%E6%81%AF"><span class="nav-text">③ 查询信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A3-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="nav-text">④ 切换用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86"><span class="nav-text">3、用户组管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="nav-text">本章Linux命令汇总</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E7%B3%BB%E7%BB%9F"><span class="nav-text">一、远程登录Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81XShell%E5%8F%8AXFtp%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、XShell及XFtp介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="nav-text">2、工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-XShell5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">① XShell5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BLinux%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AFSSHD%E6%9C%8D%E5%8A%A1"><span class="nav-text">查看Linux是否开启SSHD服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%BF%9C%E7%A8%8BLinux%EF%BC%9F"><span class="nav-text">如何连接到远程Linux？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-XFtp5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">② XFtp5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-1"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BB%A5%E5%8F%8A%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="nav-text">如何连接虚拟机以及上传文件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">解决中文乱码问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Vi%E5%92%8CVim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">二、Vi和Vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Vi%E5%92%8CVim%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、Vi和Vim的基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%A1%88%E4%BE%8B%E6%BC%94%E7%A4%BA%EF%BC%9A%E5%BC%80%E5%8F%91Helle-java%E7%A8%8B%E5%BA%8F"><span class="nav-text">2、案例演示：开发Helle.java程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%85%B6%E4%BB%96%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0-%E5%91%BD%E4%BB%A4"><span class="nav-text">3、其他案例练习(命令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">三、Linux的相关使用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E4%BB%A5%E5%8F%8A%E6%B3%A8%E9%94%80%E7%94%A8%E6%88%B7"><span class="nav-text">1、关机重启以及注销用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">2、用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%8F%8A%E5%AF%86%E7%A0%81"><span class="nav-text">① 创建用户及密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="nav-text">② 删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2-%E6%9F%A5%E8%AF%A2%E4%BF%A1%E6%81%AF"><span class="nav-text">③ 查询信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A3-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="nav-text">④ 切换用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86"><span class="nav-text">3、用户组管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="nav-text">本章Linux命令汇总</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -425,7 +424,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.3k</span>
+              <span>4.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -442,9 +441,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="一、远程登录Linux系统"><a href="#一、远程登录Linux系统" class="headerlink" title="一、远程登录Linux系统"></a>一、远程登录Linux系统</h1><h2 id="1、XShell及XFtp介绍"><a href="#1、XShell及XFtp介绍" class="headerlink" title="1、XShell及XFtp介绍"></a>1、XShell及XFtp介绍</h2><a id="more"></a>
+        <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>学习视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h1 id="一、远程登录Linux系统"><a href="#一、远程登录Linux系统" class="headerlink" title="一、远程登录Linux系统"></a>一、远程登录Linux系统</h1><a id="more"></a>
 
-<blockquote>
+<h2 id="1、XShell及XFtp介绍"><a href="#1、XShell及XFtp介绍" class="headerlink" title="1、XShell及XFtp介绍"></a>1、XShell及XFtp介绍</h2><blockquote>
 <p>为什么需要远程登录Linux以及公司开发情况说明：</p>
 <p>① linux服务器时开发小组共享的            ② 正式上线项目在公网上运行</p>
 <p>③ 程序员需要远程登录到 centos 进行项目管理或者开发 </p>
@@ -462,7 +462,7 @@
 <p>② Xshell [1] 是一个强大的安全终端模拟软件，它支持 SSH1, SSH2, 以及 Microsoft Windows 平台的 TELNET 协议。</p>
 <p>③ Xshell 可以在 Windows 界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。</p>
 </blockquote>
-<p><strong>特别注意：</strong>想要让Xshell5下载安装之后访问Linux的话，需要提前在Linux中启用SSHD服务，该服务会监听22号端口。</p>
+<p><strong>特别注意</strong>：想要让Xshell5下载安装之后访问Linux的话，需要提前在Linux中启用SSHD服务，该服务会监听22号端口。</p>
 <p><strong>网盘链接：</strong>  </p>
 <p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVNfSHBYVEFrNTBYN0Q1RkNvUnozd2c=">https://pan.baidu.com/s/1S_HpXTAk50X7D5FCoRz3wg<i class="fa fa-external-link-alt"></i></span> </p>
 <p>​    提取码：am5k </p>
@@ -470,7 +470,6 @@
 <p>② 上下键选择系统服务，直接回车</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">  </p>
 <p>③ 往下翻，我们能够看到sshd标注了*号，表示已经打开</p>
-<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606126728122.png">  </p>
 <hr>
 <h4 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，下一步，接着选择<strong>免费为家庭/学校</strong>，接受许可，选择安装路径，点击完成</p>
 <p>打开如下：</p>
@@ -478,7 +477,7 @@
 <p>我们也可以更改<strong>主题、编码以及字体大小</strong> </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">  </p>
 <hr>
-<h4 id="如何连接到远程Linux？"><a href="#如何连接到远程Linux？" class="headerlink" title="如何连接到远程Linux？"></a>如何连接到远程Linux？</h4><p><strong>① 新建Xshell的会话</strong>    </p>
+<h4 id="如何连接到远程Linux？"><a href="#如何连接到远程Linux？" class="headerlink" title="如何连接到远程Linux？"></a>如何连接到远程Linux？</h4><p><strong>① 新建Xshell的会话</strong> </p>
 <p>我们打开Xshell5，点击打开</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png" width="50%">  
 
@@ -486,12 +485,12 @@
 
 <p>点击新建会话</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191405.png"> </p>
-<p><strong>② 获取到Linux的ip地址</strong>   </p>
+<p><strong>② 获取到Linux的ip地址</strong> </p>
 <p>我们回到虚拟机的Linux(此时就假设它为远程的Linux)，打开网络连接</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191627.png">  </p>
 <p>在终端输入命令获取到ip地址：<code>ipconfig</code>，下面红框的就是Linux的ip地址</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191904.png">  </p>
-<p><strong>③ 回到和会话，进行连接</strong>  </p>
+<p><strong>③ 回到和会话,进行连接</strong>  </p>
 <p>注意填写其中远程Linux的ip地址以及其协议、端口号，点击确定</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192106.png" width="60%">  
 
@@ -508,15 +507,15 @@
 
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192927.png" width="70%">  
 
-<p><strong>此时我们已经连接到远程的Linux了，快点去操作一下吧!</strong>     </p>
+<p><strong>此时我们已经连接到远程的Linux了，快点去操作一下吧!</strong> </p>
 <p>此时我们在/root目录下，输入<code>ls</code>,能够查看到当前目录下的内容，接着打开home目录，进行一下测试吧</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123193554.png">  </p>
 <hr>
 <h3 id="②-XFtp5安装及使用"><a href="#②-XFtp5安装及使用" class="headerlink" title="② XFtp5安装及使用"></a>② XFtp5安装及使用</h3><blockquote>
 <p>是一个基于 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS93aW5kb3dz">windows <i class="fa fa-external-link-alt"></i></span>平台的功能强大的 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9TRlRQ">SFTP<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9GVFA=">FTP <i class="fa fa-external-link-alt"></i></span>文件传输软件。使用了 Xftp  以后，windows 用户能安全地在 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9VTklY">UNIX<i class="fa fa-external-link-alt"></i></span>/<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9MaW51eA==">Linux <i class="fa fa-external-link-alt"></i></span>和 Windows PC 之间传输文件。</p>
 </blockquote>
-<p>网盘链接：</p>
-<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTloZk1ObHJINlg2RkdVTFZpLWVXVnc=">https://pan.baidu.com/s/19hfMNlrH6X6FGULVi-eWVw<i class="fa fa-external-link-alt"></i></span><br>    提取码：r0fb </p>
+<p><strong>网盘链接</strong>：</p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTloZk1ObHJINlg2RkdVTFZpLWVXVnc=">https://pan.baidu.com/s/19hfMNlrH6X6FGULVi-eWVw<i class="fa fa-external-link-alt"></i></span>   提取码：r0fb </p>
 <h4 id="安装步骤-1"><a href="#安装步骤-1" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，之后next，选择免费为家庭/学校，之后更改安装地址即可</p>
 <p>下面即为安装好的Xftp5：</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200621.png" width="70%">  
@@ -540,10 +539,10 @@
 <p>Vim具有程序编辑的能力，可以看做是vi的增强版，能够辨识语法展示不同的颜色进行区分，更方便程序设计。包含代码补完、编译、错误跳转等功能。</p>
 </blockquote>
 <p>Vi与Vim包含三种常见模式分别为：<strong>正常(一般)模式、插入(编辑)模式、命令行模式</strong></p>
-<p><strong>正常模式：</strong>终端输入<code>vim 文件名</code>即可进入到该模式，能够上下左右移动光标，删除字符或整行、复制粘贴操作来处理文档数据。</p>
-<p><strong>插入模式：</strong>在正常模式中按<code>i, I, o, O, a, A, r, R 等任何一个字母</code>即可进入插入模式，注意只有在这个模式下才能对文档进行编辑操作，可以输入任意内容。(一般按i来进入，因为i表示insert)。</p>
-<p><strong>命令行模式：</strong>在正常模式中按<code>:</code>即可进入到命令行模式，常用命令为这三个： <code>:wq</code>     <code>:q</code>       <code> :q!</code> 来分别进行退出操作。</p>
-<p><strong>vi与vim三种模式相互切换图：</strong></p>
+<p><strong>正常模式</strong>：终端输入<code>vim 文件名</code>即可进入到该模式，能够上下左右移动光标，删除字符或整行、复制粘贴操作来处理文档数据。</p>
+<p><strong>插入模式</strong>：在正常模式中按<code>i, I, o, O, a, A, r, R 等任何一个字母</code>即可进入插入模式，注意只有在这个模式下才能对文档进行编辑操作，可以输入任意内容。(一般按i来进入，因为i表示insert)。</p>
+<p><strong>命令行模式</strong>：在正常模式中按<code>:</code>即可进入到命令行模式，常用命令为这三个： <code>:wq</code>     <code>:q</code>       <code> :q!</code> 来分别进行退出操作。</p>
+<p><strong>vi与vim三种模式相互切换图</strong>：</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124151024.png" width="70%">  
 
 
@@ -575,7 +574,10 @@
 <p><strong>最后我们输入命令来查看一下，已经保存了，如下：</strong>  </p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155723.png">  </p>
 <hr>
-<h2 id="3、其他案例练习-命令"><a href="#3、其他案例练习-命令" class="headerlink" title="3、其他案例练习(命令)"></a>3、其他案例练习(命令)</h2><ol>
+<h2 id="3、其他案例练习-命令"><a href="#3、其他案例练习-命令" class="headerlink" title="3、其他案例练习(命令)"></a>3、其他案例练习(命令)</h2><blockquote>
+<p>下面#右边是使用方式</p>
+</blockquote>
+<ol>
 <li><p>拷贝当前行        <strong>#</strong>  正常模式   <code>yy</code> ,  拷贝当前行向下的 5 行    <code>5yy</code>，并粘贴<code>p</code>。</p>
 </li>
 <li><p>删除当前行        <strong>#</strong>  正常模式   <code>dd</code>    , 删除当前行向下的 5 行     <code>5dd</code></p>
@@ -593,14 +595,14 @@
 </ol>
 <hr>
 <h1 id="三、Linux的相关使用操作"><a href="#三、Linux的相关使用操作" class="headerlink" title="三、Linux的相关使用操作"></a>三、Linux的相关使用操作</h1><h2 id="1、关机重启以及注销用户"><a href="#1、关机重启以及注销用户" class="headerlink" title="1、关机重启以及注销用户"></a>1、关机重启以及注销用户</h2><p><strong>关机：</strong>  </p>
-<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
+<p>​      <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
 <p>​    <code>halt</code>：立即关机，与shutdown -h now等价</p>
 <p><strong>重启：</strong>  </p>
 <p>​    <code>shutdown -r now</code>：立即重启</p>
 <p>​    <code>reboot</code>：重启系统</p>
 <p><code>syn</code>：把内存的数据同步到磁盘中</p>
 <p><strong>注意点：</strong><u>当我们关机前，需要执行<code>syn</code>这条指令，将内存的数据写入到磁盘中，放置数据丢失</u>。  </p>
-<p><strong>登陆用户：</strong>尽量不使用root登陆，因为root是系统管理员拥有最大的权限，所以通常使用普通用户登录。</p>
+<p><strong>登陆用户</strong>：尽量不使用root登陆，因为root是系统管理员拥有最大的权限，所以通常使用普通用户登录。</p>
 <p><strong>注销用户</strong>：  </p>
 <p>​    <code>logout</code>：注销用户，使用XShell连接到服务器输入(失去连接)，运行级别三下有效，在当地Centos中输入无效</p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165106.png">  </p>
@@ -609,18 +611,19 @@
 <p>​    主要有三个部分的概念：<strong>用户、组、家目录</strong>(一定要分清其中概念)</p>
 <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165721.png" width="70%">  
 
-<p><strong>说明:</strong> </p>
+<p><strong>说明</strong>： </p>
 <p>​    ① Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，并且可以使用管理员创建的账号进入到系统中。</p>
 <p>​    ② Linux的用户至少要属于一个组。</p>
 <hr>
 <h3 id="①-创建用户及密码"><a href="#①-创建用户及密码" class="headerlink" title="① 创建用户及密码"></a>① 创建用户及密码</h3><blockquote>
-<p>前提说明：只有root用户才有权限能够创建用户以及修改密码</p>
+<p>前提说明：只有root用户才有权限能够创建用户以及修改密码.</p>
+<p>若我们只是创建一个用户，在创建用户的同时已经指定好默认家目录以及组，如用户为pp,家目录默认为/home/pp,组为pp，密码暂未设置</p>
 </blockquote>
 <p><strong>创建用户语法：</strong><code>useradd [选项] 用户名</code></p>
 <p>​    创建用户(不带选项)：<code>useradd  xm</code>        <strong>#</strong> 创建一个名为xm的用户将其添加到新创建的/home/xm这个目录</p>
 <p>​    创建用户(带选项)：<code>useradd  -d  /home/tiger  xm</code>     <strong>#</strong> 创建一个xm的用户放置到/home/tiger这个目录</p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124183539.png">     </p>
-<p><strong>注意：</strong>在使用<u>带选项的这条命令前不能提前将对应家目录创建后使用</u>，否则我们在使用该用户远程连接时会找不到对应的目录，远程连接后自动进入到家目录中。</p>
+<p><strong>注意</strong>：在使用<u>带选项的这条命令前不能提前将对应家目录创建后使用</u>，否则我们在使用该用户远程连接时会找不到对应的目录，远程连接后自动进入到家目录中。</p>
 <p><strong>设置密码语法</strong>：<code>passwd 用户名</code></p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184427.png" >  </p>
 <p><strong>最后我们尝试来使用xiaoming用户来远程连接到linux：</strong>  </p>
@@ -632,6 +635,7 @@
 <p>删除用户以及家目录：<code>userdel -r  用户</code></p>
 <p><strong>实际操作：</strong></p>
 <p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124194223.png">  </p>
+<p>说明一下图片中所说的组应该是对应的家目录，而不是组、</p>
 <hr>
 <h3 id="③-查询信息"><a href="#③-查询信息" class="headerlink" title="③ 查询信息"></a>③ 查询信息</h3><p>查询用户信息：<code>id  用户名</code>        <strong>#</strong> 当该用户不存在时，会返回”无此用户”</p>
 <p>查询当前用户：<code>whoami</code>  或  <code>who am i</code>      <strong>#</strong> 返回当前用户名</p>
@@ -644,8 +648,8 @@
 <hr>
 <h3 id="④-切换用户"><a href="#④-切换用户" class="headerlink" title="④ 切换用户"></a>④ 切换用户</h3><p>切换用户：<code>su -  切换用户名</code></p>
 <p>需要返回到原来连接用户：<code>exit </code>     # 原本从高权限用户切换低权限用户，想要再回到高权限用户时使用</p>
-<p><strong>注意：</strong>① 高权限切换到低权限用户时不需要输入密码     ② 低权限切换到高权限用户需要输入密码</p>
-<p><strong>实例演示：</strong></p>
+<p><strong>注意</strong>：① 高权限切换到低权限用户时不需要输入密码     ② 低权限切换到高权限用户需要输入密码</p>
+<p><strong>实例演示</strong>：</p>
 <p>​    高权限-&gt;低权限以及低权限-&gt;高权限演示：</p>
 <p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200245.png">  </p>
 <p>​    使用exit切换到原来用户：</p>
@@ -656,11 +660,12 @@
 </blockquote>
 <p>添加组：<code>groupadd  用户组名</code></p>
 <p>删除组：<code>groupdel  用户组名</code></p>
-<p><strong>与用户组相关联的操作：</strong> </p>
+<p><strong>与用户组相关联的操作</strong>： </p>
 <p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
 <p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
-<p><strong>实际操作演示:</strong>   </p>
-<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">    </p>
+<p>​    </p>
+<p>**实际操作演示： ** </p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">  </p>
 <hr>
 <h1 id="本章Linux命令汇总"><a href="#本章Linux命令汇总" class="headerlink" title="本章Linux命令汇总"></a>本章Linux命令汇总</h1><p><code>setup</code>             <strong>#</strong> 打开文本模式设置工具</p>
 <p><code>touch 文件</code>     <strong>#</strong> 创建文件</p>
@@ -694,7 +699,6 @@
 <p><strong>与用户组相关联的操作：</strong> </p>
 <p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
 <p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
-<p>参考视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
 <hr>
 <p>​                                                <strong>整理者：长路   时间：2020/11/23-2020/11/24</strong></p>
 

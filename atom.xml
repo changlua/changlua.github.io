@@ -24,8 +24,8 @@
     <updated>2020-12-02T12:55:24.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;原理图&quot;&gt;&lt;a href=&quot;#原理图&quot; class=&quot;headerlink&quot; title=&quot;原理图&quot;&gt;&lt;/a&gt;原理图&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;学习视频&lt;/strong&gt;：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
-&lt;p&gt;我们接下来通过XFtp来将对应安装包从windows传入到Linux中，看一下原理图&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;学习视频：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;原理图&quot;&gt;&lt;a href=&quot;#原理图&quot; class=&quot;headerlink&quot; title=&quot;原理图&quot;&gt;&lt;/a&gt;原理图&lt;/h1&gt;&lt;p&gt;我们接下来通过XFtp来将对应安装包从windows传入到Linux中，看一下原理图&lt;/p&gt;</summary>
     
     
     
@@ -44,8 +44,8 @@
     <updated>2020-12-02T12:54:06.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;一、组管理与权限管理&quot;&gt;&lt;a href=&quot;#一、组管理与权限管理&quot; class=&quot;headerlink&quot; title=&quot;一、组管理与权限管理&quot;&gt;&lt;/a&gt;一、组管理与权限管理&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;学习视频&lt;/strong&gt;：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
-&lt;h2 id=&quot;1、组管理基本介绍&quot;&gt;&lt;a href=&quot;#1、组管理基本介绍&quot; class=&quot;headerlink&quot; title=&quot;1、组管理基本介绍&quot;&gt;&lt;/a&gt;1、组管理基本介绍&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;学习视频：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;一、组管理与权限管理&quot;&gt;&lt;a href=&quot;#一、组管理与权限管理&quot; class=&quot;headerlink&quot; title=&quot;一、组管理与权限管理&quot;&gt;&lt;/a&gt;一、组管理与权限管理&lt;/h1&gt;</summary>
     
     
     
@@ -62,7 +62,8 @@
     <updated>2020-11-27T09:19:19.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;1、指定运行级别-init-数字&quot;&gt;&lt;a href=&quot;#1、指定运行级别-init-数字&quot; class=&quot;headerlink&quot; title=&quot;1、指定运行级别(init 数字)&quot;&gt;&lt;/a&gt;1、指定运行级别(init 数字)&lt;/h1&gt;&lt;h2 id=&quot;运行级别介绍&quot;&gt;&lt;a href=&quot;#运行级别介绍&quot; class=&quot;headerlink&quot; title=&quot;运行级别介绍&quot;&gt;&lt;/a&gt;运行级别介绍&lt;/h2&gt;&lt;p&gt;设置运行级别：&lt;code&gt;init  数字&lt;/code&gt;       &lt;strong&gt;/etc/inittab&lt;/strong&gt;  这个目录存放着默认启动时的运行级别&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;学习视频：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;1、指定运行级别-init-数字&quot;&gt;&lt;a href=&quot;#1、指定运行级别-init-数字&quot; class=&quot;headerlink&quot; title=&quot;1、指定运行级别(init 数字)&quot;&gt;&lt;/a&gt;1、指定运行级别(init 数字)&lt;/h1&gt;&lt;h2 id=&quot;运行级别介绍&quot;&gt;&lt;a href=&quot;#运行级别介绍&quot; class=&quot;headerlink&quot; title=&quot;运行级别介绍&quot;&gt;&lt;/a&gt;运行级别介绍&lt;/h2&gt;&lt;p&gt;设置运行级别：&lt;code&gt;init  数字&lt;/code&gt;       &lt;strong&gt;/etc/inittab&lt;/strong&gt;  这个目录存放着默认启动时的运行级别&lt;/p&gt;</summary>
     
     
     
@@ -81,7 +82,8 @@
     <updated>2020-11-26T15:56:45.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;一、远程登录Linux系统&quot;&gt;&lt;a href=&quot;#一、远程登录Linux系统&quot; class=&quot;headerlink&quot; title=&quot;一、远程登录Linux系统&quot;&gt;&lt;/a&gt;一、远程登录Linux系统&lt;/h1&gt;&lt;h2 id=&quot;1、XShell及XFtp介绍&quot;&gt;&lt;a href=&quot;#1、XShell及XFtp介绍&quot; class=&quot;headerlink&quot; title=&quot;1、XShell及XFtp介绍&quot;&gt;&lt;/a&gt;1、XShell及XFtp介绍&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;学习视频：&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=&quot;&gt;尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;一、远程登录Linux系统&quot;&gt;&lt;a href=&quot;#一、远程登录Linux系统&quot; class=&quot;headerlink&quot; title=&quot;一、远程登录Linux系统&quot;&gt;&lt;/a&gt;一、远程登录Linux系统&lt;/h1&gt;</summary>
     
     
     
