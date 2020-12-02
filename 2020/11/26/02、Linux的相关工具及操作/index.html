@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto+Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"changlujava.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":true,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="一、远程登录Linux系统1、XShell及XFtp介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux的相关工具及操作">
+<meta property="og:url" content="https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="Changlu&#39;s Blog">
+<meta property="og:description" content="一、远程登录Linux系统1、XShell及XFtp介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">
+<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606126728122.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191127.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191405.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191627.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191904.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192106.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192253.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192350.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192538.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192822.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192927.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123193554.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200621.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201005.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201236.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201647.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201449.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124151024.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124154257.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155337.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155007.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155126.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155557.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155723.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165106.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165721.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124183539.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184427.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184335.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124194223.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124195527.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124201124.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200245.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200417.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">
+<meta property="article:published_time" content="2020-11-26T15:56:45.000Z">
+<meta property="article:modified_time" content="2020-11-26T15:56:45.000Z">
+<meta property="article:author" content="changlu">
+<meta property="article:tag" content="Linux相关工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png">
+
+<link rel="canonical" href="https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux的相关工具及操作 | Changlu's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d799723b49054783f9671bcbc95d020";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Changlu's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <!-- fork me on github右上角设置 -->
+    <a target="_blank" rel="noopener" href="https://github.com/changlua/changlua.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Changlu's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95Linux%E7%B3%BB%E7%BB%9F"><span class="nav-text">一、远程登录Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81XShell%E5%8F%8AXFtp%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、XShell及XFtp介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="nav-text">2、工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-XShell5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">① XShell5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BLinux%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AFSSHD%E6%9C%8D%E5%8A%A1"><span class="nav-text">查看Linux是否开启SSHD服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%BF%9C%E7%A8%8BLinux%EF%BC%9F"><span class="nav-text">如何连接到远程Linux？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-XFtp5%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-text">② XFtp5安装及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4-1"><span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BB%A5%E5%8F%8A%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="nav-text">如何连接虚拟机以及上传文件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">解决中文乱码问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Vi%E5%92%8CVim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">二、Vi和Vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Vi%E5%92%8CVim%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、Vi和Vim的基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%A1%88%E4%BE%8B%E6%BC%94%E7%A4%BA%EF%BC%9A%E5%BC%80%E5%8F%91Helle-java%E7%A8%8B%E5%BA%8F"><span class="nav-text">2、案例演示：开发Helle.java程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%85%B6%E4%BB%96%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0-%E5%91%BD%E4%BB%A4"><span class="nav-text">3、其他案例练习(命令)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">三、Linux的相关使用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E4%BB%A5%E5%8F%8A%E6%B3%A8%E9%94%80%E7%94%A8%E6%88%B7"><span class="nav-text">1、关机重启以及注销用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">2、用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A0-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%8F%8A%E5%AF%86%E7%A0%81"><span class="nav-text">① 创建用户及密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A1-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="nav-text">② 删除用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A2-%E6%9F%A5%E8%AF%A2%E4%BF%A1%E6%81%AF"><span class="nav-text">③ 查询信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%91%A3-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="nav-text">④ 切换用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86"><span class="nav-text">3、用户组管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="nav-text">本章Linux命令汇总</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="/about">
+    <img class="site-author-image" itemprop="image" alt="changlu"
+      src="/images/avator_image.jpg">
+  <p class="site-author-name" itemprop="name">changlu</p>
+  <div class="site-description" itemprop="description">欢迎来到长路的个人博客！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVh" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;changlua"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cDovL3dwYS5xcS5jb20vbXNncmQ/dj0zJnVpbj05Mzk5NzQ4ODMmc2l0ZT1xcSZtZW51PXllcw==" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;939974883&amp;site&#x3D;qq&amp;menu&#x3D;yes"><i class="fab fa-qq fa-fw"></i>QQ</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NsOTM5OTc0ODgz" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;cl939974883">CSDN</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGc=" title="https:&#x2F;&#x2F;www.yuque.com&#x2F;changlu-xs5pg">语雀</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vY2hhbmdsdUphdmE=" title="https:&#x2F;&#x2F;gitee.com&#x2F;changluJava">Gitee</span>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+
+      <!--网易云插件-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+        src="////music.163.com/outchain/player?type=2&id=757911&auto=1&height=66">
+      </iframe>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVhL2NoYW5nbHVhLmdpdGh1Yi5pbw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator_image.jpg">
+      <meta itemprop="name" content="changlu">
+      <meta itemprop="description" content="欢迎来到长路的个人博客！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changlu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux的相关工具及操作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-26 23:56:45" itemprop="dateCreated datePublished" datetime="2020-11-26T23:56:45+08:00">2020-11-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、远程登录Linux系统"><a href="#一、远程登录Linux系统" class="headerlink" title="一、远程登录Linux系统"></a>一、远程登录Linux系统</h1><h2 id="1、XShell及XFtp介绍"><a href="#1、XShell及XFtp介绍" class="headerlink" title="1、XShell及XFtp介绍"></a>1、XShell及XFtp介绍</h2><a id="more"></a>
+
+<blockquote>
+<p>为什么需要远程登录Linux以及公司开发情况说明：</p>
+<p>① linux服务器时开发小组共享的            ② 正式上线项目在公网上运行</p>
+<p>③ 程序员需要远程登录到 centos 进行项目管理或者开发 </p>
+</blockquote>
+<p><strong>示例图：</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123171658.png" width="70%">  
+
+<p>当我们要登录到远程机房的Linux系统，我们就会使用到<strong>XShell</strong>这个软件，可以进行发送指令；</p>
+<p>当我们与远程机房Linux要进行文件上传及下载(如mysql等)就需要使用<strong>XFtp</strong>；</p>
+<hr>
+<h2 id="2、工具安装"><a href="#2、工具安装" class="headerlink" title="2、工具安装"></a>2、工具安装</h2><h3 id="①-XShell5安装及使用"><a href="#①-XShell5安装及使用" class="headerlink" title="① XShell5安装及使用"></a>① XShell5安装及使用</h3><blockquote>
+<p>介绍说明：</p>
+<p>① Xshell 是目前最好的远程登录到 Linux 操作的软件，流畅的速度并且完美解决了中文乱码</p>
+<p>的问题， 是目前程序员首选的软件。    </p>
+<p>② Xshell [1] 是一个强大的安全终端模拟软件，它支持 SSH1, SSH2, 以及 Microsoft Windows 平台的 TELNET 协议。</p>
+<p>③ Xshell 可以在 Windows 界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。</p>
+</blockquote>
+<p><strong>特别注意：</strong>想要让Xshell5下载安装之后访问Linux的话，需要提前在Linux中启用SSHD服务，该服务会监听22号端口。</p>
+<p><strong>网盘链接：</strong>  </p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMVNfSHBYVEFrNTBYN0Q1RkNvUnozd2c=">https://pan.baidu.com/s/1S_HpXTAk50X7D5FCoRz3wg<i class="fa fa-external-link-alt"></i></span> </p>
+<p>​    提取码：am5k </p>
+<h4 id="查看Linux是否开启SSHD服务"><a href="#查看Linux是否开启SSHD服务" class="headerlink" title="查看Linux是否开启SSHD服务"></a>查看Linux是否开启SSHD服务</h4><p>① 终端输入命令：<code>setup</code></p>
+<p>② 上下键选择系统服务，直接回车</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123181530.png">  </p>
+<p>③ 往下翻，我们能够看到sshd标注了*号，表示已经打开</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606126728122.png">  </p>
+<hr>
+<h4 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，下一步，接着选择<strong>免费为家庭/学校</strong>，接受许可，选择安装路径，点击完成</p>
+<p>打开如下：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191127.png">  </p>
+<p>我们也可以更改<strong>主题、编码以及字体大小</strong> </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200426.png">  </p>
+<hr>
+<h4 id="如何连接到远程Linux？"><a href="#如何连接到远程Linux？" class="headerlink" title="如何连接到远程Linux？"></a>如何连接到远程Linux？</h4><p><strong>① 新建Xshell的会话</strong>    </p>
+<p>我们打开Xshell5，点击打开</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191250.png" width="50%">  
+
+
+
+<p>点击新建会话</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191405.png"> </p>
+<p><strong>② 获取到Linux的ip地址</strong>   </p>
+<p>我们回到虚拟机的Linux(此时就假设它为远程的Linux)，打开网络连接</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191627.png">  </p>
+<p>在终端输入命令获取到ip地址：<code>ipconfig</code>，下面红框的就是Linux的ip地址</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123191904.png">  </p>
+<p><strong>③ 回到和会话，进行连接</strong>  </p>
+<p>注意填写其中远程Linux的ip地址以及其协议、端口号，点击确定</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192106.png" width="60%">  
+
+<p>点击连接</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192253.png" width="60%">    
+
+<p>我们选择接收并保存</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192350.png" width="60%">  
+
+<p>输入Linux的用户名：<strong>root</strong> (此时一个root用户)</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192538.png">  </p>
+<p>输入密码，点击确定即可</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192822.png" width="60%">    
+
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123192927.png" width="70%">  
+
+<p><strong>此时我们已经连接到远程的Linux了，快点去操作一下吧!</strong>     </p>
+<p>此时我们在/root目录下，输入<code>ls</code>,能够查看到当前目录下的内容，接着打开home目录，进行一下测试吧</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123193554.png">  </p>
+<hr>
+<h3 id="②-XFtp5安装及使用"><a href="#②-XFtp5安装及使用" class="headerlink" title="② XFtp5安装及使用"></a>② XFtp5安装及使用</h3><blockquote>
+<p>是一个基于 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS93aW5kb3dz">windows <i class="fa fa-external-link-alt"></i></span>平台的功能强大的 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9TRlRQ">SFTP<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9GVFA=">FTP <i class="fa fa-external-link-alt"></i></span>文件传输软件。使用了 Xftp  以后，windows 用户能安全地在 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9VTklY">UNIX<i class="fa fa-external-link-alt"></i></span>/<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9MaW51eA==">Linux <i class="fa fa-external-link-alt"></i></span>和 Windows PC 之间传输文件。</p>
+</blockquote>
+<p>网盘链接：</p>
+<p>​    链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMTloZk1ObHJINlg2RkdVTFZpLWVXVnc=">https://pan.baidu.com/s/19hfMNlrH6X6FGULVi-eWVw<i class="fa fa-external-link-alt"></i></span><br>    提取码：r0fb </p>
+<h4 id="安装步骤-1"><a href="#安装步骤-1" class="headerlink" title="安装步骤"></a>安装步骤</h4><p>点击安装，之后next，选择免费为家庭/学校，之后更改安装地址即可</p>
+<p>下面即为安装好的Xftp5：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123200621.png" width="70%">  
+
+
+
+<h4 id="如何连接虚拟机以及上传文件？"><a href="#如何连接虚拟机以及上传文件？" class="headerlink" title="如何连接虚拟机以及上传文件？"></a>如何连接虚拟机以及上传文件？</h4><p>打开文件—新建会话—填写会话名、ip地址、协议、端口以及账号密码，点击确定</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201005.png"></p>
+<p>之后点击连接即可，下面则是连接之后的展览。</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201236.png">  </p>
+<p><strong>上传文件看过来！！！</strong></p>
+<p>我们只需要在想要上传的资源上右击—传输即可，下面演示的是主机传输到Linux，Linux传输到主机方法相同</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201647.png"> </p>
+<hr>
+<h4 id="解决中文乱码问题"><a href="#解决中文乱码问题" class="headerlink" title="解决中文乱码问题"></a>解决中文乱码问题</h4><p>我们可以看到连接完之后出现了中文乱码的问题，如何解决呢，我们只需要设置一下，再刷新即可！</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201123201449.png"> </p>
+<p>确定之后还是乱码的，在右边部分<strong>刷新</strong>即可。</p>
+<hr>
+<h1 id="二、Vi和Vim编辑器"><a href="#二、Vi和Vim编辑器" class="headerlink" title="二、Vi和Vim编辑器"></a>二、Vi和Vim编辑器</h1><h2 id="1、Vi和Vim的基本介绍"><a href="#1、Vi和Vim的基本介绍" class="headerlink" title="1、Vi和Vim的基本介绍"></a>1、Vi和Vim的基本介绍</h2><blockquote>
+<p>所有的Linux系统都会内建vi文本编辑器</p>
+<p>Vim具有程序编辑的能力，可以看做是vi的增强版，能够辨识语法展示不同的颜色进行区分，更方便程序设计。包含代码补完、编译、错误跳转等功能。</p>
+</blockquote>
+<p>Vi与Vim包含三种常见模式分别为：<strong>正常(一般)模式、插入(编辑)模式、命令行模式</strong></p>
+<p><strong>正常模式：</strong>终端输入<code>vim 文件名</code>即可进入到该模式，能够上下左右移动光标，删除字符或整行、复制粘贴操作来处理文档数据。</p>
+<p><strong>插入模式：</strong>在正常模式中按<code>i, I, o, O, a, A, r, R 等任何一个字母</code>即可进入插入模式，注意只有在这个模式下才能对文档进行编辑操作，可以输入任意内容。(一般按i来进入，因为i表示insert)。</p>
+<p><strong>命令行模式：</strong>在正常模式中按<code>:</code>即可进入到命令行模式，常用命令为这三个： <code>:wq</code>     <code>:q</code>       <code> :q!</code> 来分别进行退出操作。</p>
+<p><strong>vi与vim三种模式相互切换图：</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124151024.png" width="70%">  
+
+
+
+<hr>
+<h2 id="2、案例演示：开发Helle-java程序"><a href="#2、案例演示：开发Helle-java程序" class="headerlink" title="2、案例演示：开发Helle.java程序"></a>2、案例演示：开发Helle.java程序</h2><p>① 按下<code>vim Hello.java</code></p>
+<p>此时进入到了正常模式，我们想进行编辑的话需要进入到插入模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124154257.png" width="50%">  
+
+
+
+<p>② 输入i，进入到插入(编辑)模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155337.png" width="50%">    
+
+<p>接着我们进行编辑，编写一个简单的java输出程序</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155007.png" width="60%">      
+
+
+
+<p>③ 回到正常模式，准备保存退出</p>
+<p>我们按下<code>Esc</code>快捷键，即可退出插入编辑模式到正常模式</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155126.png" width="60%">    
+
+<p>此时我们想保存退出，我们按:，接着输入为完整的保存退出命令<code>:wq</code></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155557.png" width="60%">    
+
+
+
+<p><strong>最后我们输入命令来查看一下，已经保存了，如下：</strong>  </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124155723.png">  </p>
+<hr>
+<h2 id="3、其他案例练习-命令"><a href="#3、其他案例练习-命令" class="headerlink" title="3、其他案例练习(命令)"></a>3、其他案例练习(命令)</h2><ol>
+<li><p>拷贝当前行        <strong>#</strong>  正常模式   <code>yy</code> ,  拷贝当前行向下的 5 行    <code>5yy</code>，并粘贴<code>p</code>。</p>
+</li>
+<li><p>删除当前行        <strong>#</strong>  正常模式   <code>dd</code>    , 删除当前行向下的 5 行     <code>5dd</code></p>
+</li>
+<li><p>在文件中查找某个单词       <strong>#</strong>  命令模式 <code>/关键字</code> ， 回车查找 ，输入 n 就是查找下一个</p>
+</li>
+<li><p>设置文件的行号，取消文件的行号        <strong>#</strong>  命令行模式   <code> :set nu</code>     <code>:set nonu</code></p>
+</li>
+<li><p>编辑 /etc/profile 文件，使用快捷键到底文档的最末行      <strong>#</strong> 正常模式    <code>gg</code>(顶部)   <code>G</code>(末尾)</p>
+</li>
+<li><p>在一个文件中输入 “hello” ,然后又撤销这个动作              <strong>#</strong> 正常模式  <code>u</code></p>
+</li>
+<li><p>编辑 /etc/profile 文件，并将光标移动到第 20 行    <strong>#</strong> 正常模式  首先输入20      <code>shift+g</code></p>
+</li>
+</ol>
+<hr>
+<h1 id="三、Linux的相关使用操作"><a href="#三、Linux的相关使用操作" class="headerlink" title="三、Linux的相关使用操作"></a>三、Linux的相关使用操作</h1><h2 id="1、关机重启以及注销用户"><a href="#1、关机重启以及注销用户" class="headerlink" title="1、关机重启以及注销用户"></a>1、关机重启以及注销用户</h2><p><strong>关机：</strong>  </p>
+<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
+<p>​    <code>halt</code>：立即关机，与shutdown -h now等价</p>
+<p><strong>重启：</strong>  </p>
+<p>​    <code>shutdown -r now</code>：立即重启</p>
+<p>​    <code>reboot</code>：重启系统</p>
+<p><code>syn</code>：把内存的数据同步到磁盘中</p>
+<p><strong>注意点：</strong><u>当我们关机前，需要执行<code>syn</code>这条指令，将内存的数据写入到磁盘中，放置数据丢失</u>。  </p>
+<p><strong>登陆用户：</strong>尽量不使用root登陆，因为root是系统管理员拥有最大的权限，所以通常使用普通用户登录。</p>
+<p><strong>注销用户</strong>：  </p>
+<p>​    <code>logout</code>：注销用户，使用XShell连接到服务器输入(失去连接)，运行级别三下有效，在当地Centos中输入无效</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165106.png">  </p>
+<hr>
+<h2 id="2、用户管理"><a href="#2、用户管理" class="headerlink" title="2、用户管理"></a>2、用户管理</h2><p>在Linux中，每个用户都会被分类到组中去，并且每个用户都有它自己的家目录，它们的关系如下：</p>
+<p>​    主要有三个部分的概念：<strong>用户、组、家目录</strong>(一定要分清其中概念)</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124165721.png" width="70%">  
+
+<p><strong>说明:</strong> </p>
+<p>​    ① Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，并且可以使用管理员创建的账号进入到系统中。</p>
+<p>​    ② Linux的用户至少要属于一个组。</p>
+<hr>
+<h3 id="①-创建用户及密码"><a href="#①-创建用户及密码" class="headerlink" title="① 创建用户及密码"></a>① 创建用户及密码</h3><blockquote>
+<p>前提说明：只有root用户才有权限能够创建用户以及修改密码</p>
+</blockquote>
+<p><strong>创建用户语法：</strong><code>useradd [选项] 用户名</code></p>
+<p>​    创建用户(不带选项)：<code>useradd  xm</code>        <strong>#</strong> 创建一个名为xm的用户将其添加到新创建的/home/xm这个目录</p>
+<p>​    创建用户(带选项)：<code>useradd  -d  /home/tiger  xm</code>     <strong>#</strong> 创建一个xm的用户放置到/home/tiger这个目录</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124183539.png">     </p>
+<p><strong>注意：</strong>在使用<u>带选项的这条命令前不能提前将对应家目录创建后使用</u>，否则我们在使用该用户远程连接时会找不到对应的目录，远程连接后自动进入到家目录中。</p>
+<p><strong>设置密码语法</strong>：<code>passwd 用户名</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184427.png" >  </p>
+<p><strong>最后我们尝试来使用xiaoming用户来远程连接到linux：</strong>  </p>
+<p>​    成功连接，并且对应目录在之前设置的组中</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124184335.png">  </p>
+<hr>
+<h3 id="②-删除用户"><a href="#②-删除用户" class="headerlink" title="② 删除用户"></a>② 删除用户</h3><p><strong>语法</strong>：<code>userdel [选项] 用户</code></p>
+<p>仅仅删除用户,不删除家目录：<code>userdel  用户</code></p>
+<p>删除用户以及家目录：<code>userdel -r  用户</code></p>
+<p><strong>实际操作：</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124194223.png">  </p>
+<hr>
+<h3 id="③-查询信息"><a href="#③-查询信息" class="headerlink" title="③ 查询信息"></a>③ 查询信息</h3><p>查询用户信息：<code>id  用户名</code>        <strong>#</strong> 当该用户不存在时，会返回”无此用户”</p>
+<p>查询当前用户：<code>whoami</code>  或  <code>who am i</code>      <strong>#</strong> 返回当前用户名</p>
+<p><strong>实操演示：</strong></p>
+<p>​    <strong>查询用户信息：</strong></p>
+<p>​        uid：用户id       gid：组id      组=0：指的是root的组</p>
+<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124195527.png">  </p>
+<p>​    <strong>查询当前用户：</strong></p>
+<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124201124.png"></p>
+<hr>
+<h3 id="④-切换用户"><a href="#④-切换用户" class="headerlink" title="④ 切换用户"></a>④ 切换用户</h3><p>切换用户：<code>su -  切换用户名</code></p>
+<p>需要返回到原来连接用户：<code>exit </code>     # 原本从高权限用户切换低权限用户，想要再回到高权限用户时使用</p>
+<p><strong>注意：</strong>① 高权限切换到低权限用户时不需要输入密码     ② 低权限切换到高权限用户需要输入密码</p>
+<p><strong>实例演示：</strong></p>
+<p>​    高权限-&gt;低权限以及低权限-&gt;高权限演示：</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200245.png">  </p>
+<p>​    使用exit切换到原来用户：</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201124200417.png">  </p>
+<hr>
+<h2 id="3、用户组管理"><a href="#3、用户组管理" class="headerlink" title="3、用户组管理"></a>3、用户组管理</h2><blockquote>
+<p>类似于角色，系统可以对有共性的多个用户进行统一的管理</p>
+</blockquote>
+<p>添加组：<code>groupadd  用户组名</code></p>
+<p>删除组：<code>groupdel  用户组名</code></p>
+<p><strong>与用户组相关联的操作：</strong> </p>
+<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
+<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
+<p><strong>实际操作演示:</strong>   </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201126105804.png">    </p>
+<hr>
+<h1 id="本章Linux命令汇总"><a href="#本章Linux命令汇总" class="headerlink" title="本章Linux命令汇总"></a>本章Linux命令汇总</h1><p><code>setup</code>             <strong>#</strong> 打开文本模式设置工具</p>
+<p><code>touch 文件</code>     <strong>#</strong> 创建文件</p>
+<p><code>ifconfig</code>        <strong>#</strong> 可以查看其中的ip地址信息等</p>
+<p><code>clear </code>              <strong>#</strong> 清理控制台</p>
+<p><code>pwd</code>                  <strong>#</strong> 展示当前目录</p>
+<p><strong>vim三种模式：</strong>  </p>
+<p><code>vim 文件名</code>(终端进入①)    </p>
+<p>① 正常模式：<code>yy</code>(拷贝)   <code>dd</code>(删除)    <code>gg</code>(到顶部)   <code>G</code>(到末尾)    <code>u</code>(撤销上一步动作)  <code>数字 shift+g</code>(到达指定行)</p>
+<p>​    <strong>切换操作</strong>：①按下i，进入②       ②③按下Esc，回到①     ①按下:进入③     </p>
+<p>② 编辑模式：</p>
+<p>③ 命令行模式：<code>:wq</code>(保存退出)  <code>:q</code>(不作修改，仅查看后退出)     <code>:q!</code>(作修改，不保存退出)</p>
+<pre><code>             `/关键词`(查询关键词)     ` :set nu`(设置行号)     `:set nonu`(取消行号)</code></pre>
+<p><strong>关机：</strong>  </p>
+<p>​    <code>shutdown -h now</code>：立即关机     <code>shutdown -h 1</code>：1分钟后关机    </p>
+<p>   ​ <code>halt</code>：立即关机，与shutdown -h now等价</p>
+<p><strong>重启：</strong>  </p>
+<p>​    <code>shutdown -r now</code>：立即重启</p>
+<p>​    <code>reboot</code>：重启系统</p>
+<p><code>syn</code>：把内存的数据同步到磁盘中</p>
+<p><code>logout</code>：注销用户</p>
+<p><strong>用户管理：</strong></p>
+<p>​    创建用户：     <code>useradd 用户名</code>(创建用户及家目录)       <code>useradd -d  /user/家目录  用户名</code>(创建用户及指定家目录)</p>
+<p>​    修改用户密码：  <code>passwd  用户名</code>(之后修改密码即可)</p>
+<p>​    删除用户 :     ：<code>userdel 用户名 </code>(只删除该用户)   <code>userdel -r 用户名</code>(删除该用户及组)</p>
+<p>​    查询用户：      <code>id  用户名</code>(获取其用户id及组id)    <code>whoami</code>(查询当前用户)</p>
+<p>​    切换用户：      <code>su  -  用户名</code>      <code>exit</code>(切换到原来连接用户) </p>
+<p><strong>用户组管理：</strong></p>
+<p>​    添加组：<code>groupadd  用户组名</code></p>
+<p>​    删除组：<code>groupdel  用户组名</code></p>
+<p><strong>与用户组相关联的操作：</strong> </p>
+<p>​    添加用户到用户组：<code>useradd -g 用户组名 用户名</code></p>
+<p>​    修改用户到用户组：<code>usermod -g 用户组名 用户名</code></p>
+<p>参考视频：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<hr>
+<p>​                                                <strong>整理者：长路   时间：2020/11/23-2020/11/24</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>changlu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/" title="Linux的相关工具及操作">https://changlujava.gitee.io/child/2020/11/26/02、Linux的相关工具及操作/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/" rel="tag"><i class="fa fa-tag"></i> Linux相关工具</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/24/01%E3%80%81Linux%E5%85%A5%E9%97%A8%E5%8F%8A%E5%9F%BA%E7%A1%80/" rel="prev" title="Linux入门及基础">
+      <i class="fa fa-chevron-left"></i> Linux入门及基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/27/03%E3%80%81Linux%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4/" rel="next" title="Linux实用指令">
+      Linux实用指令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">changlu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">38k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">34 分钟</span>
+</div>
+  <!--
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+  <br/>
+  -->
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://changlujava.gitee.io/child/2020/11/26/02%E3%80%81Linux%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%93%8D%E4%BD%9C/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"RKq07e1mB9ImJNBK1sNX36Qm-gzGzoHsz","appKey":"p9Q0YXonqjlX0h4L2syIP0Tu","placeholder":"ヾﾉ≧∀≦)o快来，快来！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+  <!-- 添加背景特效 -->
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 添加点击特效 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

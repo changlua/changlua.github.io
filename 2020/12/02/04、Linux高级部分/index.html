@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto+Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"changlujava.gitee.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":true,"sidebar":{"position":"left","width":240,"display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="一、组管理与权限管理学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   1、组管理基本介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04、Linux高级部分">
+<meta property="og:url" content="https://changlujava.gitee.io/child/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/index.html">
+<meta property="og:site_name" content="Changlu&#39;s Blog">
+<meta property="og:description" content="一、组管理与权限管理学习视频：尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)   1、组管理基本介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127180553.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127182917.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183334.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183532.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127193049.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127192911.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128094420.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128095055.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128095354.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128100849.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128101114.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128114422.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128110924.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128114516.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128111520.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128111706.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128112740.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128113537.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128142934.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128144615.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128145552.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128145706.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128150715.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128151012.png">
+<meta property="og:image" content="c:/Users/93997/AppData/Local/Temp/1606547665929.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128155858.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128160314.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128163249.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128163728.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128165345.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128165452.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128205227.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128205725.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128211510.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128212522.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129093449.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129104036.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105223.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105824.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105457.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105950.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129110502.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129112654.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129112912.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129143727.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129113917.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129114520.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129153327.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129154719.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129155136.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129155808.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129163740.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164128.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164423.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164715.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129165351.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129170023.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129170213.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129230739.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129231326.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129231525.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232239.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232416.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232604.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233034.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233657.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233807.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129234533.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000448.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129235310.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129235741.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000030.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000255.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000342.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130092708.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130091822.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130093408.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130093425.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130103918.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104436.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104606.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104606.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104942.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130105513.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130110319.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111623.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111813.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113133.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113321.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113521.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130143609.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130144251.png">
+<meta property="og:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130144605.png">
+<meta property="article:published_time" content="2020-12-02T12:54:06.000Z">
+<meta property="article:modified_time" content="2020-12-02T12:54:06.000Z">
+<meta property="article:author" content="changlu">
+<meta property="article:tag" content="Linux高级部分">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127180553.png">
+
+<link rel="canonical" href="https://changlujava.gitee.io/child/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>04、Linux高级部分 | Changlu's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d799723b49054783f9671bcbc95d020";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Changlu's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <!-- fork me on github右上角设置 -->
+    <a target="_blank" rel="noopener" href="https://github.com/changlua/changlua.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Changlu's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%BB%84%E7%AE%A1%E7%90%86%E4%B8%8E%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-text">一、组管理与权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%BB%84%E7%AE%A1%E7%90%86%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、组管理基本介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E3%80%81%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E6%96%87%E6%A1%A3"><span class="nav-text">1.1、查看目录文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E3%80%81%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85"><span class="nav-text">1.2、文件所有者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E3%80%81%E4%BF%AE%E6%94%B9%E6%96%87%E6%A1%A3%E6%89%80%E6%9C%89%E8%80%85%E5%8F%8A%E6%89%80%E5%9C%A8%E7%BB%84"><span class="nav-text">1.3、修改文档所有者及所在组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4%E3%80%81%E5%85%B6%E4%BB%96%E7%BB%84"><span class="nav-text">1.4、其他组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-text">2、权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E3%80%81%E6%9D%83%E9%99%90%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.1、权限基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E3%80%81rwx%E6%9D%83%E9%99%90%E8%AF%A6%E8%A7%A3"><span class="nav-text">2.2、rwx权限详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rwx-%E4%BD%9C%E7%94%A8%E5%88%B0%E6%96%87%E4%BB%B6"><span class="nav-text">rwx 作用到文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rwx-%E4%BD%9C%E7%94%A8%E5%88%B0%E7%9B%AE%E5%BD%95"><span class="nav-text">rwx 作用到目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E3%80%81chmod%E6%8C%87%E4%BB%A4-%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="nav-text">2.3、chmod指令(修改权限)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A-%E3%80%81-%E3%80%81-%E5%8F%98%E6%9B%B4%E6%9D%83%E9%99%90"><span class="nav-text">方式一：+、-、&#x3D;变更权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%95%B0%E5%AD%97%E5%8F%98%E6%9B%B4%E6%9D%83%E9%99%90"><span class="nav-text">方式二：使用数字变更权限</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E3%80%81chown%E6%8C%87%E4%BB%A4-%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85"><span class="nav-text">2.3、chown指令(修改文件所有者)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E3%80%81chgrp%E6%8C%87%E4%BB%A4-%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E7%BB%84"><span class="nav-text">2.4、chgrp指令(修改文件所在组)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E6%A1%88%E4%BE%8B"><span class="nav-text">综合案例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81crond-%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6"><span class="nav-text">二、crond 任务调度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="nav-text">原理示意图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B-%E9%85%8D%E5%90%88%E5%91%BD%E4%BB%A4"><span class="nav-text">快速入门案例(配合命令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B-%E9%85%8D%E5%90%88%E8%84%9A%E6%9C%AC"><span class="nav-text">应用案例(配合脚本)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E3%80%81%E6%8C%82%E8%BD%BD"><span class="nav-text">三、Linux磁盘分区、挂载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">分区基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81Linux%E5%88%86%E5%8C%BA"><span class="nav-text">1、Linux分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E3%80%81%E5%8E%9F%E7%90%86%E4%BB%8B%E7%BB%8D"><span class="nav-text">1.1、原理介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E3%80%81%E7%A1%AC%E7%9B%98%E8%AF%B4%E6%98%8E"><span class="nav-text">1.2、硬盘说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%A1%AC%E7%9B%98-%E5%88%86%E5%8C%BA%E6%8C%82%E8%BD%BD"><span class="nav-text">2、如何添加一个硬盘(分区挂载)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E7%A3%81%E7%9B%98%E6%83%85%E5%86%B5%E6%9F%A5%E8%AF%A2"><span class="nav-text">3、磁盘情况查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#df-%E6%9F%A5%E8%AF%A2%E7%B3%BB%E7%BB%9F%E6%95%B4%E4%BD%93%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="nav-text">df(查询系统整体磁盘使用情况)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du-%E6%9F%A5%E8%AF%A2%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5"><span class="nav-text">du(查询指定目录的磁盘占用情况)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E6%83%85%E5%86%B5-%E5%B7%A5%E4%BD%9C%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-text">磁盘情况-工作实用指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-text">四、网络配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86%E5%9B%BE-%E5%90%AB%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-text">Linux 网络配置原理图(含虚拟机)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9CIP%E4%B8%8E%E7%BD%91%E5%85%B3"><span class="nav-text">1、查看网络IP与网关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%B8%8E%E4%BF%AE%E6%94%B9%E7%BD%91%E7%BB%9CIP"><span class="nav-text">查看与修改网络IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%BD%91%E5%85%B3"><span class="nav-text">查看网关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8Bwindows-%E7%8E%AF%E5%A2%83%E7%9A%84%E4%B8%ADVMnet8-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-text">查看windows 环境的中VMnet8 网络配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">2、网络环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%9A%E8%87%AA%E5%8A%A8%E8%8E%B7%E5%8F%96"><span class="nav-text">第一种方法：自动获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E6%96%B9%E5%BC%8F%EF%BC%9A-%E6%8C%87%E5%AE%9A%E5%9B%BA%E5%AE%9Aip%EF%BC%8C%E5%BB%BA%E8%AE%AE"><span class="nav-text">第二种方式：(指定固定ip，建议)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifcfg-eth0%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-text">ifcfg-eth0配置信息</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">五、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81ps%E6%8C%87%E4%BB%A4-%E6%98%BE%E7%A4%BA%E7%B3%BB%E7%BB%9F%E6%89%A7%E8%A1%8C%E8%BF%9B%E7%A8%8B"><span class="nav-text">1、ps指令(显示系统执行进程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D-1"><span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-text">如何查看指定进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%88%B6%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-text">如何查看进程的父进程？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81kill%E3%80%81killall%E6%8C%87%E4%BB%A4-%E7%BB%88%E6%AD%A2%E8%BF%9B%E7%A8%8B"><span class="nav-text">2、kill、killall指令(终止进程)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E6%BC%94%E7%A4%BA"><span class="nav-text">案例演示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81pstree%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E6%A0%91"><span class="nav-text">3、pstree指令(查看进程树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%9C%8D%E5%8A%A1"><span class="nav-text">4、服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="nav-text">服务介绍及原理图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service%E7%AE%A1%E7%90%86%E6%8C%87%E4%BB%A4"><span class="nav-text">service管理指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows%E6%B5%8B%E8%AF%95telnet"><span class="nav-text">windows测试telnet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%90%8D-%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">查看服务名(两种方式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="nav-text">服务的运行级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chkconfig%E6%8C%87%E4%BB%A4-%E8%AE%BE%E7%BD%AE%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E6%9C%8D%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="nav-text">chkconfig指令(设置运行级别服务状态)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%8A%A8%E6%80%81%E7%9B%91%E6%8E%A7%E8%BF%9B%E7%A8%8B"><span class="nav-text">5、动态监控进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#top%E6%8C%87%E4%BB%A4-%E5%8A%A8%E6%80%81%E7%9B%91%E6%8E%A7"><span class="nav-text">top指令(动态监控)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#netstat%E6%8C%87%E4%BB%A4-%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%BB%9C%E6%83%85%E5%86%B5"><span class="nav-text">netstat指令(查看系统网络情况)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81RPM%E4%B8%8EYUM"><span class="nav-text">六、RPM与YUM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81RPM"><span class="nav-text">1、RPM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rom%E6%8C%87%E4%BB%A4-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-text">rom指令(基本介绍)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85rpm%E5%8C%85"><span class="nav-text">卸载与安装rpm包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81YUM"><span class="nav-text">2、YUM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D-2"><span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-text">应用案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS6-8%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8Cyum%E6%BA%90"><span class="nav-text">CentOS6.8配置阿里yum源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0Linux%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="nav-text">本章Linux命令汇总</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a href="/about">
+    <img class="site-author-image" itemprop="image" alt="changlu"
+      src="/images/avator_image.jpg">
+  <p class="site-author-name" itemprop="name">changlu</p>
+  <div class="site-description" itemprop="description">欢迎来到长路的个人博客！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVh" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;changlua"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cDovL3dwYS5xcS5jb20vbXNncmQ/dj0zJnVpbj05Mzk5NzQ4ODMmc2l0ZT1xcSZtZW51PXllcw==" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;939974883&amp;site&#x3D;qq&amp;menu&#x3D;yes"><i class="fab fa-qq fa-fw"></i>QQ</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NsOTM5OTc0ODgz" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;cl939974883">CSDN</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGc=" title="https:&#x2F;&#x2F;www.yuque.com&#x2F;changlu-xs5pg">语雀</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vY2hhbmdsdUphdmE=" title="https:&#x2F;&#x2F;gitee.com&#x2F;changluJava">Gitee</span>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+
+      <!--网易云插件-->
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 
+        src="////music.163.com/outchain/player?type=2&id=757911&auto=1&height=66">
+      </iframe>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NoYW5nbHVhL2NoYW5nbHVhLmdpdGh1Yi5pbw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://changlujava.gitee.io/child/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator_image.jpg">
+      <meta itemprop="name" content="changlu">
+      <meta itemprop="description" content="欢迎来到长路的个人博客！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changlu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          04、Linux高级部分
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-02 20:54:06" itemprop="dateCreated datePublished" datetime="2020-12-02T20:54:06+08:00">2020-12-02</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、组管理与权限管理"><a href="#一、组管理与权限管理" class="headerlink" title="一、组管理与权限管理"></a>一、组管理与权限管理</h1><p><strong>学习视频</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTFXNDExVDdqUj9wPTI=">尚硅谷Linux基础教程(大数据、JavaEE、Python开发通用版)<i class="fa fa-external-link-alt"></i></span>  </p>
+<h2 id="1、组管理基本介绍"><a href="#1、组管理基本介绍" class="headerlink" title="1、组管理基本介绍"></a>1、组管理基本介绍</h2><a id="more"></a>
+
+<p>组的管理分为：所有者(即用户)、所在组以及其他组</p>
+<h3 id="1-1、查看目录文档"><a href="#1-1、查看目录文档" class="headerlink" title="1.1、查看目录文档"></a>1.1、查看目录文档</h3><p><strong>查看文件的详细信息：</strong>ls -alh</p>
+<p>其中包含了所有者(即用户)，以及所在组</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127180553.png">  </p>
+<hr>
+<h3 id="1-2、文件所有者"><a href="#1-2、文件所有者" class="headerlink" title="1.2、文件所有者"></a>1.2、文件所有者</h3><p><strong>回顾一下创建用户并指定组，设置用户密码：</strong></p>
+<p>​    ① 首先创建一个组    <code>groupadd person</code></p>
+<p>​    ② 添加用户并指定组   <code>useradd -g person tom</code></p>
+<p>​    ③ 给用户设置密码     <code>passwd tom</code></p>
+<p><strong>那我们怎么刚开始时怎么来设置一个文件的所有者？</strong></p>
+<pre><code> 我们使用登录的用户创建文件时，其文件的所有者就是该用户，之后也可以使用命令来修改。</code></pre>
+<p><strong>案例演示：</strong></p>
+<p>我们通过xh账户中创建一个文件来查看其所有者及组</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127182917.png">  </p>
+<hr>
+<h3 id="1-3、修改文档所有者及所在组"><a href="#1-3、修改文档所有者及所在组" class="headerlink" title="1.3、修改文档所有者及所在组"></a>1.3、修改文档所有者及所在组</h3><p><strong>这里我们新学习两个指令</strong>： </p>
+<p>​    修改文档所有者：   <code>chown 用户名  文档</code></p>
+<p>​    修改文档所在组：   <code>chgrp 组名 文档</code></p>
+<p><strong>回顾命令修改用户所在组：</strong><code>usermod -g  用户组 用户</code></p>
+<p><strong>案例演示：</strong></p>
+<p>​    案例1：我们来修改/home/xh目录1.txt的所有者为root     <code>chown root 1.txt </code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183334.png">  </p>
+<p>​    案例2：我们依旧修改/home/xh目录1.txt的所在组为root  <code>chgrp root 1.txt</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127183532.png">  </p>
+<p><strong>总结：</strong>我们在初始建立用户时就会默认家目录及用户组，之后我们可以在root权限下使用命令来更改对应用户组以及更改文件的所有者及所在组这些都是可以的。</p>
+<hr>
+<h3 id="1-4、其他组"><a href="#1-4、其他组" class="headerlink" title="1.4、其他组"></a>1.4、其他组</h3><p>除文件的所有者和所在组的用户外，系统的其它用户都是文件的其它组.</p>
+<hr>
+<h2 id="2、权限管理"><a href="#2、权限管理" class="headerlink" title="2、权限管理"></a>2、权限管理</h2><h3 id="2-1、权限基本介绍"><a href="#2-1、权限基本介绍" class="headerlink" title="2.1、权限基本介绍"></a>2.1、权限基本介绍</h3><p>输入指令：<code>ls -alh</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127193049.png">  </p>
+<p>我们根据红框来进行详解：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201127192911.png">  </p>
+<p><strong>注意</strong>：对应6这个位置，如果是文本文件的话，其中内容还应加上一个字符，也就是说如果内容为”hello”，那么统计字符为6；如果是统计文件目录的话，应当把其目录下的两个隐藏文件也要算到里面，分别为.(当前目录)以及..(上级目录)</p>
+<hr>
+<h3 id="2-2、rwx权限详解"><a href="#2-2、rwx权限详解" class="headerlink" title="2.2、rwx权限详解"></a>2.2、rwx权限详解</h3><h4 id="rwx-作用到文件"><a href="#rwx-作用到文件" class="headerlink" title="rwx 作用到文件"></a>rwx 作用到文件</h4><ol>
+<li><p>[ r ]代表可读(read):  可以读取,查看</p>
+</li>
+<li><p>[ w ]代表可写(write): 可以修改,但是不代表可以删除该文件,删除一个文件的前提条件是<u>对该文件所在的目录有写权限，才能删除该文件</u>.</p>
+</li>
+<li><p>[ x ]代表可执行(execute):可以被执行</p>
+</li>
+</ol>
+<h4 id="rwx-作用到目录"><a href="#rwx-作用到目录" class="headerlink" title="rwx 作用到目录"></a>rwx 作用到目录</h4><ol>
+<li><p>[ r ]代表可读(read):  可以读取，ls 查看目录内容</p>
+</li>
+<li><p>[ w ]代表可写(write):  可以修改,目录内创建+删除+重命名目录</p>
+</li>
+<li><p>[ x ]代表可执行(execute):可以进入该目录</p>
+</li>
+</ol>
+<p><strong>总结</strong>：针对于一个文件，不是说所在组或其他组有了w权限就能够删除了(有w是可以修改)，其上层目录必须也要有写的权限，这个文件才能够删除！！！</p>
+<p><strong>不同权限的使用介绍</strong>：</p>
+<p>​     1）在可执行的权限下可以进入该目录，但是无法读取该目录中的内容；</p>
+<p>​     2）在可读可执行的权限下可以进入该目录，也可以读取该目录中的内容，但是不能在该目录中创建文件；</p>
+<p>​     3）在可写可执行的权限下，可以在目录中创建文件但是不能读取，在可读可写可执行的情况下可以在该目录中创建文件并且可以读取。</p>
+<hr>
+<h3 id="2-3、chmod指令-修改权限"><a href="#2-3、chmod指令-修改权限" class="headerlink" title="2.3、chmod指令(修改权限)"></a>2.3、chmod指令(修改权限)</h3><p><strong>语法</strong>：<code>chmod 修改权限 文件目录</code>     可以修改文件或者目录的权限</p>
+<h4 id="方式一：-、-、-变更权限"><a href="#方式一：-、-、-变更权限" class="headerlink" title="方式一：+、-、=变更权限"></a>方式一：+、-、=变更权限</h4><p><strong>不同含义</strong>：<u>u:所有者    g:所有组      o:其他人    a:所有人</u>(u、g、o 的总和)，</p>
+<p>就是下面9个字符分别指代u、g、o</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128094420.png">  </p>
+<p><strong>修改方式如下：</strong></p>
+<p>​    1) chmod    u=rwx,g=rx,o=x    文件目录名</p>
+<p>​    2) chmod    o+w    文件目录名</p>
+<p>​    3) chmod    a-x    文件目录名</p>
+<p><strong>案例演示</strong>：</p>
+<p>​    案例1：给 abc 文件的所有者读写执行的权限，给所在组读执行权限，给其它组读执行权限。</p>
+<p>​    <code>chmod u=rwx,g=rx,o=rx abc</code></p>
+<p>​        <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128095055.png">  </p>
+<p>​    案例2：给 abc文件的所有者除去执行的权限，增加组写的权限。</p>
+<p>​    <code>chmod u-x,g+w abc</code></p>
+<p>​       <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128095354.png"></p>
+<p>​    案例3：给 abc 文件的所有用户添加读的权限      <code>chmod a+r abc</code>     # 使用a表示所有用户</p>
+<hr>
+<h4 id="方式二：使用数字变更权限"><a href="#方式二：使用数字变更权限" class="headerlink" title="方式二：使用数字变更权限"></a>方式二：使用数字变更权限</h4><p><strong>规则</strong>：r=4 w=2 x=1      那么：rwx=4+2+1=7，rw=6，rx=5，wx=3</p>
+<p>我们只需要设置对应的数字即可代表对应权限，例如<code>chmod u=rwx,g=rx,o=x 文件名</code> =》 <code>chmod 751 文件名</code></p>
+<p><strong>案例演示</strong>：</p>
+<p>​    案例1：将 /home/abc.txt 文件的权限修改成    rwxr-xr-x, 使用给数字的方式实现  </p>
+<p>​    <code>chmod 755 /home/abc.txt</code></p>
+<p>​    </p>
+<hr>
+<h3 id="2-3、chown指令-修改文件所有者"><a href="#2-3、chown指令-修改文件所有者" class="headerlink" title="2.3、chown指令(修改文件所有者)"></a>2.3、chown指令(修改文件所有者)</h3><p><strong>语法介绍</strong>：</p>
+<p>​    <code>chown [选项] newowner file</code>        改变文件的所有者</p>
+<p>​    <code>chown [选项] newowner:newgroup file</code>    改变文件的所有者和所有组</p>
+<p><strong>选项</strong>：</p>
+<p>​    -R    如果是目录，则使其下所有子文件或目录递归生效</p>
+<p><strong>案例演示</strong>：</p>
+<p>​    案例1：请将 /home/abc .txt 文件的所有者修改成 xh     <code>chown xh /home/abc.txt</code></p>
+<p>​    案例2：请将 /home/kkk 目录下所有的文件和目录的所有者都修改成 xh      <code>chown -R xh /home/kkk</code></p>
+<p>​       <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128100849.png">  </p>
+<p>​    案例3：将/home/kkk 目录下所有文件及目录的所有者、所有组为 xh、xh     <code>chown -R xh:xh /home/kkk</code>      </p>
+<p>​       <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128101114.png"></p>
+<hr>
+<h3 id="2-4、chgrp指令-修改文件所在组"><a href="#2-4、chgrp指令-修改文件所在组" class="headerlink" title="2.4、chgrp指令(修改文件所在组)"></a>2.4、chgrp指令(修改文件所在组)</h3><p><strong>语法</strong>：<code>chgrp [选项] newgroup file 改变文件的所有组</code></p>
+<p><strong>选项：</strong></p>
+<p>​    -R：如果是目录，则使其下所有子文件或目录递归生效</p>
+<p><strong>案例演示</strong>：</p>
+<p>​    案例1：请将 /home/abc .txt 文件的所在组修改成 bandit (土匪)      <code>chgrp bandit /home/abc.txt</code></p>
+<p>​    案例2：请将 /home/kkk 目录下所有的文件和目录的所在组都修改成 bandit(土匪)    </p>
+<p>​    <code>chgrp -R bandit /home/kkk</code></p>
+<hr>
+<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><p><strong>题目描述</strong>：</p>
+<p>组别：police，bandit </p>
+<p>jack, jerry: 警察</p>
+<p>xh, xq: 土匪</p>
+<p>(1) 创建组</p>
+<p>(2) 创建用户</p>
+<p>(3) jack 创建一个文件，自己可以读写，本组人可以读，其它组没人任何权限</p>
+<p>(4) jack 修改该文件，让其它组人可以读,  本组人可以读写</p>
+<p>(5) xh 投靠 警察，看看是否可以读写jack创建的文件. </p>
+<p><strong>过程描述</strong>：</p>
+<p>(1)   <code>groupadd police </code>      <code>groupadd bandit </code>     # 创建两个组</p>
+<p>(2)    <code>useradd -g police jack</code>   <code>useradd -g police jerry</code>     # 给jack、jerry指定police警察组</p>
+<p>​    <code>useradd -g bandit xh</code>   <code>useradd -g bandit xq</code>       # 给xh、xq指定bandit土匪组</p>
+<p>​    <code>passwd jack</code>    <code>passwd jerry</code>    <code>passwd xh</code>   <code>passwd xq</code>      # 设置密码</p>
+<p>(3)  登陆到jack用户，<code>pwd</code>  查看当前目录，接着<code>vim jack.txt</code>，编辑文本信息</p>
+<p>接着设置该文件的权限   <code>chmod 640 jack.txt</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128114422.png">  </p>
+<p>(4)  根据要求来添加权限信息</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128110924.png">  </p>
+<p>(5) 首先我们使用<strong>root用户</strong>来修改xh的所属组   <code>usermod -g police xh</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128114516.png">  </p>
+<p>接着我们使用<strong>xh用户</strong>登陆，来尝试进入到jack的目录，显示权限不够</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128111520.png">  </p>
+<p>我们去<strong>root用户</strong>下查看一下jack目录的权限信息，能够看到所在组没有权限：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128111706.png">  </p>
+<p>我们回想一下：jack是police组的，我们之前也是将xh指定为police组，那么我们为了使组员能够进入到jack文件，并最终能够修改jack.txt，我们<strong>root用户</strong>下设置该文件所有组的权限为rx：<code>chmod g=rx jack</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128112740.png">  </p>
+<p>小细节：设置完权限之后我们<strong>重新登录xh用户账号</strong>，<code>vim jack.txt</code> </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128113537.png">  </p>
+<p><strong>总结</strong>：① 我们在使用用户来进入到其他用户的家目录或其他目录，若没有设置权限，应到root用户下去进行修改操作对应权限，一定要小心注意,修改对应权限后，其他用户应该重新登录来访问。</p>
+<p>② 每个的前面9个字符分别对应<u>所有者权限、所在组权限(一般针对于同组其他人)、其他组(除了本组的其他组)</u></p>
+<hr>
+<h1 id="二、crond-任务调度"><a href="#二、crond-任务调度" class="headerlink" title="二、crond 任务调度"></a>二、crond 任务调度</h1><h2 id="原理示意图"><a href="#原理示意图" class="headerlink" title="原理示意图"></a>原理示意图</h2><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128142934.png" width="70%">  
+
+<p>contrab命令来进行定时任务的设置</p>
+<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>任务调度：是指系统在某个时间执行的特定的命令或程序。</p>
+<p>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等</p>
+<p>2.个别用户工作：个别用户可能希望执行某些程序，比如对 mysql 数据库的备份。</p>
+</blockquote>
+<p><strong>语法</strong>：<code>crontab [选项]</code>       </p>
+<p><strong>选项</strong>：</p>
+<p>​    -e：编辑crontab定时任务</p>
+<p>​    -l：查询contab任务</p>
+<p>​    -r：删除当前用户所有的crontab任务</p>
+<p><code>service crond restart</code>    [重启任务调度]</p>
+<p><strong>编写调度任务的语法</strong>：<code>* * * * * 对应执行的任务命令</code></p>
+<p>任务调度文件是在/etc/crontab文件中，我们进行查看一下：<code>more /etc/crontab</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128144615.png">  </p>
+<p><strong>5个占位符说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">项目</th>
+<th align="center">含义</th>
+<th align="center">范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">第一个’*’</td>
+<td align="center">一小时当中的第几分钟</td>
+<td align="center">0-59</td>
+</tr>
+<tr>
+<td align="center">第二个’*’</td>
+<td align="center">一天当中的第几小时</td>
+<td align="center">0-23</td>
+</tr>
+<tr>
+<td align="center">第三个’*’</td>
+<td align="center">一个月当中的第几天</td>
+<td align="center">1-31</td>
+</tr>
+<tr>
+<td align="center">第四个’*’</td>
+<td align="center">一年当中的第几月</td>
+<td align="center">1-12</td>
+</tr>
+<tr>
+<td align="center">第五个’*’</td>
+<td align="center">一周当中的星期几</td>
+<td align="center">0-7(0和7代表星期日)</td>
+</tr>
+</tbody></table>
+<p>五个部分可以使用的<strong>特殊符号</strong>说明：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128145552.png" width="80%">    
+
+
+
+<hr>
+<h2 id="快速入门案例-配合命令"><a href="#快速入门案例-配合命令" class="headerlink" title="快速入门案例(配合命令)"></a>快速入门案例(配合命令)</h2><p><strong>定时任务案例介绍</strong>：  </p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128145706.png" width="75%">    
+
+
+
+<p><strong>实际案例</strong></p>
+<p><strong>案例1</strong>：设置任务调度为：将/etc/目录下文件内容输入到/tmp/to.txt中，每分钟执行一次。</p>
+<p><strong>实现过程</strong>：</p>
+<p>​    首先我们来编辑crontab定时任务：   <code>crontab -e</code></p>
+<p>​    接着编辑     <code>*/1 * * * * ls -l /etc/ &gt;&gt; /home/ok.txt</code>,保存退出  (<strong>含义</strong>：每一分钟将/etc目录内容添加    到/home/ok.txt中)，保存即开始执行任务</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128150715.png">      </p>
+<p>​    我们等待1分钟，来查看一下/home/ok.txt文档，发现执行任务成功</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128151012.png">  </p>
+<p><strong>案例2</strong>：查看当前任务调度以及删除当前的任务</p>
+<p><code>crontab l</code>    # 查看当前crontab的定时任务     <code>crontab -r</code>   # 删除当前的crontab任务</p>
+<p><img data-src="C:\Users\93997\AppData\Local\Temp\1606547665929.png" alt="1606547665929">  </p>
+<hr>
+<h2 id="应用案例-配合脚本"><a href="#应用案例-配合脚本" class="headerlink" title="应用案例(配合脚本)"></a>应用案例(配合脚本)</h2><p><strong>案例 1</strong>：每隔 1 分钟，就将当前的日期信息，追加到 /tmp/mydate 文件中   (脚本)</p>
+<p>​    ① 首先编写脚本/home/mytash1.sh：      <code>vim /home/mytash1.sh</code> ，编辑命令   <code>date &gt;&gt; /tmp/mydate</code></p>
+<p>​    检查该脚本文件是否可执行？若不是可执行，那么设置可执行权限：<code>chmod 744 mytask1.sh</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128155858.png">  </p>
+<p>​    ② 编辑定时任务：     <code>crontab -e</code>    编辑调度时间并指向脚本文件： <code>*/1 * * * * /home/mytash1.sh</code></p>
+<p>​    ③ 保存即开始执行定时任务 ,我们并来查看一下是否成功执行</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128160314.png">  </p>
+<p><strong>案例 2</strong>：每隔 1 分钟， 将当前日期和日历都追加到 /home/mycal 文件中  (脚本)</p>
+<p>我们编写脚本文件/home/mytash1.sh，添加两条命令，<code>date &gt;&gt; /tmp/mycal</code>     <code>cal &gt;&gt; /tmp/mycal</code>，接着设置该脚本的执行权限，依旧来进行任务调度：<code>crontab -e</code>，编辑添加：<code>*/1 * * * * /home/mytash1.sh</code></p>
+<p><strong>案例 3</strong>: 每天凌晨 2:00 将mysql 数据库 testdb，备份到文件中 (非脚本)</p>
+<p>针对一条指令的话，直接使用任务调度，<code>crontab -e</code> ，编辑添加  </p>
+<p><code>0 2 * * * /user/local/mysql/bin/mysqldump -u root -proot testdb &gt; /tmp/mydb.bak</code>，保存退出即可生效</p>
+<hr>
+<h1 id="三、Linux磁盘分区、挂载"><a href="#三、Linux磁盘分区、挂载" class="headerlink" title="三、Linux磁盘分区、挂载"></a>三、Linux磁盘分区、挂载</h1><h2 id="分区基础知识"><a href="#分区基础知识" class="headerlink" title="分区基础知识"></a>分区基础知识</h2><p><strong>分区的方式</strong>：</p>
+<blockquote>
+<p>mbr 分区</p>
+</blockquote>
+<ol>
+<li>最多支持四个主分区</li>
+<li>系统只能安装在主分区</li>
+<li>扩展分区要占一个主分区</li>
+<li>MBR 最大只支持 2TB，但拥有最好的兼容性</li>
+</ol>
+<blockquote>
+<p>gtp 分区</p>
+</blockquote>
+<ol>
+<li>支持无限多个主分区（但操作系统可能限制，比如 windows 下最多 128 个分区）</li>
+<li>最大支持 18EB 的大容量（1EB=1024 PB，1PB=1024 TB  ）</li>
+<li>windows7 64 位以后支持 gtp</li>
+</ol>
+<p><strong>windows下磁盘分区</strong>：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128163249.png" width="80%">  
+
+
+
+<hr>
+<h2 id="1、Linux分区"><a href="#1、Linux分区" class="headerlink" title="1、Linux分区"></a>1、Linux分区</h2><h3 id="1-1、原理介绍"><a href="#1-1、原理介绍" class="headerlink" title="1.1、原理介绍"></a>1.1、原理介绍</h3><blockquote>
+<p>Linux分区原理介绍：</p>
+</blockquote>
+<ol>
+<li><p>Linux 来说无论有几个分区，分给哪一目录使用，它归根结底就只有一个根目录，一个独立且唯一的文件结构 , Linux 中每个分区都是用来组成整个文件系统的一部分。</p>
+</li>
+<li><p>Linux 采用了一种叫“载入”的处理方法，它的整个文件系统中包含了一整套的文件和目录， 且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一个目录下获得。</p>
+</li>
+</ol>
+<p><strong>原理分析图</strong>：</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128163728.png" width="70%">    
+
+
+
+<hr>
+<h3 id="1-2、硬盘说明"><a href="#1-2、硬盘说明" class="headerlink" title="1.2、硬盘说明"></a>1.2、硬盘说明</h3><blockquote>
+<p>硬盘详细介绍：</p>
+</blockquote>
+<ol>
+<li><p>Linux 硬盘分 IDE 硬盘和 SCSI 硬盘，目前基本上是 SCSI 硬盘</p>
+</li>
+<li><p>对于 IDE 硬盘，驱动器标识符为“hdx-”,其中“hd”表明分区所在设备的类型，这里是指 IDE 硬盘了。“x”为盘号（a 为基本盘，b 为基本从属盘，c 为辅助主盘，d 为辅助从属盘）,“-”代表分区， 前四个分区用数字 1 到 4 表示，它们是主分区或扩展分区，从 5 开始就是逻辑分区。例，hda3 表示为第一个IDE 硬盘上的第三个主分区或扩展分区,hdb2 表示为第二个IDE 硬盘上的第二个主分区或扩展分区。</p>
+</li>
+</ol>
+<p>3)对于 SCSI 硬盘则标识为“sdx~”，SCSI 硬盘是用“sd”来表示分区所在设备的类型的，其余则和 IDE 硬盘的表示方法一样。</p>
+<p>在本地虚拟机上使用命令查看系统分区及挂载情况：<code>lsblk -f </code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128165345.png">  </p>
+<p>直接使用命令：<code>lsblk</code>，还可以查询到对应硬盘分区大小</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128165452.png">  </p>
+<hr>
+<h2 id="2、如何添加一个硬盘-分区挂载"><a href="#2、如何添加一个硬盘-分区挂载" class="headerlink" title="2、如何添加一个硬盘(分区挂载)"></a>2、如何添加一个硬盘(分区挂载)</h2><p>详细步骤内容请点击右边链接： <span class="exturl" data-url="aHR0cHM6Ly93d3cueXVxdWUuY29tL2NoYW5nbHUteHM1cGcvZ2gxNTRxL2ZtZDdoNw==">增加硬盘(如何挂载)<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>简略总结命令</strong>：</p>
+<p>​    1) 虚拟机添加硬盘</p>
+<p>​    2) 分区   <code>fdisk /dev/sdb</code></p>
+<p>​    3) 格式化  <code>mkfs -t ext4/dev/sdb1</code></p>
+<p>​    4) 挂载   先创建一个 /home/newdisk,  挂载    <code>mount/dev/sdb1 /home/newdisk</code></p>
+<p>​     5) 设置可以自动挂载(永久挂载，当你重启系统，仍然可以挂载到 /home/newdisk) 。</p>
+<p>​    <code>vim /etc/fstab</code></p>
+<p>​    <code>/dev/sdb1 /home/newdisk ext4 defaults 0 0</code></p>
+<hr>
+<h2 id="3、磁盘情况查询"><a href="#3、磁盘情况查询" class="headerlink" title="3、磁盘情况查询"></a>3、磁盘情况查询</h2><h4 id="df-查询系统整体磁盘使用情况"><a href="#df-查询系统整体磁盘使用情况" class="headerlink" title="df(查询系统整体磁盘使用情况)"></a>df(查询系统整体磁盘使用情况)</h4><blockquote>
+<p>df指令介绍：查询系统整体磁盘使用情况</p>
+</blockquote>
+<p><strong>语法</strong>：<code>df [选项]</code></p>
+<p><strong>选项</strong>：</p>
+<p>​    -l：以列表形式展开</p>
+<p>​    -h：进行换算单位展示</p>
+<p><strong>案例</strong>：查询系统磁盘使用情况</p>
+<p>输入命令：<code>df -lh</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128205227.png">  </p>
+<hr>
+<h4 id="du-查询指定目录的磁盘占用情况"><a href="#du-查询指定目录的磁盘占用情况" class="headerlink" title="du(查询指定目录的磁盘占用情况)"></a>du(查询指定目录的磁盘占用情况)</h4><blockquote>
+<p>du介绍：查询指定目录的磁盘占用情况，默认为当前目录</p>
+</blockquote>
+<p><strong>语法</strong>：<code>du  [选项]  /目录</code>      一般选项联合使用：<code>-ach --max-depth=1 </code> </p>
+<p>​    -s：指定目录占用大小汇总</p>
+<p>​    -h：带计量单位</p>
+<p>​    -a：含文件</p>
+<p>​    –max-depth=n：子目录深度</p>
+<p>​    -c：列出明细的同时，增加汇总值</p>
+<p><strong>案例</strong>：查询 /opt 目录的磁盘占用情况，深度为 1     <code>du -ach --max-depth=1 /opt</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128205725.png">   </p>
+<hr>
+<h2 id="磁盘情况-工作实用指令"><a href="#磁盘情况-工作实用指令" class="headerlink" title="磁盘情况-工作实用指令"></a>磁盘情况-工作实用指令</h2><p><strong>案例1</strong>：统计/home 文件夹下<u>文件</u>的个数 </p>
+<p>​     <code>ls -l /home | grep &quot;^-&quot; | wc -l</code>    （/home后使用了管道符号，<code>| grep &quot;^-&quot;</code>使用正则来筛选开头为-表示为文件，<code>| wc -l</code> 测试统计文件的个数）</p>
+<p><strong>案例2</strong>：统计/home 文件夹下<u>目录</u>的个数    </p>
+<p>​    <code>ls -l /home | grep &quot;^d&quot; | wc -l</code>     （要是统计目录的是，那么就筛选开头为d的即可，d表示目录）</p>
+<p><strong>案例3</strong>：统计/home 文件夹下<u>文件</u>的个数，<u>包括子文件夹里的</u></p>
+<p>​    <code>ls -lR /home | grep &quot;^-&quot; | wc -l</code>     (注意这里是<strong>包含所有子文件夹的个数</strong>，那么在ls选项上添加R ，-R表示递归所有目录)</p>
+<p><strong>案例4</strong>：统计文件夹下<u>目录</u>的个数，<u>包括子文件夹里的</u></p>
+<p>​    <code>ls -lR /home | grep &quot;^d&quot; | wc -l</code>    （和上面几乎一样，只是这里查询的是目录，所有更改为”^d”）</p>
+<p><strong>案例5</strong>：以树状显示目录结构</p>
+<p>​    需要使用到    <code>tree</code>指令</p>
+<p>​    若出现以下情况，那就是没有安装tree，我们使用    <code>yum -y install tree</code>   （这里-y是默认yes）</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128211510.png">  </p>
+<p>​    安装完之后使用    <code>tree</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201128212522.png">  </p>
+<hr>
+<h1 id="四、网络配置"><a href="#四、网络配置" class="headerlink" title="四、网络配置"></a>四、网络配置</h1><h2 id="Linux-网络配置原理图-含虚拟机"><a href="#Linux-网络配置原理图-含虚拟机" class="headerlink" title="Linux 网络配置原理图(含虚拟机)"></a>Linux 网络配置原理图(含虚拟机)</h2><blockquote>
+<p>前提描述：我们之前所有点击的system eth0，获取到的ip地址是动态的</p>
+</blockquote>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129093449.png" width="850%">  
+
+
+
+<p><strong>虚拟机时如何实现上网的呢？</strong></p>
+<p>Linux使用：<code>ifconfig</code>  ，windows输入命令：<code>ipconfig</code></p>
+<p>分别获取到其ip地址，windows的虚拟网卡ip地址为192.168.72.1，linux的ip地址为192.168.181.128</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129104036.png">  </p>
+<p>经过试验是能够相互ping通的，Linux系统接着通过主机的真实网卡代理出去经过网关来访问网络。</p>
+<h2 id="1、查看网络IP与网关"><a href="#1、查看网络IP与网关" class="headerlink" title="1、查看网络IP与网关"></a>1、查看网络IP与网关</h2><h3 id="查看与修改网络IP"><a href="#查看与修改网络IP" class="headerlink" title="查看与修改网络IP"></a>查看与修改网络IP</h3><p>我们选择编辑—虚拟网络编辑器</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105223.png">  </p>
+<p>我们点击更改设置，授予权限才能够进行修改等操作</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105824.png" width="70%">  
+
+
+
+<p>我们选择NAT模式，接着就能够查看或修改ip地址了</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105457.png" width="70%">  
+
+
+
+<hr>
+<h3 id="查看网关"><a href="#查看网关" class="headerlink" title="查看网关"></a>查看网关</h3><p>我们和上面一样打开编辑—虚拟网络编辑器，然后选定NAT模式，接着点击NAT设置即可看到对应<strong>网关信息</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129105950.png">  </p>
+<h3 id="查看windows-环境的中VMnet8-网络配置"><a href="#查看windows-环境的中VMnet8-网络配置" class="headerlink" title="查看windows 环境的中VMnet8 网络配置"></a>查看windows 环境的中VMnet8 网络配置</h3><blockquote>
+<p>方式一：直接在cmd中输入命令ipconfig</p>
+</blockquote>
+<blockquote>
+<p>方式二：打开网络共享中心查看</p>
+</blockquote>
+<p>按照下面步骤即可打开查看vmnet8的对应信息</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129110502.png">  </p>
+<hr>
+<h2 id="2、网络环境配置"><a href="#2、网络环境配置" class="headerlink" title="2、网络环境配置"></a>2、网络环境配置</h2><h3 id="第一种方法：自动获取"><a href="#第一种方法：自动获取" class="headerlink" title="第一种方法：自动获取"></a>第一种方法：自动获取</h3><p>我们选择：<strong>系统—首选项—网络连接</strong></p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129112654.png" width="60%">  
+
+
+
+<p>接着我们选择对应网卡，编辑，<strong>勾选自动连接</strong>，点击应用即可</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129112912.png">  </p>
+<p><strong>缺点说明</strong>：linux 启动后会自动获取 IP,缺点是每次自动获取的 ip 地址可能不一样。这个不适用于做服务器，因为我们的服务器的 ip 需要时固定的。</p>
+<hr>
+<h3 id="第二种方式：-指定固定ip，建议"><a href="#第二种方式：-指定固定ip，建议" class="headerlink" title="第二种方式：(指定固定ip，建议)"></a>第二种方式：(指定固定ip，建议)</h3><blockquote>
+<p>我们通过直接修改配置文件来指定ip即可</p>
+</blockquote>
+<p><strong>要求</strong>：将 ip 地址配置为静态的，ip 地址为 192.168.181.128</p>
+<p>①终端输入命令：<code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
+<p>②编辑添加对应内容，保存退出</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129143727.png">    </p>
+<p>注意：需要提前看一下你自己的网关号，再设置对应的ip地址，否则会连接不上网络</p>
+<p>③ 我们重启服务：<code>service network restart</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129113917.png">  </p>
+<p>最后重启<code>reboot</code>，查看是否能够访问网络</p>
+<hr>
+<h4 id="ifcfg-eth0配置信息"><a href="#ifcfg-eth0配置信息" class="headerlink" title="ifcfg-eth0配置信息"></a>ifcfg-eth0配置信息</h4><p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129114520.png">  </p>
+<hr>
+<h1 id="五、进程管理"><a href="#五、进程管理" class="headerlink" title="五、进程管理"></a>五、进程管理</h1><blockquote>
+<p>基本介绍：</p>
+</blockquote>
+<ol>
+<li><p>在 LINUX 中，每个执行的程序（代码）都称为一个进程。每一个进程都分配一个 ID 号。</p>
+</li>
+<li><p>每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如 www 服务器。</p>
+</li>
+<li><p>每个进程都可能以两种方式存在的。前台与后台，所谓前台进程就是用户目前的屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。</p>
+</li>
+<li><p>一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才才结束。</p>
+</li>
+</ol>
+<p><strong>说明：后台也称作为守护进程，我们使用的终端就是前台进程，系统服务都是以后台来进行运行的</strong>。</p>
+<hr>
+<h2 id="1、ps指令-显示系统执行进程"><a href="#1、ps指令-显示系统执行进程" class="headerlink" title="1、ps指令(显示系统执行进程)"></a>1、ps指令(显示系统执行进程)</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><blockquote>
+<p>介绍：查看进行使用的指令是ps ,一般来说使用的参数是 ps -aux</p>
+</blockquote>
+<p><strong>语法</strong>：<code>ps [选项]</code></p>
+<p><strong>选项</strong>：</p>
+<p>​    -a：显示当前终端的所有进程信息</p>
+<p>​    -u：以用户的格式显示进程信息</p>
+<p>​    -x：显示后台进程运行的参数</p>
+<p>​    -e：显示所有进程</p>
+<p>​    -f：全格式</p>
+<p><strong>实际指令演示</strong>：<code>ps -aux | more</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129153327.png">  </p>
+<p><strong>对应显示名称分别含义</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">标识名</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">System V</td>
+<td align="center">展示风格</td>
+</tr>
+<tr>
+<td align="center">USER</td>
+<td align="center">用户名称</td>
+</tr>
+<tr>
+<td align="center">PID</td>
+<td align="center">进程号</td>
+</tr>
+<tr>
+<td align="center">%CPU</td>
+<td align="center">进程占用cpu的百分比</td>
+</tr>
+<tr>
+<td align="center">%MEN</td>
+<td align="center">进程占用物理内存的百分比</td>
+</tr>
+<tr>
+<td align="center">VSZ</td>
+<td align="center">进程占用的虚拟内存大小(单位：KB)</td>
+</tr>
+<tr>
+<td align="center">RSS</td>
+<td align="center">进程占用的物理内存大小(单位：KB)</td>
+</tr>
+<tr>
+<td align="center">TT</td>
+<td align="center">终端名称，缩写</td>
+</tr>
+<tr>
+<td align="center">STAT</td>
+<td align="center">进程状态，S：睡眠，s：表示该进程是会话的先导进程，N：表示进程拥有比普通优先级更低的优先级，R：正在运行，D：短期等待，Z：僵死进程，T：被跟踪或者被停止等等</td>
+</tr>
+<tr>
+<td align="center">STARTED</td>
+<td align="center">进程的启动时间</td>
+</tr>
+<tr>
+<td align="center">TIME</td>
+<td align="center">CPU时间，即进程使用CPU的总时间</td>
+</tr>
+<tr>
+<td align="center">COMMAND</td>
+<td align="center">启动进程所用的命令与参数，如果过长会被截断显示</td>
+</tr>
+</tbody></table>
+<h3 id="如何查看指定进程？"><a href="#如何查看指定进程？" class="headerlink" title="如何查看指定进程？"></a>如何查看指定进程？</h3><p>使用命令查看sshd的进程：<code>ps -aux | grep sshd</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129154719.png">  </p>
+<h3 id="如何查看进程的父进程？"><a href="#如何查看进程的父进程？" class="headerlink" title="如何查看进程的父进程？"></a>如何查看进程的父进程？</h3><blockquote>
+<p>全格式显示当前的所有进程，并查看进程的父进程</p>
+</blockquote>
+<p>使用命令：<code>ps -ef | more</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129155136.png">  </p>
+<p><strong>如果想查看sshd的父进程呢</strong>？那么我们就要进行筛选，使用管道符：<code>ps -ef | grep sshd</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129155808.png">    </p>
+<p><strong>此时我们想问他们的父进程为0的到底是什么</strong>？</p>
+<p>去百度上查一下有这样的解释(仅供参考)：Linux系统中不存在pid为0的进程；我们在写多进程程序时所看到的pid==0，是指父进程自己。 linux下的pid起始数为1 永远是init进程 编程的时候 pid=0 同一个进程组的进程</p>
+<p><strong>查询的参数描述</strong>：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">UID</td>
+<td align="center">用户ID</td>
+</tr>
+<tr>
+<td align="center">PID</td>
+<td align="center">进程ID</td>
+</tr>
+<tr>
+<td align="center">PPID</td>
+<td align="center">父进程ID</td>
+</tr>
+<tr>
+<td align="center">C</td>
+<td align="center">CPU用来计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低；数值越小，表明进程是I/O密集型运算，执行优先级会提高</td>
+</tr>
+<tr>
+<td align="center">STIME</td>
+<td align="center">进程启动的时间</td>
+</tr>
+<tr>
+<td align="center">TTY</td>
+<td align="center">完整的终端名称</td>
+</tr>
+<tr>
+<td align="center">TIME</td>
+<td align="center">CPU时间</td>
+</tr>
+<tr>
+<td align="center">CMD</td>
+<td align="center">启动进程所用的命令和参数</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2、kill、killall指令-终止进程"><a href="#2、kill、killall指令-终止进程" class="headerlink" title="2、kill、killall指令(终止进程)"></a>2、kill、killall指令(终止进程)</h2><blockquote>
+<p>介绍：若是某个进程执行一半需要停止时，或是已消了很大的系统资源时，此时可以考虑停止该进程。使用 kill 命令来完成此项任务。</p>
+</blockquote>
+<p><strong>语法</strong>：<code>kill [选项] 进程号</code>        (通过进程号杀死进程)</p>
+<p>​        <code>killall 进程名称</code>       (通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时很有用)</p>
+<p><strong>选项</strong>：</p>
+<p>​    -9：表示强迫进程立即停止</p>
+<h3 id="案例演示"><a href="#案例演示" class="headerlink" title="案例演示"></a>案例演示</h3><p><strong>案例1：踢掉某个非法登录用户</strong>    </p>
+<p>​    使用一个用户来进行远程登录，我们通过sshd来查找到对应的进程，输入命令：  <code>ps -aux | grep sshd</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129163740.png"> </p>
+<p>​    我们找到对应登录的进程id为3617，我们使用命令杀死它即可：  <code>kill 3617 </code> ,此时我们的连接已断开</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164128.png">    </p>
+<p><strong>案例2：终止远程登录服务 sshd, 在适当时候再次重启 sshd 服务</strong></p>
+<p>​    <strong>场景描述</strong>：我们的服务器需要进行维护，那么我们不希望有人来进行连接，此时可以终止远程登录服务sshd</p>
+<p>​    首先我们输入命令  <code>ps -aux | grep sshd</code>，找到对应的进程id号为2360</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164423.png">  </p>
+<p>​    使用命令     <code>kill 2360</code>，杀死该进程，接下来我们再尝试使用XShell时无法连接</p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129164715.png">  </p>
+<p>​    <strong>注意</strong>：当我们在杀死该进程前就已经登陆了root用户时，依旧会连接在那里，其他用户会自动断开</p>
+<p><strong>案例3：终止多个 gedit  编辑器</strong></p>
+<p>​    场景描述：打开了多个gedit编辑器，想直接关闭所有    <code>killall gedit</code></p>
+<p><strong>案例4：强制杀掉一个终端</strong></p>
+<p>​    场景描述：我们打开两个终端，为了区分，我们相隔一分钟打开，杀死第一个打开的终端</p>
+<p>​    终端名称为bash，那么我们直接使用命令    <code>ps -aux | grep bash</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129165351.png">  </p>
+<p>​    对于终端我们使用普通的kill是无法删除的，我们需要使用    <code>kill -9 3360</code>来进行杀死终端进程</p>
+<p>​    <strong>说明</strong>：我们也可以杀死当前自己使用的进程，只需要知道进程id号即可，这里的话为    <code>kill -9 3706</code></p>
+<hr>
+<h2 id="3、pstree指令-查看进程树"><a href="#3、pstree指令-查看进程树" class="headerlink" title="3、pstree指令(查看进程树)"></a>3、pstree指令(查看进程树)</h2><p><strong>语法</strong>：pstree [选项]       (可以更加直观的来看进程信息)</p>
+<p><strong>选项</strong>：</p>
+<p>​    -p：显示进程的 PID</p>
+<p>​    -u：显示进程的所属用户</p>
+<p><strong>案例1</strong>：使用树状的形式来显示进程的PID    <code>pstree -p</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129170023.png">  </p>
+<p><strong>案例2</strong>：使用树状的形式来显示进程的所有用户   <code>pstree -u</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129170213.png">  </p>
+<hr>
+<h2 id="4、服务"><a href="#4、服务" class="headerlink" title="4、服务"></a>4、服务</h2><h3 id="服务介绍及原理图"><a href="#服务介绍及原理图" class="headerlink" title="服务介绍及原理图"></a>服务介绍及原理图</h3><blockquote>
+<p>服务(service) 本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其它程序的请求，比如(mysql , sshd 防火墙等)，因此我们又称为守护进程，是 Linux 中非常重要的知识点。</p>
+</blockquote>
+<p><strong>原理图</strong>：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129230739.png">  </p>
+<h3 id="service管理指令"><a href="#service管理指令" class="headerlink" title="service管理指令"></a>service管理指令</h3><blockquote>
+<p>在 CentOS7.0 后 不再使用 service ,而是 systemctl</p>
+</blockquote>
+<p><strong>语法</strong>：<code>service 服务名  [start | stop | restart | reload | status]</code></p>
+<p><strong>案例：查看当前防火墙的状况，关闭防火墙和重启防火墙</strong></p>
+<p>防火墙的服务名为：<u>iptables</u>，接着我们来查看一下：<code>service iptables status</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129231326.png">  </p>
+<p>我们使用<code>service iptables stop</code>指令来关闭防火墙，接着使用<code>service iptables start</code>指令开启防火墙</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129231525.png">  </p>
+<hr>
+<h3 id="windows测试telnet"><a href="#windows测试telnet" class="headerlink" title="windows测试telnet"></a>windows测试telnet</h3><p>上面我们查看防火墙的状态是打开的，其端口号是22，那么我们在windows上进行测试连接防火墙端口</p>
+<p>输入命令：<code>telnet 192.168.181.128 22</code>，我们出现错误了。 </p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232239.png">  </p>
+<p><strong>解决方法</strong>：控制面板—程序—启动或关闭windows服务—勾选telnet</p>
+<img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232416.png" width="70%">  
+
+
+
+<p>接着我们继续在cmd中输入命令：<code>telnet 192.168.181.128 22</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129232604.png">  </p>
+<hr>
+<h3 id="查看服务名-两种方式"><a href="#查看服务名-两种方式" class="headerlink" title="查看服务名(两种方式)"></a>查看服务名(两种方式)</h3><blockquote>
+<p>方式一：终端输入setup，选择系统服务，来进行查看</p>
+</blockquote>
+<p>输入<code>setup</code>，选择系统服务，下面就是对应服务内容，我们使用<strong>空格键</strong>来进行选中取消</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233034.png">  </p>
+<blockquote>
+<p>方式二：查看/etc/init.d/服务名称的内容</p>
+</blockquote>
+<p>我们可以使用这个命令查看所有服务：<code>ls -l /etc/init.d/</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233657.png">  </p>
+<p>单独查看防火墙的服务：<code>ls -l /etc/init.d/iptables</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129233807.png">  </p>
+<hr>
+<h3 id="服务的运行级别"><a href="#服务的运行级别" class="headerlink" title="服务的运行级别"></a>服务的运行级别</h3><p>我们使用命令<code>vim /etc/inittab</code>，在末尾查看默认的运行级别</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129234533.png">  </p>
+<p>Linux 系统有 7 种运行级别(runlevel)：常用的是级别 3 和 5</p>
+<table>
+<thead>
+<tr>
+<th>运行级别</th>
+<th>级别描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>运行级别 0</td>
+<td>系统停机状态，系统默认运行级别不能设为 0，否则不能正常启动</td>
+</tr>
+<tr>
+<td>运行级别 1</td>
+<td>单用户工作状态，root 权限，用于系统维护，禁止远程登陆</td>
+</tr>
+<tr>
+<td>运行级别 2</td>
+<td>多用户状态(没有 NFS)，不支持网络</td>
+</tr>
+<tr>
+<td>运行级别 3</td>
+<td>完全的多用户状态(有 NFS)，登陆后进入控制台命令行模式</td>
+</tr>
+<tr>
+<td>运行级别 4</td>
+<td>系统未使用，保留</td>
+</tr>
+<tr>
+<td>运行级别 5</td>
+<td>X11 控制台，登陆后进入图形 GUI 模式</td>
+</tr>
+<tr>
+<td>运行级别 6</td>
+<td>系统正常关闭并重启，默认运行级别不能设为 6，否则不能正常启动</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="chkconfig指令-设置运行级别服务状态"><a href="#chkconfig指令-设置运行级别服务状态" class="headerlink" title="chkconfig指令(设置运行级别服务状态)"></a>chkconfig指令(设置运行级别服务状态)</h3><blockquote>
+<p>介绍：通过chkconfig 命令可以给每个服务的各个运行级别设置自启动/关闭</p>
+</blockquote>
+<p><strong>语法</strong>：1) 查看服务 <code>chkconfig  --list | grep 服务名</code></p>
+<p>​        2) 查看服务    <code>chkconfig 服务名 --list</code></p>
+<p>​        3) 设置不同级别指定服务的状态  <code>chkconfig --level n 服务名 on/off</code></p>
+<p><strong>开机流程介绍</strong>：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000448.png">  </p>
+<p><strong>案例1：查看所有服务</strong>   <code>chkconfig --list</code></p>
+<p>对应每个运行级别都有对应服务是否开启还是关闭的描述说明</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129235310.png">  </p>
+<p><strong>案例2：查看防火墙服务</strong>  <code>chkconfig iptables --list</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201129235741.png">  </p>
+<p><strong>案例3：设置sshd服务在运行级别为5的情况下不要自启动</strong>   <code>chkconfig --level 5 sshd off</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000030.png">  </p>
+<p><strong>案例4：在所有级别下，关闭防火墙</strong>   <code>chkconfig iptables off</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000255.png"> </p>
+<p><strong>案例5：在所有级别下，开启防火墙</strong>   <code>chkconfig iptables on</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130000342.png">  </p>
+<p><strong>注意</strong>：chkconfig 重新设置服务  <code>service 服务名 restart</code>后自启动或关闭，需要重启机器 reboot 才能生效.</p>
+<hr>
+<h2 id="5、动态监控进程"><a href="#5、动态监控进程" class="headerlink" title="5、动态监控进程"></a>5、动态监控进程</h2><h3 id="top指令-动态监控"><a href="#top指令-动态监控" class="headerlink" title="top指令(动态监控)"></a>top指令(动态监控)</h3><blockquote>
+<p>介绍：动态监控使用的是top，top 与 ps 命令很相似。它们都用来显示正在执行的进程。Top 与 ps 最大的不同之处，在于 top 在执行一段时间可以更新正在运行的的进程。</p>
+</blockquote>
+<p><strong>语法</strong>：<code>top [选项]</code></p>
+<p><strong>选项</strong>：</p>
+<p>​    -d 秒数：指定top命令每隔几秒更新，默认是3秒在top命令的交互模式当中可以执行的命令</p>
+<p>​    -i：使top不显示任何闲置或僵死进程</p>
+<p>​    -p：通过指定监控进程ID来仅仅监控某个进程的状态</p>
+<p><strong>我们在进入到动态监控时，可以按下对应键来与其进行交互操作，如下</strong>：</p>
+<p>​    P：以CPU使用率排序，默认就是此项</p>
+<p>​    M：以内存的使用率排序</p>
+<p>​    N：以PID排序</p>
+<p>​    k：杀死输入指定的id进程</p>
+<p>​    q：退出top</p>
+<p>输入<code>top</code>查看下其中的信息：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130092708.png">  </p>
+<p><strong>应用案例</strong>：</p>
+<p>​    <strong>案例 1.监视特定用户</strong>   </p>
+<p>​    按下      <code>top </code> 命令，我们想要监控某个用户，那么输入交互命令<code>u</code>，再输入root即可查看</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130091822.png">  </p>
+<p>​    </p>
+<p>​    <strong>案例2：终止指定的进程</strong></p>
+<p>​    同样在动态监控状态，按下   <code>k</code>，输入对应想要杀死进程的id号即可</p>
+<p>​    </p>
+<p>​    <strong>案例3：指定系统状态更新的时间(每隔 10 秒自动更新， 默认是 3 秒)</strong></p>
+<p>​    若是要设置系统状态更新的时间，那么我们需要在输入top命令时设置，为    <code>top -d 10</code></p>
+<hr>
+<h3 id="netstat指令-查看系统网络情况"><a href="#netstat指令-查看系统网络情况" class="headerlink" title="netstat指令(查看系统网络情况)"></a>netstat指令(查看系统网络情况)</h3><blockquote>
+<p>用户查看网络服务，当我们向想要查看一下系统监控的时候用</p>
+</blockquote>
+<p><strong>语法</strong>：<code>netstat [选项] </code></p>
+<p><strong>选项</strong>：</p>
+<p>​    -an：按一定顺序排列输出</p>
+<p>​    -p：显示哪个进程在调用</p>
+<p><strong>应用案例</strong>：</p>
+<p>​    <strong>案例1：查看系统所有的网络服务</strong>   <code>netstat -anp</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130093408.png">        </p>
+<p>​    <strong>案例2：请查看服务名为 sshd 的服务的信息</strong>   <code>netstat -anp | grep sshd</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130093425.png">   </p>
+<p>​    支持ipv4与ipv6的远程机来连接</p>
+<hr>
+<h1 id="六、RPM与YUM"><a href="#六、RPM与YUM" class="headerlink" title="六、RPM与YUM"></a>六、RPM与YUM</h1><h2 id="1、RPM"><a href="#1、RPM" class="headerlink" title="1、RPM"></a>1、RPM</h2><h3 id="rom指令-基本介绍"><a href="#rom指令-基本介绍" class="headerlink" title="rom指令(基本介绍)"></a>rom指令(基本介绍)</h3><blockquote>
+<p>介绍：RPM是一种用于互联网下载包的打包及安装工具，它包含在某些 Linux 分发版中。</p>
+<p>它生成具有.RPM 扩展名的文件。RPM 是 RedHat Package Manager（RedHat 软件包管理工具）的缩写，类似 windows 的 setup.exe，这一文件格式名称虽然打上了 RedHat 的标志，但理念是通用的。</p>
+<p>Linux 的分发版本都有采用（suse,redhat, centos  等等），可以算是公认的行业标准了。</p>
+</blockquote>
+<p><strong>语法</strong>：rpm [选项]  </p>
+<p><strong>选项</strong>：</p>
+<p>​    -q 软件包名：查看软件包是否安装</p>
+<p>​    -qa：已安装的rpm列表</p>
+<p>​    -qi：查看软件包信息</p>
+<p>​    -ql：查询软件包文件目录信息</p>
+<p>​    -qf：查询文件所属的软件包名</p>
+<p><strong>应用案例</strong>：</p>
+<p>​    <strong>案例1：首先我们查看一下Linux是否安装了firefox</strong>    <code>rpm -qa | grep firefox</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130103918.png">  </p>
+<p>​    <strong>firefox</strong>:软件名       <strong>-45.0.1-1</strong>：版本号      <strong>el6.centos.x86_64</strong>：在适用于centos6.x的系统(如果是 i686、i386 表示 32 位系统，noarch 表示通用)</p>
+<p>​    <strong>案例2：查看火狐软件是否安装</strong>      <code>rpm -q firefox-45.0.1-1.el6.centos.x86_64</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104436.png"></p>
+<p>​    <strong>案例3：查看火狐包的详细信息</strong>   <code>rpm -qi firefox</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104606.png">  </p>
+<p>​    <strong>案例4：查询获取软件包的文件路径信息</strong>     <code>rpm -ql firefox</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104606.png">   </p>
+<p>​    <strong>案例5：查看文件所属的软件包</strong>      <code>rpm -qf 文件路径</code></p>
+<p>​    <img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130104942.png">  </p>
+<hr>
+<h3 id="卸载与安装rpm包"><a href="#卸载与安装rpm包" class="headerlink" title="卸载与安装rpm包"></a>卸载与安装rpm包</h3><p><strong>卸载的语法</strong>：<code>rpm -e RPM包的名称</code>     添加 <code>-nodes</code>参数：强制删除</p>
+<p><strong>安装的语法</strong>：<code>rpm -ivh RPM 包全路径名称</code></p>
+<p>​    <strong>参数说明</strong>：i：install 安装    </p>
+<p>​               v：verbose 提示    </p>
+<p>​               h：hash(进度条) </p>
+<blockquote>
+<p>卸载firefox的软件包</p>
+</blockquote>
+<p>执行命令<code>rpm -e firefox</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130105513.png">  </p>
+<p><strong>需要注意的是</strong>：有些删除情况会出现错误信息，因为其他包依赖于你想要卸载的软件包，那么我们进行强制删除呢？可以添加参数 <code>--nodeps</code> (强制删除)，不过不推荐这么做，因为这样的话依赖于已删除包的软件包会无法运行！！！</p>
+<blockquote>
+<p>安装rpm包</p>
+</blockquote>
+<p><strong>首先我们得先有rpm包，那么到哪里去找呢？</strong>那么我们需要挂载上对应的iso文件，如果没有挂载的按下面步骤进行挂载即可！</p>
+<p><strong>① 通过挂载光驱后，我们可以从对应目录中去找到rpm包</strong></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130110319.png"></p>
+<p><strong>② 进入到挂载目录中的rpm包的管理目录，复制firefox的rpm到/opt目录下</strong></p>
+<p>挂载完之后我们可以看到桌面上有个光盘，说明挂载成功了</p>
+<p>接着我们可以从**/media/Centos_6.8_Final/Packages**中来找到对应的火狐rpm安装包</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111623.png">  </p>
+<p>  我们将该rpm复制到/opt目录下：<code>cp firefox-45.0.1-1.el6.centos.x86_64.rpm /opt/</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130111813.png">  </p>
+<p><strong>③ 安装firefox的rpm包</strong></p>
+<p>在当前/opt目录下进行安装rpm包  <code>rpm -ivh firefox-45.0.1-1.el6.centos.x86_64.rpm</code></p>
+<p><strong>安装完成就是下面的样子</strong>：我们的桌面上也出现了火狐的图标</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113133.png">  </p>
+<p>那么我们<strong>怎么找到对应firefox安装的目录呢</strong>？使用命令 <code>locate firefox | more</code> ，找到安装目录在/etc下</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113321.png">  </p>
+<p>我们去对应目录看一眼 <code>ls -l | grep firefox</code> ，确实是今天安装的firefox</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130113521.png">  </p>
+<p><strong>安装成功！</strong></p>
+<hr>
+<h2 id="2、YUM"><a href="#2、YUM" class="headerlink" title="2、YUM"></a>2、YUM</h2><h3 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h3><blockquote>
+<p>Yum 是一个 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9TaGVsbA==">Shell <i class="fa fa-external-link-alt"></i></span>前端软件包管理器。基于 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9SUE0=">RPM <i class="fa fa-external-link-alt"></i></span>包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。使用 yum 的前提是可以联网。</p>
+</blockquote>
+<p><strong>yum的原理图</strong>：</p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130143609.png">  </p>
+<p><strong>基本语法</strong>：</p>
+<p>① 查询 yum 服务器是否有需要安装的软件：<code>yum list|grep 软件名称</code></p>
+<p>② 安装指定的 yum 包：<code>yum -y install 软件名称</code>     </p>
+<hr>
+<h3 id="应用案例"><a href="#应用案例" class="headerlink" title="应用案例"></a>应用案例</h3><blockquote>
+<p>我们来尝试下载安装firefox</p>
+</blockquote>
+<p>为了测试，我们先将火狐删除 <code>rpm -e firefox</code>  </p>
+<p>查看一下yum源上是否有火狐的安装包 <code>yum list | grep firefox</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130144251.png">  </p>
+<p>接下来我们来进行安装firefox (说明一下，如果安装不了可以更换国内的yum源)  <code>yum -y install firefox</code></p>
+<p><img data-src="https://gitee.com/changluJava/picture-bed/raw/master/mouse/20201130144605.png">  </p>
+<p><strong>等待即可安装成功！</strong></p>
+<hr>
+<h3 id="CentOS6-8配置阿里yum源"><a href="#CentOS6-8配置阿里yum源" class="headerlink" title="CentOS6.8配置阿里yum源"></a>CentOS6.8配置阿里yum源</h3><p><strong>参考文章</strong>：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZGRzdHVkeS9wLzEyNTQ3MTAzLmh0bWw=">CentOS6.8配置阿里yum源<i class="fa fa-external-link-alt"></i></span></p>
+<p>① 进入yum源存放目录，其中默认会带有官方的yum源   <code>cd /etc/yum.repos.d/</code></p>
+<p>② 我们删除官方的yum源，再更换上阿里的源，执行命令  <code>rm -rf *</code></p>
+<p>③ 使用wget工具来下载阿里的源到该目录  <code>wget http://mirrors.aliyun.com/repo/Centos-6.repo</code></p>
+<blockquote>
+<p>说明一下wget是Linux中的一个下载文件的工具，在Linux下开发的开放源代码的软件，后来被移植到包括Windows在内的各个平台上</p>
+</blockquote>
+<p>④ 清空一下yum的缓存  <code>yum clean all</code></p>
+<p>⑤ 查看yum源的列表并自动下载一些相应的元数据存到本地  <code>yum repolist</code></p>
+<p><strong>安装软件的话使用命令</strong>：<code>yum -y install 软件名称</code>    <strong>查看yum源是否有软件</strong>：<code>yum list | grep 软件名称</code></p>
+<p><strong>删除软件</strong>  ：<code>rpm -e 软件名称</code></p>
+<hr>
+<h1 id="本章Linux命令汇总"><a href="#本章Linux命令汇总" class="headerlink" title="本章Linux命令汇总"></a>本章Linux命令汇总</h1><p><strong>组管理</strong>：</p>
+<p>​    查看当前目录下完整信息：<code>ls -alh</code></p>
+<p>​    修改文档或文件权限：   <code>chmod 修改权限 文件目录</code>   # 两种方式变更权限</p>
+<p>​    修改文档或文件所有者:   ：   <code>chown 用户名  文档</code>    <code>chown -R  用户名 文件</code>  <code>chown 所有者：所有组 文档</code></p>
+<p>​    修改文档或文件所在组：   <code>chgrp 组名 文档</code>      <code>chgrp -R 组名 文档</code></p>
+<p><strong>crond任务调度：</strong></p>
+<p>​    <code>crontab -e</code>     <strong>#</strong> 编辑crontab定时任务    <code>crontab -l</code>   # 查看任务     <code>crontab -r</code>  # 删除任务      </p>
+<p>​    <strong>五个占位符</strong>：* * * * *  (分、时、天、月、周)     <strong>特殊符号</strong>：*，-  */n   (任何时刻，不连续，连续，每隔多久)</p>
+<p>​    shell脚本以.sh为结尾，设置shell脚本需要开启执行权限     <code>chmod 744 脚本文件</code>    任务调度为:  <code>* * * * *  /home/shell脚本</code></p>
+<p>​    <code>service crond restart</code>    <strong>#</strong> 重启任务调度</p>
+<p><strong>磁盘分区</strong>：</p>
+<p>​    <code>lsblk -f </code>   <strong>#</strong> 更容易看清系统分区和挂载       <code>lsblk</code>    # 能够查看到对应分区容量    (方便记忆：老师不离开)</p>
+<p><strong>增加一个硬盘</strong>：</p>
+<p>​    1) 虚拟机添加硬盘</p>
+<p>​    2) 分区            <code>fdisk /dev/sdb</code></p>
+<p>​    3) 格式化      <code>mkfs -t ext4/dev/sdb1</code></p>
+<p>​    4) 挂载    先创建一个 /home/newdisk    ,  挂载    <code>mount/dev/sdb1 /home/newdisk</code></p>
+<p>​    5) 设置可以自动挂载(永久挂载，当你重启系统，仍然可以挂载到 /home/newdisk) 。</p>
+<p>​    vim    /etc/fstab</p>
+<p>​    /dev/sdb1    /home/newdisk    ext4    defaults    0 0</p>
+<p><strong>查询系统磁盘使用情况</strong>：<code>df -lh</code></p>
+<p><strong>查询系统整体磁盘使用情况</strong>：    <code>du -ach --max-depth=1 /opt</code></p>
+<p><strong>工作实用指令</strong>：</p>
+<p>​    统计/home 文件夹下    <u>文件</u>的个数：    <code>ls -l /home | grep &quot;^-&quot; | wc -l</code>    </p>
+<p>​    统计/home 文件夹下    <u>目录</u>的个数：   <code>ls -l /home | grep &quot;^d&quot; | wc -l</code>  </p>
+<p>​    统计/home 文件夹下    <u>文件</u>的个数，<u>包括子文件夹里的</u>：  <code>ls -lR /home | grep &quot;^-&quot; | wc -l</code>   </p>
+<p>​    统计文件夹下   <u>目录</u>的个数，<u>包括子文件夹里的</u>：     <code>ls -lR /home | grep &quot;^d&quot; | wc -l</code> </p>
+<p>​    以树状显示目录结构：  首先安装tree：    <code>yum -y install tree</code>     <code>tree</code></p>
+<p><strong>网络配置</strong>：</p>
+<p>​    查看ip地址：windows使用      <code>ipconfig</code>  ，Linux使用   <code>ifconfig</code></p>
+<p>​    修改网络配置文件：  <code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code></p>
+<p>​    重启服务：  <code>service network restart</code></p>
+<p><strong>进程管理</strong>：</p>
+<p>​    查看进程信息：   <code>ps -aux | more</code></p>
+<p>​    查看指定进程：   <code>ps -aux | grep sshd</code></p>
+<p>​    查看父进程：     <code>ps -ef | more</code>     <code>ps -ef | grep sshd</code></p>
+<p>​    指定service状态：  <code>service 服务名  [start | stop | restart | reload | status]</code></p>
+<p>​    重启服务  如sshd ：  <code>service sshd restart</code></p>
+<p>​    查看所有服务：      <code>ls -l /etc/init.d/</code>      查看指定服务：<code>ls -l /etc/init.d/服务名</code></p>
+<p>​    查看服务：  <code>chkconfig  --list | grep 服务名</code></p>
+<p>​    查看服务：  <code>chkconfig 服务名 --list</code></p>
+<p>​    设置不同级别指定服务的状态     <code>chkconfig --level n 服务名 on/off</code>  </p>
+<p>​    设置所有级别服务的状态    <code>chkconfig 服务名 on/off</code></p>
+<p>​    </p>
+<p><strong>动态监控进程</strong>：</p>
+<p>​    <code>top</code>  # 默认3秒   <code>top -d 10</code>  # 10秒动态刷新    P、M、N、K、Q   <strong>#</strong> 动态交互</p>
+<p>​    <code>netstat -anp</code> # 查看所有网络服务   <code>netstat -anp | grep sshd</code>   # 指定查看sshd服务</p>
+<p><strong>RPM</strong>：打包及安装工具，可用于卸载与安装rpm包</p>
+<p>​     <code>rpm -q</code>    参数列表：<code>-qa</code>(列表)    <code> -ql</code> (目录信息)    <code>-qi</code> (软件包信息)    <code>-qf </code> (文件所属软件包)</p>
+<p>​     <code>rpm -e 应用名称</code>   # 卸载     <code>rpm -ivh 完整.rpm包</code>   # 安装</p>
+<p><strong>YUM</strong>：</p>
+<p>​    <code>yum list | grep 软件名</code>    # 用于查看yum源对应的软件信息，是否提供</p>
+<p>​    <code>yum -y install 软件名</code>    # -y可以默认yes来进行安装</p>
+<p>​    <code>yum clean all</code>     # 清空缓存</p>
+<p>​    <code>yum repolist</code>     # 查看yum源的列表并自动下载一些相应的元数据存到本地</p>
+<hr>
+<p>​                                                      <strong>整理者：长路  时间：2020/11/28</strong>-<strong>2020/11/30</strong></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>changlu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://changlujava.gitee.io/child/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/" title="04、Linux高级部分">https://changlujava.gitee.io/child/2020/12/02/04、Linux高级部分/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/" rel="tag"><i class="fa fa-tag"></i> Linux高级部分</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/27/03%E3%80%81Linux%E5%AE%9E%E7%94%A8%E6%8C%87%E4%BB%A4/" rel="prev" title="Linux实用指令">
+      <i class="fa fa-chevron-left"></i> Linux实用指令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/02/05%E3%80%81JavaEE%E5%AE%9A%E5%88%B6%E7%AF%87/" rel="next" title="05、JavaEE定制篇">
+      05、JavaEE定制篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">changlu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">38k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">34 分钟</span>
+</div>
+  <!--
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+  <br/>
+  -->
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i>
+    <span id="busuanzi_container_site_uv">
+      本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink.listen({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://changlujava.gitee.io/child/2020/12/02/04%E3%80%81Linux%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"RKq07e1mB9ImJNBK1sNX36Qm-gzGzoHsz","appKey":"p9Q0YXonqjlX0h4L2syIP0Tu","placeholder":"ヾﾉ≧∀≦)o快来，快来！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+  <!-- 添加背景特效 -->
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 添加点击特效 -->
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
