@@ -6,7 +6,7 @@
   <link href="https://changlujava.gitee.io/child/atom.xml" rel="self"/>
   
   <link href="https://changlujava.gitee.io/child/"/>
-  <updated>2020-12-02T12:55:24.000Z</updated>
+  <updated>2020-12-30T07:05:24.000Z</updated>
   <id>https://changlujava.gitee.io/child/</id>
   
   <author>
@@ -15,6 +15,95 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回顾2020年总结</title>
+    <link href="https://changlujava.gitee.io/child/2020/12/30/%E5%9B%9E%E9%A1%BE2020%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
+    <id>https://changlujava.gitee.io/child/2020/12/30/%E5%9B%9E%E9%A1%BE2020%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
+    <published>2020-12-30T07:05:24.000Z</published>
+    <updated>2020-12-30T07:05:24.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;写于2020年12月29日晚上19点26分，还有3天就是1月1号，已买好那天下午13:50回家的票。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​        这几天天气突然转冷，现在外面还下起了:snowflake:。对于马上到来的2021年，我想好好的回顾这一年来我的学习与经历。这一年我觉得自己成长了不少，比如比以前爱看书啦，自己会开始主动学习，自己主动总结啊等等等，对于自己身上现有的不足与欠缺还是有着很多。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="思考总结" scheme="https://changlujava.gitee.io/child/categories/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="2020年度总结" scheme="https://changlujava.gitee.io/child/tags/2020%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript</title>
+    <link href="https://changlujava.gitee.io/child/2020/12/14/JavaScript/"/>
+    <id>https://changlujava.gitee.io/child/2020/12/14/JavaScript/</id>
+    <published>2020-12-14T02:15:44.000Z</published>
+    <updated>2020-12-14T02:15:44.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;认识JavaScript&quot;&gt;&lt;a href=&quot;#认识JavaScript&quot; class=&quot;headerlink&quot; title=&quot;认识JavaScript&quot;&gt;&lt;/a&gt;认识JavaScript&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1995&lt;/strong&gt;年网景公司(凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司)为在静态HTML上有一些动态的效果。&lt;/p&gt;
+&lt;p&gt;Brendan Eich两周之内创建了js，javascript虽然与java有着相同的部分，但是毫不相关，只是借助其名称推广。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://changlujava.gitee.io/child/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript入门" scheme="https://changlujava.gitee.io/child/tags/JavaScript%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3</title>
+    <link href="https://changlujava.gitee.io/child/2020/12/12/CSS3/"/>
+    <id>https://changlujava.gitee.io/child/2020/12/12/CSS3/</id>
+    <published>2020-12-12T02:15:20.000Z</published>
+    <updated>2020-12-12T02:15:20.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;CSS3基本了解&quot;&gt;&lt;a href=&quot;#CSS3基本了解&quot; class=&quot;headerlink&quot; title=&quot;CSS3基本了解&quot;&gt;&lt;/a&gt;CSS3基本了解&lt;/h1&gt;&lt;h2 id=&quot;如何学习？&quot;&gt;&lt;a href=&quot;#如何学习？&quot; class=&quot;headerlink&quot; title=&quot;如何学习？&quot;&gt;&lt;/a&gt;如何学习？&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;css是什么&lt;/li&gt;
+&lt;li&gt;css怎么用(快速入门)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;css选择器(重点+难点)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;美化网页(文字、阴影、超链接、列表、渐变…)&lt;/li&gt;
+&lt;li&gt;盒子模型</summary>
+    
+    
+    
+    <category term="CSS3" scheme="https://changlujava.gitee.io/child/categories/CSS3/"/>
+    
+    
+    <category term="CSS3入门" scheme="https://changlujava.gitee.io/child/tags/CSS3%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html</title>
+    <link href="https://changlujava.gitee.io/child/2020/12/06/HTML5/"/>
+    <id>https://changlujava.gitee.io/child/2020/12/06/HTML5/</id>
+    <published>2020-12-06T15:11:42.000Z</published>
+    <updated>2020-12-06T15:11:42.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;初识Html&quot;&gt;&lt;a href=&quot;#初识Html&quot; class=&quot;headerlink&quot; title=&quot;初识Html&quot;&gt;&lt;/a&gt;初识Html&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt; HTML(Hyper Text Markup Language)：超文本标记语言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;超文本包含文字、图片、音频、视频、动画等&lt;/p&gt;
+&lt;h2 id=&quot;Html发展史&quot;&gt;&lt;a href=&quot;#Html发展史&quot; class=&quot;headerlink&quot; title=&quot;Html发展史&quot;&gt;&lt;/a&gt;Html发展史&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="HTML" scheme="https://changlujava.gitee.io/child/categories/HTML/"/>
+    
+    
+    <category term="HTML学习" scheme="https://changlujava.gitee.io/child/tags/HTML%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>05、JavaEE定制篇</title>

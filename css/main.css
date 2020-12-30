@@ -2642,6 +2642,7 @@ mjx-container[display="true"] + br {
 }
 .use-motion .sidebar .animated {
   animation-fill-mode: both;
+  border-radius: 0px 0px 43px 40px;
 }
 .header {
   align-self: stretch;
